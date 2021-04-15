@@ -74,7 +74,7 @@ namespace UTS
             scene.lastChild().rotateQ(1.0f, 0, 0, 0);
             scene.lastChild().translate(4.84464f, 5.56542f, 2.48315f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(250 / 255f, 184 / 255f, 41 / 255f);
 
 
 
