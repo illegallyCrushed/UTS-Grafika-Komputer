@@ -338,6 +338,8 @@ namespace UTS
             init();
         }
 
+        
+
         public void createBall(float percent = 1)
         {
             delete();
@@ -577,7 +579,6 @@ namespace UTS
             {
                 k1 = (uint)i * ((uint)(hCount / divide) + 1);
                 k2 = (uint)k1 + (uint)(hCount / divide) + 1;
-
                 for (int j = 0; j < hCount / divide; j++, k1++, k2++)
                 {
                     vertexIndices.Add(k1);
@@ -614,6 +615,39 @@ namespace UTS
                 0, 1, 3,
                 0, 3, 2
             });
+            init();
+            rotateX(90f);
+        }
+
+        public void createTriangle(bool right = false)
+        {
+
+            delete();
+            if (!right)
+            {
+                vertices.Add(new Vector3(0.5f, -0.5f, 0));
+                vertices.Add(new Vector3(0.5f, 0.5f, 0));
+                vertices.Add(new Vector3(-0.5f, 0, 0));
+
+                normals.Add(new Vector3(0.5f, -0.5f, 0));
+                normals.Add(new Vector3(0.5f, 0.5f, 0));
+                normals.Add(new Vector3(-0.5f, 0, 0));
+            }
+            else {
+                vertices.Add(new Vector3(0.5f, -0.5f, 0));
+                vertices.Add(new Vector3(0.5f, 0.5f, 0));
+                vertices.Add(new Vector3(-0.5f, -0.5f, 0));
+
+                normals.Add(new Vector3(0.5f, -0.5f, 0));
+                normals.Add(new Vector3(0.5f, 0.5f, 0));
+                normals.Add(new Vector3(-0.5f, -0.5f, 0));
+            }
+            
+
+            vertexIndices = new List<uint>(new uint[] {
+               0,1,2
+            });
+
             init();
             rotateX(90f);
         }

@@ -47,6 +47,8 @@ namespace UTS
             Jeremy.Objects(ref scene);
 
             scene.init();
+
+            scene.translateZ(-5f);
         }
 
         public static void AnimateScene()
@@ -54,6 +56,7 @@ namespace UTS
             Leonando.Animations(ref scene);
             Nicholas.Animations(ref scene);
             Jeremy.Animations(ref scene);
+            scene.rotateZ(-0.1f);
         }
         public static void RenderScene()
         {

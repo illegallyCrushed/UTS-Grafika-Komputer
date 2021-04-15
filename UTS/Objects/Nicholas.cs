@@ -22,9 +22,9 @@ namespace UTS
 
             scene.addChild(new Object("BatangPohon"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.254126f, 0.254126f, -2.85938f);
+            scene.lastChild().scale(0.254126f, 0.254126f, -1.99938f);
             scene.lastChild().rotateQ(1.0f,0,0,0);
-            scene.lastChild().translate(4.10321f, -4.96785f, 2.69006f);
+            scene.lastChild().translate(4.10321f, -4.96785f, 1.99546f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(105/255.0f, 75/255.0f, 55/255.0f);
 
@@ -32,7 +32,7 @@ namespace UTS
             scene.lastChild().createCylinder();
             scene.lastChild().scale(0.055009f, 0.055009f, 1.07105f);
             scene.lastChild().rotateQ(0.941193f, 0.160407f, 0.231418f, -0.186737f);
-            scene.lastChild().translate(4.70789f, -5.48614f, 4.63283f);
+            scene.lastChild().translate(4.70789f, -5.48614f, 3.82823f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(105 / 255.0f, 75 / 255.0f, 55 / 255.0f);
 
@@ -40,7 +40,7 @@ namespace UTS
             scene.lastChild().createCylinder();
             scene.lastChild().scale(0.055009f, 0.055009f, 0.491048f);
             scene.lastChild().rotateQ(0.916892f, -0.28363f, 0.278902f, -0.032815f);
-            scene.lastChild().translate(4.49066f, -4.53096f, 4.80774f);
+            scene.lastChild().translate(4.49066f, -4.53096f, 4.00314f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(105 / 255.0f, 75 / 255.0f, 55 / 255.0f);
 
@@ -48,7 +48,7 @@ namespace UTS
             scene.lastChild().createCylinder();
             scene.lastChild().scale(0.055009f, 0.055009f, 0.571048f);
             scene.lastChild().rotateQ(0.348117f, -0.25946f, -0.157528f, 0.88695f);
-            scene.lastChild().translate(3.6578f, -4.87545f, 4.55862f);
+            scene.lastChild().translate(3.6578f, -4.87545f, 3.75402f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(105 / 255f, 75 / 255f, 55 / 255f);
 
@@ -56,7 +56,7 @@ namespace UTS
             scene.lastChild().createBall();
             scene.lastChild().scale(2.64469f, 2.47364f,1);
             scene.lastChild().rotateQ(1.0f,0,0,0);
-            scene.lastChild().translate(4.39924f, -5.52693f, 5.73931f);
+            scene.lastChild().translate(4.39924f, -5.52693f, 4.93471f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(109/ 255f, 179/ 255f, 63/255f);
 
@@ -64,7 +64,7 @@ namespace UTS
             scene.lastChild().createBall();
             scene.lastChild().scale(1.93883f, 1.81343f, 0.733102f);
             scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(3.97226f, -4.18096f, 6.52882f);
+            scene.lastChild().translate(3.97226f, -4.18096f, 5.72422f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(109 / 255f, 179 / 255f, 63 / 255f);
 
@@ -255,6 +255,11 @@ namespace UTS
             //scene.lastChild().scale(1.0f);
             //scene.lastChild().centerOrigin();
 
+            //scene.addChild(new Object("Triangle.001"));
+            //scene.lastChild().createTriangle();
+            //scene.lastChild().scale(5.0f);
+            //scene.lastChild().centerOrigin();
+
             //scene.addChild(new Object("Circle.001"));
             //scene.lastChild().createCircle();
             //scene.lastChild().scale(1.0f);
@@ -301,7 +306,6 @@ namespace UTS
             //scene.findChild("Torus.001").rotateY(-0.2f);
             //scene.findChild("Cone.001").rotateY(-0.2f);
             //scene.findChild("Ball.001").rotateY(-0.2f);
-            scene.rotateZ(0.2f);
         }
     }
 }
