@@ -42,9 +42,13 @@ namespace UTS
             // ortho
             // ProjectionMatrix = Matrix4.CreateOrthographic(15,15,0.1f,100.0f); 
 
-            Leonando.Objects(ref scene);
-            Nicholas.Objects(ref scene);
-            Jeremy.Objects(ref scene);
+            //Leonando.Objects(ref scene);
+            //Nicholas.Objects(ref scene);
+            //Jeremy.Objects(ref scene);
+
+            scene.addChild(new Object("Ball"));
+            scene.createBall(0.5f);
+            scene.scale(7.0f);
 
             scene.init();
         }
