@@ -30,7 +30,7 @@ namespace UTS
 
         public static float LightPower = 100.0f;
 
-        public static bool Wireframe = true;
+        public static bool Wireframe = false;
 
         public static bool Solids = true;
 

@@ -116,6 +116,30 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1, 1, 1);
 
+            scene.addChild(new Object("AwanKananBelakang.001"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(1.67211f, 0.979347f, 0.809671f);
+            scene.lastChild().rotateQ(0.41887f, -0.281023f, 0.380846f, -0.774939f);
+            scene.lastChild().translate(-10.3729f, 2.66747f, 12.8463f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1, 1, 1);
+
+            scene.addChild(new Object("AwanKananBelakang.002"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(3.01242f, 0.720379f, 0.667502f);
+            scene.lastChild().rotateQ(0.41887f, -0.281023f, 0.380846f, -0.774939f);
+            scene.lastChild().translate(-9.69324f, 3.38415f, 12.1099f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1, 1, 1);
+
+            scene.addChild(new Object("AwanKananBelakang.003"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(1.33242f, 0.720379f, 0.547502f);
+            scene.lastChild().rotateQ(0.41887f, -0.281023f, 0.380846f, -0.774939f);
+            scene.lastChild().translate(-9.03657f, 4.22907f, 12.591f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1, 1, 1);
+
             scene.addChild(new Object("Pelangi.Merah"));
             scene.lastChild().createTorus(0.5f, 0.15f);
             scene.lastChild().scale(8.81015f, 8.19613f, 8.19613f);
