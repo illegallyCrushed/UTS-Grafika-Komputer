@@ -71,8 +71,8 @@ namespace UTS
             scene.addChild(new Object("Pelangi"));
             scene.lastChild().createTorus(0.5f, 0.75f);
             scene.lastChild().scale(7.20812f, 7.20812f, 7.20812f);
-            scene.lastChild().rotateQ(0.752707f, -0.330415f, 0.499329f, -0.273732f);
-            scene.lastChild().translate(0.62205f, -0.233987f, 9.71695f);
+            scene.lastChild().rotateQ(0.678236f, -0.486623f, 0.525451f, -0.164606f);
+            scene.lastChild().translate(1.22676f, 0.614339f, 10.3723f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1, 1, 1);
 
