@@ -1,0 +1,25 @@
+﻿using System;
+using OpenTK.Graphics.OpenGL4;
+using OpenTK.Mathematics;
+using OpenTK.Windowing.Desktop;
+
+namespace UTS
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var ourWindow = new NativeWindowSettings()
+            {
+                Size = new Vector2i(1000, 1000),
+                Title = "Proyek UTS",
+                NumberOfSamples = Window.MULTISAMPLING_LEVEL
+            };
+
+            using (var win = new Window(GameWindowSettings.Default, ourWindow))
+            {
+                win.Run();
+            };
+        }
+    }
+}
