@@ -74,7 +74,23 @@ namespace UTS
             scene.lastChild().rotateQ(1.0f, 0, 0, 0);
             scene.lastChild().translate(4.84464f, 5.56542f, 2.48315f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(250 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("BokongKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.59f, 0.68f, 0.66f);
+            scene.lastChild().rotateQ(0.704252f, -0.063472f, -0.063472f, -0.704252f);
+            scene.lastChild().translate(3.88432f, 5.33234f, 2.50868f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("BokongKiri"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.59f, 0.68f, 0.66f);
+            scene.lastChild().rotateQ(0.704252f, -0.063472f, -0.063472f, -0.704252f);
+            scene.lastChild().translate(3.88432f, 5.77234f, 2.49868f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
 
 
 
@@ -211,7 +227,6 @@ namespace UTS
             //scene.findChild("Torus.001").rotateY(-0.2f);
             //scene.findChild("Cone.001").rotateY(-0.2f);
             //scene.findChild("Ball.001").rotateY(-0.2f);
-            scene.rotateZ(0.1f);
         }
     }
 }

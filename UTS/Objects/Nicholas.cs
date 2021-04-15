@@ -259,7 +259,7 @@ namespace UTS
             //scene.findChild("Torus.001").rotateY(-0.2f);
             //scene.findChild("Cone.001").rotateY(-0.2f);
             //scene.findChild("Ball.001").rotateY(-0.2f);
-            //scene.rotateZ(0.1f);
+            scene.rotateZ(0.1f);
         }
     }
 }
