@@ -16,6 +16,6 @@ void main(void){
     gl_Position =  vec4(aPosition, 1.0) * mvp_transform;
     FragPos = vec3(v_transform * m_transform * vec4(aPosition, 1.0));
     Normal = mat3(transpose(inverse(v_transform * m_transform))) * aNormal; 
-    LightPos_View = vec3(v_transform * vec4(LightPos_World, 1.0));
+    LightPos_View = vec3(v_transform * m_transform * m_transform * vec4(LightPos_World, 1.0));
 }
 
