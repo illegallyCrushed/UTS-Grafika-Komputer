@@ -243,11 +243,11 @@ namespace UTS
             _shader_line.SetVector3("lineColor", WireframeColor);
             _shader.SetMatrix4("m_transform", processed_transform);
             _shader.SetMatrix4("v_transform", ViewMatrix);
-            _shader.SetVector3("material.ambient", material.diffuse * new Vector3(1f, 1f, 1f));
-            //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(0.7f, 0.7f, 0.7f));
+            //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(1f, 1f, 1f));
+            _shader.SetVector3("material.ambient", material.diffuse * new Vector3(0.8f, 0.8f, 0.8f));
             _shader.SetVector3("material.diffuse", material.diffuse);
             //_shader.SetVector3("material.specular", material.specular);
-            //_shader.SetFloat("material.shininess", (float)material.specularExponent);
+            _shader.SetFloat("material.shininess", (float)material.specularExponent);
             _shader.SetVector3("LightPos_World", LightPosition);
             _shader.SetVector3("LightColor", LightColor);
             //_shader.SetFloat("LightPower", LightPower);

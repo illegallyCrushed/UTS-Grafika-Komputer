@@ -47,7 +47,6 @@ namespace UTS
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
-            
             Scene.AnimateScene();
             Scene.RenderScene();
 
