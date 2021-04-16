@@ -263,22 +263,6 @@ namespace UTS
             //scene.lastChild().lastChild().translate(0f, 1f, 0f);
             //scene.lastChild().lastChild().scale(0.5f);
             //scene.lastChild().lastChild().centerOrigin();
-
-
-
-
-
-
-
-
-
-
-            scene.addChild(new Object("Ground-Dirt"));
-            scene.lastChild().createTerrain(0.5f, 30, 3);
-            scene.lastChild().scale(10.0f);
-            scene.lastChild().translate(0, 0, 0);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(0.607f, 0.4627f, 0.3255f);
         }
 
         public static void Animations(ref Object scene)
