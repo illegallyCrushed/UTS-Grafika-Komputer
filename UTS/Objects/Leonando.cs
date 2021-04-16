@@ -92,6 +92,54 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
 
+            scene.addChild(new Object("Leher"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(-0.373297f, -0.373297f, -0.753297f);
+            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().translate(7.05128f, 5.55019f, 3.59534f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("MulutBawah"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.643924f, 0.643924f, 0.07605f);
+            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().translate(7.34f, 5.54f, 3.83f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("MulutAtas"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.824054f, 0.704054f, 0.097324f);
+            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().translate(7.37f, 5.54f, 4.03f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("Kepala"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.564093f, 0.564093f, 0.667131f);
+            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().translate(7.24f, 5.54f, 4.77f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("MoncongKepala"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.451286f, 0.451286f, 0.398902f);
+            scene.lastChild().rotateQ(0.707107f, 0, -0.707107f, 0);
+            scene.lastChild().translate(7.85f, 5.54f, 4.42f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+
+            scene.addChild(new Object("Hidung"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.42832f, 0.42832f, 0.42832f);
+            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
+            scene.lastChild().translate(8.2084f, 5.53289f, 4.42484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0, 0, 0);
+
 
 
             //scene.addChild(new Object("AlasBawah"));
