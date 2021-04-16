@@ -234,7 +234,7 @@ namespace UTS
             origin_transform.Invert();
         }
 
-        public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe)
+        public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightDirection, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe)
         {
 
 
@@ -244,11 +244,12 @@ namespace UTS
             _shader.SetMatrix4("m_transform", processed_transform);
             _shader.SetMatrix4("v_transform", ViewMatrix);
             //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(1f, 1f, 1f));
-            _shader.SetVector3("material.ambient", material.diffuse * new Vector3(0.8f, 0.8f, 0.8f));
+            //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(0.8f, 0.8f, 0.8f));
             _shader.SetVector3("material.diffuse", material.diffuse);
-            //_shader.SetVector3("material.specular", material.specular);
+            _shader.SetVector3("material.specular", material.specular);
             _shader.SetFloat("material.shininess", (float)material.specularExponent);
             _shader.SetVector3("LightPos_World", LightPosition);
+            //_shader.SetVector3("LightDir_World", LightDirection);
             _shader.SetVector3("LightColor", LightColor);
             //_shader.SetFloat("LightPower", LightPower);
             //_shader.SetVector3("ViewPos", ViewPosition);
@@ -272,7 +273,7 @@ namespace UTS
 
             foreach (var child in children)
             {
-                child.render(ProjectionMatrix, ViewMatrix, LightPosition, LightColor, LightPower, ViewPosition, WireframeColor, solids, wireframe);
+                child.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, solids, wireframe);
             }
         }
 
@@ -538,7 +539,7 @@ namespace UTS
             lastChild().centerOrigin();
 
             rotateX(90f);
-            //centerOrigin();
+            centerOrigin();
         }
 
         public void createTorus(float percent = 1, float tubedia = 1f)
@@ -636,11 +637,11 @@ namespace UTS
             else {
                 vertices.Add(new Vector3(0.5f, -0.5f, 0));
                 vertices.Add(new Vector3(0.5f, 0.5f, 0));
-                vertices.Add(new Vector3(-0.5f, -0.5f, 0));
+                vertices.Add(new Vector3(-0.5f, 0.5f, 0));
 
                 normals.Add(new Vector3(0.5f, -0.5f, 0));
                 normals.Add(new Vector3(0.5f, 0.5f, 0));
-                normals.Add(new Vector3(-0.5f, -0.5f, 0));
+                normals.Add(new Vector3(-0.5f, 0.5f, 0));
             }
             
 

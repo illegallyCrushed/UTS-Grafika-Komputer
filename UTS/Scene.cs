@@ -18,7 +18,8 @@ namespace UTS
         public static Object scene = new Object("scene");
         public static Matrix4 ProjectionMatrix;
         public static Matrix4 ViewMatrix;
-        public static Vector3 LightPosition = new Vector3(5.0f,15.0f, 0.0f);
+        public static Vector3 LightPosition = new Vector3(1.0f, 5.0f, 0.0f);
+        public static Vector3 LightDirection = new Vector3(0, -1.0f, 0.0f);
         public static Vector3 ViewPosition = new Vector3(25, 15, 0);
         public static Vector3 WireframeColor = new Vector3(1,1,1);
         public static Vector3 SkyColor = new Vector3(0.529f, 0.808f, 0.922f);
@@ -60,7 +61,7 @@ namespace UTS
         }
         public static void RenderScene()
         {
-            scene.render(ProjectionMatrix, ViewMatrix, LightPosition, LightColor, LightPower, ViewPosition, WireframeColor, Solids, Wireframe);
+            scene.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, Solids, Wireframe);
         }
 
     }

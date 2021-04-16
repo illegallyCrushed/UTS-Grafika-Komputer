@@ -4,12 +4,13 @@ in vec3 FragPos;
 in vec3 Normal;
 in vec3 LightPos_View;
 
-out vec4 outputColor;
+out vec4 FragColor;
 
 uniform mat4 mvp_transform;
 uniform mat4 m_transform;
 uniform mat4 v_transform;
 uniform vec3 LightPos_World;
+uniform vec3 LightDir_World;
 uniform vec3 LightColor;
 uniform vec3 ViewPos;
 uniform float LightPower;
@@ -24,20 +25,23 @@ struct Material {
   
 uniform Material material;
 
-void main(){
-	vec3 norm = normalize(Normal);
-	vec3 lightDir = normalize(LightPos_View - FragPos); 
-	float diff = max(dot(norm, lightDir), 0.0);
-	vec3 diffusal = diff * LightColor;
-
-	vec3 viewDir = normalize(-FragPos);
-	vec3 reflectDir = reflect(-lightDir, norm);  
-	float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-	vec3 specularity = 0.5 * spec * LightColor;  
-	
-	vec3 result = (material.ambient + diffusal + specularity)*material.diffuse;
-	//vec3 result = (material.ambient + diffusal)*material.diffuse;
-	//vec3 result = (material.ambient)*material.diffuse;
-    outputColor = vec4(result, 1.0);
-}
-
+void main()
+{
+    // ambient
+    vec3 ambient = LightColor * material.diffuse;
+  	
+    // diffuse 
+    vec3 norm = normalize(Normal);
+    vec3 lightDir = normalize(LightPos_View - FragPos);
+    float diff = max(dot(norm, lightDir), 0.0);
+    vec3 diffuse = LightColor * diff * material.diffuse;  
+    
+    // specular
+    vec3 viewDir = normalize(-FragPos);
+    vec3 reflectDir = reflect(-lightDir, norm);  
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+    vec3 specular = LightColor * spec * material.specular;  
+        
+    vec3 result = ambient + diffuse + specular;
+    FragColor = vec4(result, 1.0);
+} 
