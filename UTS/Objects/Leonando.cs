@@ -156,6 +156,54 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(19 / 255f, 82 / 255f, 129 / 255f);
 
+            scene.addChild(new Object("TelingaKanan"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.28f, 0.06f, 0.22f);
+            scene.lastChild().rotateQ(0.982774f, -0.184809f, 0, 0);
+            scene.lastChild().translate(7.21f, 4.96f, 4.75f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(81 / 255f, 49 / 255f, 10 / 255f);
+
+            scene.addChild(new Object("TelingaKiri"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.28f, 0.06f, 0.22f);
+            scene.lastChild().rotateQ(0.982774f, 0.184809f, 0, 0);
+            scene.lastChild().translate(7.21f, 6.11f, 4.75f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(81 / 255f, 49 / 255f, 10 / 255f);
+
+            scene.addChild(new Object("MataKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.073119f, 0.093119f, 0.093119f);
+            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
+            scene.lastChild().translate(7.7784f, 5.43289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1, 1, 1);
+
+            scene.addChild(new Object("MataKiri"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.073119f, 0.093119f, 0.093119f);
+            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
+            scene.lastChild().translate(7.7784f, 5.63289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1, 1, 1);
+
+            scene.addChild(new Object("MataHitamKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.035908f, 0.02573f, 0.04573f);
+            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
+            scene.lastChild().translate(7.8584f, 5.43289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0, 0, 0);
+
+            scene.addChild(new Object("MataHitamKiri"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.035908f, 0.02573f, 0.04573f);
+            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
+            scene.lastChild().translate(7.8584f, 5.63289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0, 0, 0);
+
 
 
             //scene.addChild(new Object("AlasBawah"));
