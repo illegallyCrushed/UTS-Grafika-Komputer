@@ -138,7 +138,23 @@ namespace UTS
             scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
             scene.lastChild().translate(8.2084f, 5.53289f, 4.42484f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(0, 0, 0);
+            scene.lastChild().setColor(22 / 255, 16 / 255, 2 / 255);
+
+            scene.addChild(new Object("TepiTopi"));
+            scene.lastChild().createTorus();
+            scene.lastChild().scale(0.567349f, 0.567349f, 0.567349f);
+            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().translate(7.28f, 5.54f, 5.33f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(19 / 255f, 82 / 255f, 129 / 255f);
+
+            scene.addChild(new Object("Topi"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.511874f, 0.511874f, 0.511874f);
+            scene.lastChild().rotateQ(0.5f, -0.5f, -0.5f, 0.5f);
+            scene.lastChild().translate(7.2584f, 5.53289f, 5.38484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(19 / 255f, 82 / 255f, 129 / 255f);
 
 
 
