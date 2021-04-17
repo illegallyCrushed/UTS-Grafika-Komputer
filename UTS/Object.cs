@@ -142,6 +142,42 @@ namespace UTS
             }
         }
 
+        public void setTransform(Matrix4 transformation,int type = 0, bool parentAction = false)
+        {
+            processed_transform = Matrix4.Identity;
+
+            if (parentAction)
+            {
+                if (parent != null)
+                    processed_transform = object_transform * origin_transform * parent.processed_transform;
+                else
+                    processed_transform = object_transform * origin_transform;
+            }
+            else
+            {
+                if (type == 0)
+                    // set rotation
+                    object_transform = object_transform.ClearRotation();
+                else if (type == 1)
+                    //set translation
+                    object_transform = object_transform.ClearTranslation();
+                else
+                    //clear scale
+                    object_transform = object_transform.ClearScale();
+
+                object_transform = object_transform * transformation;
+                if (parent != null)
+                    processed_transform = object_transform * origin_transform * parent.processed_transform;
+                else
+                    processed_transform = object_transform * origin_transform;
+            }
+
+            foreach (var child in children)
+            {
+                child.setTransform(transformation,type, isParent());
+            }
+        }
+
         // adjust ke model blender, y=z, z=-y; translate 1/2x
 
         public void rotateX(float degree, bool ignoreOrigin = false)
@@ -218,6 +254,59 @@ namespace UTS
             applyTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), ignoreOrigin);
         }
+
+        public void setRotation(float x, float y, float z, bool ignoreOrigin = false) {
+            Matrix4 combinedRotation = Matrix4.CreateRotationX(x.Rad()) * Matrix4.CreateRotationY(z.Rad()) * Matrix4.CreateRotationZ(y.Rad());
+            setTransform(combinedRotation,0, ignoreOrigin);
+        }
+
+        public void setRotationQ(float w, float x, float y, float z, bool ignoreOrigin = false)
+        {
+            Matrix4 combinedRotation = Matrix4.CreateRotationX(x.Rad()) * Matrix4.CreateRotationY(z.Rad()) * Matrix4.CreateRotationZ(y.Rad());
+            setTransform(Matrix4.CreateFromQuaternion(new Quaternion(x, z, -y, w)), 0, ignoreOrigin);
+        }
+
+        public void setTranslateX(float x, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, 0, 0)),1, ignoreOrigin);
+        }
+
+        public void setTranslateY(float y, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateTranslation(new Vector3(0, 0, -y / 2)),1, ignoreOrigin);
+        }
+
+        public void setTranslateZ(float z, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateTranslation(new Vector3(0, z / 2, 0)),1, ignoreOrigin);
+        }
+
+        public void setTranslate(float x, float y, float z, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)),1, ignoreOrigin);
+        }
+
+        public void setScaleX(float x, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateScale(new Vector3(x, 1, 1)),2, ignoreOrigin);
+        }
+
+        public void setScaleY(float y, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateScale(new Vector3(1, 1, y)),2, ignoreOrigin);
+        }
+
+        public void setScaleZ(float z, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateScale(new Vector3(1, z, 1)),2, ignoreOrigin);
+        }
+
+        public void setScale(float x, float y, float z, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateScale(new Vector3(x, z, y)),2, ignoreOrigin);
+        }
+
+
 
         public void setColor(float r, float g, float b)
         {
@@ -770,7 +859,7 @@ namespace UTS
             }
         }
 
-        public void createFreeformTube(List<Vector2> path,float percent = 1, float tubedia = 1)
+        public void createFreeformTube(List<Vector2> path,float percent = 1, float tubedia = 0.2f)
         {
             delete();
             int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL;

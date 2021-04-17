@@ -31,6 +31,7 @@ namespace UTS
         public static float FOV = 45.0f;
         public static float RotateVelocityX = 0;
         public static float RotateVelocityY = 0;
+        public static float rotatesz = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
 
@@ -44,14 +45,12 @@ namespace UTS
             Leonando.Objects(ref scene);
             Nicholas.Objects(ref scene);
             Jeremy.Objects(ref scene);
-
+            scene.translateZ(-8f);
             scene.init();
-            scene.translateZ(-7.5f);
         }
 
         public static void AnimateScene()
         {
-
             Leonando.Animations(ref scene);
             Nicholas.Animations(ref scene);
             Jeremy.Animations(ref scene);
@@ -105,6 +104,19 @@ namespace UTS
                 ViewPosition -= new Vector3(0, 1, 0) * speed * (float)e.Time;
                 ViewDirection -= new Vector3(0, 1, 0) * speed * (float)e.Time;
             }
+
+            if (w.KeyboardState.IsKeyDown(Keys.R))
+            {
+                scene.setTranslate(0,0,0);
+                scene.setRotation(0,0,0);
+                scene.translateZ(-8f);
+
+                ViewPosition = new Vector3(20, 5, 0);
+                ViewDirection = new Vector3(0, 0, 0);
+
+                FOV = 45f;
+            }
+
             float deltaX = w.MouseState.Position.X - w.MouseState.PreviousPosition.X;
             float deltaY = w.MouseState.Position.Y - w.MouseState.PreviousPosition.Y;
             if (w.MouseState.IsButtonDown(MouseButton.Button3))
