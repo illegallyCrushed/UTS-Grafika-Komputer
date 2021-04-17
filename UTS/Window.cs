@@ -56,6 +56,7 @@ namespace UTS
 
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
+            Animator.Tick(e);
             Scene.Movement(e, this);
         }
 

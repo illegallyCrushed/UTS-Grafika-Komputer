@@ -7,6 +7,8 @@ namespace UTS
 {
     class Nicholas
     {
+
+        public static Animator DaunPohonScale = new Animator();
         public static void Objects(ref Object scene)
         {
             // ProjectionMatrix = Matrix4.CreateOrthographic(15, 15, 0.1f, 100.0f);
@@ -465,13 +467,19 @@ namespace UTS
             scene.lastChild().translate(0, 0, 0);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(38/255f, 139/255f, 7/255f);
+
+            DaunPohonScale.s = 0.2f;
+
         }
 
         public static void Animations(ref Object scene)
         {
 
-
-            scene.findChild("Pohon").rotateX(-0.05f);
+            scene.findChild("Pohon").findChild("DaunPohon").scaleZ(DaunPohonScale.MinMaxBounce(0.999f,1.001f));
+            scene.findChild("Pohon").findChild("DaunPohon.001").scaleZ(DaunPohonScale.MinMaxBounce(0.999f, 1.001f));
+            scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonScale.MinMaxBounce(-0.001f,0.001f));
+            scene.findChild("Pohon").findChild("DaunPohon").translateZ(DaunPohonScale.MinMaxBounce(-0.001f,0.001f));
+            Console.WriteLine(DaunPohonScale.Bounce());
 
             //scene.findChild("Cube.001").rotateY(-0.2f);
             //scene.findChild("Cube.001").findChild("Cube.002").rotateY(0.4f);

@@ -30,6 +30,10 @@ namespace UTS
         private List<uint> vertexIndices = new List<uint>();
 
         // Transformation
+        public Vector3 scalation = new Vector3(1,1,1);
+        public Vector3 translation = new Vector3(0,0,0);
+        public Quaternion rotation = new Quaternion();
+
         private Matrix4 processed_transform;
         private Matrix4 object_transform;
         private Matrix4 origin_transform;
@@ -156,16 +160,31 @@ namespace UTS
             else
             {
                 if (type == 0)
+                {
                     // set rotation
                     object_transform = object_transform.ClearRotation();
+                    object_transform = object_transform * transformation;
+
+
+                }
+
                 else if (type == 1)
+                {
                     //set translation
                     object_transform = object_transform.ClearTranslation();
-                else
+                    object_transform = object_transform * transformation;
+
+                }
+
+                else {
                     //clear scale
                     object_transform = object_transform.ClearScale();
+                    object_transform = object_transform * transformation;
 
-                object_transform = object_transform * transformation;
+                }
+
+
+
                 if (parent != null)
                     processed_transform = object_transform * origin_transform * parent.processed_transform;
                 else
@@ -206,11 +225,13 @@ namespace UTS
         public void translateX(float x, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateTranslation(new Vector3(x / 2, 0, 0)), ignoreOrigin);
+            translation += new Vector3(x, 0, 0);
         }
 
         public void translateY(float y, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateTranslation(new Vector3(0, 0, -y / 2)), ignoreOrigin);
+            translation += new Vector3(0, y, 0);
             //applyTransform(Matrix4.CreateTranslation(new Vector3(0, y, 0)), ignoreOrigin);
         }
 
@@ -218,41 +239,48 @@ namespace UTS
         {
             applyTransform(Matrix4.CreateTranslation(new Vector3(0, z / 2, 0)), ignoreOrigin);
             //applyTransform(Matrix4.CreateTranslation(new Vector3(0, 0, z)), ignoreOrigin);
+            translation += new Vector3(0, 0, z);
         }
 
         public void translate(float x, float y, float z, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)), ignoreOrigin);
+            translation += new Vector3(x,y,z);
             //applyTransform(Matrix4.CreateTranslation(new Vector3(x, y, z)), ignoreOrigin);
         }
 
         public void scaleX(float x, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(x, 1, 1)), ignoreOrigin);
+            scalation *= new Vector3(x,1,1);
         }
 
         public void scaleY(float y, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(1, 1, y)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(1, y, 1)), ignoreOrigin);
+            scalation *= new Vector3(1, y, 1);
         }
 
         public void scaleZ(float z, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(1, z, 1)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(1, 1, z)), ignoreOrigin);
+            scalation *= new Vector3(1,1, z);
         }
 
         public void scale(float x, float y, float z, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(x, z, y)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(x, y, z)), ignoreOrigin);
+            scalation *= new Vector3(x,y,z);
         }
 
         public void scale(float factor, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), ignoreOrigin);
+            scalation *= new Vector3(factor, factor, factor);
         }
 
         public void setRotation(float x, float y, float z, bool ignoreOrigin = false) {
@@ -268,42 +296,57 @@ namespace UTS
 
         public void setTranslateX(float x, bool ignoreOrigin = false)
         {
+
             setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, 0, 0)),1, ignoreOrigin);
+            translation = new Vector3(x,translation.Y,translation.Z);
         }
 
         public void setTranslateY(float y, bool ignoreOrigin = false)
         {
             setTransform(Matrix4.CreateTranslation(new Vector3(0, 0, -y / 2)),1, ignoreOrigin);
+            translation = new Vector3(translation.X, y, translation.Z);
         }
 
         public void setTranslateZ(float z, bool ignoreOrigin = false)
         {
             setTransform(Matrix4.CreateTranslation(new Vector3(0, z / 2, 0)),1, ignoreOrigin);
+            translation = new Vector3(translation.X, translation.Y, z);
         }
 
         public void setTranslate(float x, float y, float z, bool ignoreOrigin = false)
         {
             setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)),1, ignoreOrigin);
+            translation = new Vector3(translation.X, translation.Y, translation.Z);
         }
 
         public void setScaleX(float x, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateScale(new Vector3(x, 1, 1)),2, ignoreOrigin);
+            setTransform(Matrix4.CreateScale(new Vector3(x, scalation.Y, scalation.Z)),2, ignoreOrigin);
+            scalation = new Vector3(x, scalation.Y, scalation.Z);
         }
 
         public void setScaleY(float y, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateScale(new Vector3(1, 1, y)),2, ignoreOrigin);
+            setTransform(Matrix4.CreateScale(new Vector3(scalation.X, scalation.Z, y)),2, ignoreOrigin);
+            scalation = new Vector3(scalation.X, y, scalation.Z);
         }
 
         public void setScaleZ(float z, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateScale(new Vector3(1, z, 1)),2, ignoreOrigin);
+            setTransform(Matrix4.CreateScale(new Vector3(scalation.X, z, scalation.Y)),2, ignoreOrigin);
+            scalation = new Vector3(scalation.X, scalation.Y, z);
         }
 
         public void setScale(float x, float y, float z, bool ignoreOrigin = false)
         {
             setTransform(Matrix4.CreateScale(new Vector3(x, z, y)),2, ignoreOrigin);
+            scalation = new Vector3(x,y,z);
+        }
+
+        public void setScale(float factor, bool ignoreOrigin = false)
+        {
+            setTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), 2, ignoreOrigin);
+            scalation = new Vector3(factor, factor, factor);
         }
 
 
