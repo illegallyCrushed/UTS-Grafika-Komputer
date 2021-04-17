@@ -148,21 +148,21 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(0.00000f, 0.00000f, 1.00000f);
 
-            scene.addChild(new Object("PelangiGreen"));
-            scene.lastChild().createTorus(0.5f, 0.25f);
-            scene.lastChild().scale(8.53725f, 8.19613f, 8.19613f);
-            scene.lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f, -0.50961f);
-            scene.lastChild().translate(-4.06628f, -0.26662f, 12.40329f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(0.00000f, 1.00000f, 0.00000f);
+            scene.lastChild().addChild(new Object("PelangiGreen"));
+            scene.lastChild().lastChild().createTorus(0.5f, 0.25f);
+            scene.lastChild().lastChild().scale(8.53725f, 8.19613f, 8.19613f);
+            scene.lastChild().lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f, -0.50961f);
+            scene.lastChild().lastChild().translate(-4.06628f, -0.26662f, 12.40329f);
+            scene.lastChild().lastChild().centerOrigin();
+            scene.lastChild().lastChild().setColor(0.00000f, 1.00000f, 0.00000f);
 
-            scene.addChild(new Object("PelangiRed"));
-            scene.lastChild().createTorus(0.5f, 0.25f);
-            scene.lastChild().scale(8.81015f, 8.19613f, 8.19613f);
-            scene.lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f, -0.50961f);
-            scene.lastChild().translate(-4.12691f, -0.52018f, 12.85885f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().addChild(new Object("PelangiRed"));
+            scene.lastChild().lastChild().createTorus(0.5f, 0.25f);
+            scene.lastChild().lastChild().scale(8.81015f, 8.19613f, 8.19613f);
+            scene.lastChild().lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f, -0.50961f);
+            scene.lastChild().lastChild().translate(-4.12691f, -0.52018f, 12.85885f);
+            scene.lastChild().lastChild().centerOrigin();
+            scene.lastChild().lastChild().setColor(1.00000f, 0.00000f, 0.00000f);
 
             scene.addChild(new Object("BalokRumah"));
             scene.lastChild().createCube();

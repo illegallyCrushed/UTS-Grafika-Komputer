@@ -24,7 +24,10 @@ for collection in collections:
             elif name[0] == "Cone":
                 file.write("scene.lastChild().createCone();\n")
             elif name[0] == "Torus":
-                file.write("scene.lastChild().createTorus();\n")
+                if len(name) == 2:
+                    file.write("scene.lastChild().createTorus();\n")
+                else:
+                    file.write("scene.lastChild().createTorus(1f,{}f);\n".format(name[2]))
             elif name[0] == "Triangle":
                 file.write("scene.lastChild().createTriangle();\n")
             elif name[0] == "RightTriangle":

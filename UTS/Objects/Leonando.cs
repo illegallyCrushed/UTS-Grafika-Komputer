@@ -22,187 +22,205 @@ namespace UTS
 
             scene.addChild(new Object("KakiDepanKanan"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.197371f, 0.197371f, 0.769748f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().scale(0.19737f, 0.19737f, 0.76975f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(6.77244f, 5.09273f, 1.31062f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252/255f, 184/255f, 41/255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
             scene.addChild(new Object("KakiDepanKiri"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.197371f, 0.197371f, 0.769748f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(6.80996f, 6.02619f, 1.31062f);
+            scene.lastChild().scale(0.19737f, 0.19737f, 0.76975f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.80996f, 6.02619f, 1.31027f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
-
-            scene.addChild(new Object("KakiBelakangKanan"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.197371f, 0.197371f, 0.769748f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(4.12125f, 5.04282f, 1.36744f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
             scene.addChild(new Object("KakiBelakangKiri"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.197371f, 0.197371f, 0.769748f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(4.07313f, 6.02691f, 1.36744f);
+            scene.lastChild().scale(0.19737f, 0.19737f, 0.76975f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.07313f, 6.02691f, 1.39525f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("BadanUtama"));
+            scene.addChild(new Object("KakiBelakangKanan"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.722596f, 0.722596f, 1.8226f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0.707107f, 0);
+            scene.lastChild().scale(0.19737f, 0.19737f, 0.76975f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.12125f, 5.04282f, 1.36744f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("Badan"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.72260f, 0.72260f, 1.82260f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.70711f, 0.00000f);
             scene.lastChild().translate(5.48215f, 5.54402f, 2.49499f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("OtotDepan"));
+            scene.addChild(new Object("BadanDepan"));
             scene.lastChild().createBall();
-            scene.lastChild().scale(1.28f, 0.84f, 0.93f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().scale(1.28000f, 0.84000f, 0.93000f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(6.39464f, 5.52542f, 2.48315f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("OtotBelakang"));
+            scene.addChild(new Object("BadanBelakang"));
             scene.lastChild().createBall();
-            scene.lastChild().scale(1.51f, 0.78f, 0.99f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().scale(1.51000f, 0.78000f, 0.99000f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(4.84464f, 5.56542f, 2.48315f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("BokongKanan"));
+            scene.addChild(new Object("PantatKiri"));
             scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.59f, 0.68f, 0.66f);
-            scene.lastChild().rotateQ(0.704252f, -0.063472f, -0.063472f, -0.704252f);
-            scene.lastChild().translate(3.88432f, 5.33234f, 2.50868f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
-
-            scene.addChild(new Object("BokongKiri"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.59f, 0.68f, 0.66f);
-            scene.lastChild().rotateQ(0.704252f, -0.063472f, -0.063472f, -0.704252f);
+            scene.lastChild().scale(0.59000f, 0.68000f, 0.66000f);
+            scene.lastChild().rotateQ(0.70425f, -0.06347f, -0.06347f, -0.70425f);
             scene.lastChild().translate(3.88432f, 5.77234f, 2.49868f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("Leher"));
+            scene.addChild(new Object("PantatKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.59000f, 0.68000f, 0.66000f);
+            scene.lastChild().rotateQ(0.70425f, -0.06347f, -0.06347f, -0.70425f);
+            scene.lastChild().translate(3.88432f, 5.33234f, 2.50868f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("Leher.001"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(-0.373297f, -0.373297f, -0.753297f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
+            scene.lastChild().scale(-0.37330f, -0.37330f, -0.75330f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(7.05128f, 5.55019f, 3.59534f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
             scene.addChild(new Object("MulutBawah"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.643924f, 0.643924f, 0.07605f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(7.34f, 5.54f, 3.83f);
+            scene.lastChild().scale(0.64392f, 0.64392f, 0.07605f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.34000f, 5.54000f, 3.83000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("MoncongHidung"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.45129f, 0.45129f, 0.39890f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, -0.70711f, 0.00000f);
+            scene.lastChild().translate(7.85000f, 5.54000f, 4.42000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
             scene.addChild(new Object("MulutAtas"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.824054f, 0.704054f, 0.097324f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(7.37f, 5.54f, 4.03f);
+            scene.lastChild().scale(0.82405f, 0.70405f, 0.09732f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.37000f, 5.54000f, 4.03000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
             scene.addChild(new Object("Kepala"));
             scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.564093f, 0.564093f, 0.667131f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(7.24f, 5.54f, 4.77f);
+            scene.lastChild().scale(0.56409f, 0.56409f, 0.66713f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.24000f, 5.54000f, 4.77000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
-            scene.addChild(new Object("MoncongKepala"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.451286f, 0.451286f, 0.398902f);
-            scene.lastChild().rotateQ(0.707107f, 0, -0.707107f, 0);
-            scene.lastChild().translate(7.85f, 5.54f, 4.42f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
-
-            scene.addChild(new Object("Hidung"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.42832f, 0.42832f, 0.42832f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
-            scene.lastChild().translate(8.2084f, 5.53289f, 4.42484f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(22 / 255, 16 / 255, 2 / 255);
-
-            scene.addChild(new Object("TepiTopi"));
+            scene.addChild(new Object("TopiTepi"));
             scene.lastChild().createTorus();
-            scene.lastChild().scale(0.567349f, 0.567349f, 0.567349f);
-            scene.lastChild().rotateQ(1.0f, 0, 0, 0);
-            scene.lastChild().translate(7.28f, 5.54f, 5.33f);
+            scene.lastChild().scale(0.56735f, 0.56735f, 0.56735f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.28000f, 5.54000f, 5.33000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(19 / 255f, 82 / 255f, 129 / 255f);
-
-            scene.addChild(new Object("Topi"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.511874f, 0.511874f, 0.511874f);
-            scene.lastChild().rotateQ(0.5f, -0.5f, -0.5f, 0.5f);
-            scene.lastChild().translate(7.2584f, 5.53289f, 5.38484f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(19 / 255f, 82 / 255f, 129 / 255f);
-
-            scene.addChild(new Object("TelingaKanan"));
-            scene.lastChild().createCube();
-            scene.lastChild().scale(0.28f, 0.06f, 0.22f);
-            scene.lastChild().rotateQ(0.982774f, -0.184809f, 0, 0);
-            scene.lastChild().translate(7.21f, 4.96f, 4.75f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(81 / 255f, 49 / 255f, 10 / 255f);
-
-            scene.addChild(new Object("TelingaKiri"));
-            scene.lastChild().createCube();
-            scene.lastChild().scale(0.28f, 0.06f, 0.22f);
-            scene.lastChild().rotateQ(0.982774f, 0.184809f, 0, 0);
-            scene.lastChild().translate(7.21f, 6.11f, 4.75f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(81 / 255f, 49 / 255f, 10 / 255f);
-
-            scene.addChild(new Object("MataKanan"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.073119f, 0.093119f, 0.093119f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
-            scene.lastChild().translate(7.7784f, 5.43289f, 5.03484f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1, 1, 1);
+            scene.lastChild().setColor(0.07451f, 0.32157f, 0.50588f);
 
             scene.addChild(new Object("MataKiri"));
             scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.073119f, 0.093119f, 0.093119f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
-            scene.lastChild().translate(7.7784f, 5.63289f, 5.03484f);
+            scene.lastChild().scale(0.07312f, 0.09312f, 0.09312f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(7.77840f, 5.63289f, 5.03484f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1, 1, 1);
+            scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
-            scene.addChild(new Object("MataHitamKanan"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.035908f, 0.02573f, 0.04573f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
-            scene.lastChild().translate(7.8584f, 5.43289f, 5.03484f);
+            scene.addChild(new Object("TelingaKanan"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.28000f, 0.06000f, 0.22000f);
+            scene.lastChild().rotateQ(0.98277f, -0.18481f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.21000f, 4.96000f, 4.75000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(0, 0, 0);
+            scene.lastChild().setColor(0.31765f, 0.19216f, 0.03922f);
 
-            scene.addChild(new Object("MataHitamKiri"));
-            scene.lastChild().createBall(0.5f);
-            scene.lastChild().scale(0.035908f, 0.02573f, 0.04573f);
-            scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
-            scene.lastChild().translate(7.8584f, 5.63289f, 5.03484f);
+            scene.addChild(new Object("TelingaKiri"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.28000f, 0.06000f, 0.22000f);
+            scene.lastChild().rotateQ(0.98277f, 0.18481f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.21000f, 6.11000f, 4.75000f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(0, 0, 0);
+            scene.lastChild().setColor(0.31765f, 0.19216f, 0.03922f);
+
+            scene.addChild(new Object("HidungDepan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.42832f, 0.42832f, 0.42832f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(8.20840f, 5.53289f, 4.42484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.08627f, 0.06275f, 0.01290f);
+
+            scene.addChild(new Object("MataKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.07312f, 0.09312f, 0.09312f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(7.77840f, 5.43289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+            scene.addChild(new Object("PupilKiri"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.03591f, 0.02573f, 0.04573f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(7.85840f, 5.63289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00000f, 0.00000f, 0.00000f);
+
+            scene.addChild(new Object("PupilKanan"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.03591f, 0.02573f, 0.04573f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(7.85840f, 5.43289f, 5.03484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00000f, 0.00000f, 0.00000f);
+
+            scene.addChild(new Object("Lidah"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.37987f, 0.18635f, 0.06451f);
+            scene.lastChild().rotateQ(0.96858f, 0.00000f, 0.24869f, 0.00000f);
+            scene.lastChild().translate(7.96000f, 5.51000f, 3.85000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.80000f, 0.04368f, 0.06054f);
+
+            scene.addChild(new Object("Buntut"));
+            scene.lastChild().createTorus(0.5f);
+            scene.lastChild().scale(1.04584f, 0.51622f, 0.56139f);
+            scene.lastChild().rotateQ(0.68953f, 0.68473f, 0.16745f, -0.16629f);
+            scene.lastChild().translate(3.09290f, 5.59000f, 3.55000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("TopiAtas"));
+            scene.lastChild().createBall(0.5f);
+            scene.lastChild().scale(0.51187f, 0.51187f, 0.51187f);
+            scene.lastChild().rotateQ(0.50000f, -0.50000f, -0.50000f, 0.50000f);
+            scene.lastChild().translate(7.25840f, 5.53289f, 5.38484f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.07451f, 0.32157f, 0.50588f);
+
+
 
 
 
