@@ -133,7 +133,7 @@ namespace UTS
 			scene.addChild(new Object("bulu10"));
 			scene.lastChild().createBall(0.5f);
 			scene.lastChild().scale(0.58000f, 0.30000f, 0.57000f);
-			scene.lastChild().rotateQ(0.32599f, -0.94537f, -0.00000f, -0.00000f);
+			scene.lastChild().rotateQ(0.32599f, -0.94537f, 0.00000f, 0.00000f);
 			scene.lastChild().translate(4.05171f, 0.49875f, 1.85342f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(0.80000f, 0.80000f, 0.80000f);
@@ -141,7 +141,7 @@ namespace UTS
 			scene.addChild(new Object("bulu11"));
 			scene.lastChild().createBall(0.5f);
 			scene.lastChild().scale(0.58000f, 0.30000f, 0.57000f);
-			scene.lastChild().rotateQ(0.28952f, 0.95542f, 0.00000f, 0.05790f);
+			scene.lastChild().rotateQ(0.28952f, 0.95542f, -0.00000f, 0.05790f);
 			scene.lastChild().translate(4.17171f, 0.58875f, 1.18342f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(0.80000f, 0.80000f, 0.80000f);
@@ -268,8 +268,8 @@ namespace UTS
 
 			scene.addChild(new Object("telinga"));
 			scene.lastChild().createCircle();
-			scene.lastChild().scale(-0.12000f, -0.15000f, -1.00000f);
-			scene.lastChild().rotateQ(0.00000f, 0.00000f, 0.00000f, 1.00000f);
+			scene.lastChild().scale(0.12000f, 0.13000f, 1.00000f);
+			scene.lastChild().rotateQ(0.80953f, 0.00000f, 0.58708f, 0.00000f);
 			scene.lastChild().translate(5.63695f, -0.71472f, 2.47059f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.00000f, 0.01795f, 0.00876f);
@@ -277,7 +277,7 @@ namespace UTS
 			scene.addChild(new Object("telinga2"));
 			scene.lastChild().createCircle();
 			scene.lastChild().scale(-0.12000f, -0.15000f, -1.00000f);
-			scene.lastChild().rotateQ(0.00000f, 0.00000f, 0.00000f, 1.00000f);
+			scene.lastChild().rotateQ(0.31068f, 0.00000f, 0.95052f, 0.00000f);
 			scene.lastChild().translate(5.63695f, 0.09125f, 2.45011f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.00000f, 0.01795f, 0.00876f);
@@ -369,7 +369,7 @@ namespace UTS
 				scene.lastChild().addChild(new Object("matakiritimmy.001"));
 				scene.lastChild().lastChild().createBall(0.5f);
 				scene.lastChild().lastChild().scale(0.04000f, 0.01000f, 0.04000f);
-				scene.lastChild().lastChild().rotateQ(0.00785f, -0.81761f, 0.57569f, -0.00553f);
+				scene.lastChild().lastChild().rotateQ(-0.00785f, 0.81761f, -0.57569f, 0.00553f);
 				scene.lastChild().lastChild().translate(0.55433f, 0.01206f, 0.63473f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.02539f, 0.02539f, 0.02539f);
@@ -425,7 +425,7 @@ namespace UTS
 				scene.lastChild().addChild(new Object("telingtimmykiri"));
 				scene.lastChild().lastChild().createBall(0.5f);
 				scene.lastChild().lastChild().scale(-0.07000f, -0.14000f, -0.17000f);
-				scene.lastChild().lastChild().rotateQ(0.00000f, 0.00000f, 0.00000f, 1.00000f);
+				scene.lastChild().lastChild().rotateQ(0.42262f, -0.90631f, 0.00000f, 0.00000f);
 				scene.lastChild().lastChild().translate(0.40048f, 0.12356f, 0.77948f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.01109f, 0.01109f, 0.01109f);
@@ -577,7 +577,6 @@ namespace UTS
 			scene.lastChild().translate(4.61407f, 2.82125f, 0.00011f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
 
 
 

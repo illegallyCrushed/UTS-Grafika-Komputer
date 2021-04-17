@@ -15,6 +15,7 @@ namespace UTS
         public Vector3 diffuse;
         public Vector3 specular;
         public float specularExponent;
+        public float alpha;
         public string name;
 
         public Material(string matname = "Default")
@@ -26,6 +27,7 @@ namespace UTS
             specular.X = 1;
             specular.Y = 1;
             specular.Z = 1;
+            alpha = 1.0f;
             specularExponent = 128;
         }
     }

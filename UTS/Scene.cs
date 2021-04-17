@@ -20,7 +20,7 @@ namespace UTS
         public static Matrix4 ViewMatrix;
         public static Vector3 LightPosition = new Vector3(5.0f, 15.0f, 0.0f);
         public static Vector3 LightDirection = new Vector3(5, 5f, 2f);
-        public static Vector3 ViewPosition = new Vector3(20, 5, 0);
+        public static Vector3 ViewPosition = new Vector3(20, 3, 0);
         public static Vector3 ViewDirection = new Vector3(0, 0, 0);
         public static Vector3 ViewUpwards = new Vector3(0, 1, 0);
         public static Vector3 WireframeColor = new Vector3(1, 1, 1);
@@ -46,7 +46,8 @@ namespace UTS
             Leonando.Objects(ref scene);
             Nicholas.Objects(ref scene);
             Jeremy.Objects(ref scene);
-            scene.translateZ(-8f);
+            scene.translateZ(-8.5f);
+            scene.rotateZ(45f);
             scene.init();
         }
 
@@ -110,9 +111,9 @@ namespace UTS
             {
                 scene.setTranslate(0,0,0);
                 scene.setRotation(0,0,0);
-                scene.translateZ(-8f);
+                scene.translateZ(-8.5f);
 
-                ViewPosition = new Vector3(20, 5, 0);
+                ViewPosition = new Vector3(20, 3, 0);
                 ViewDirection = new Vector3(0, 0, 0);
 
                 FOV = 45f;

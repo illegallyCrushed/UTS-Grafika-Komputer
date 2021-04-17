@@ -54,7 +54,7 @@ def generateObject(object, file, order):
             if len(name) == 2:
                 file.write(("\t\t\t"*len(order.split(".")))+"});\n")
             else:
-                file.write(("\t\t\t"*len(order.split(".")))+"{},1f,{});\n".format("}",name[2]))
+                file.write(("\t\t\t"*len(order.split(".")))+"{},1f,{}f);\n".format("}",name[2]))
         elif name[0] == "Parent":
             file.write("\n{} // Children of \'{}\'\n\n".format("{",name[1]))
             for child in object.children:
