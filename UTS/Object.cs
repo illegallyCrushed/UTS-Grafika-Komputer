@@ -904,7 +904,7 @@ namespace UTS
         public void createFreeformTube(List<Vector2> path,float percent = 1, float tubedia = 0.2f)
         {
             delete();
-            int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL;
+            int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL*10;
             int hCount = sharpness;
             float divide = 1 / percent;
             float PI = (float)Math.PI;

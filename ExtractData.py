@@ -51,7 +51,10 @@ def generateObject(object, file, order):
             curvetemp = object.to_mesh()
             for vert in curvetemp.vertices:
                 file.write(("\t\t\t\t"*len(order.split(".")))+"new Vector2({:.5f}f, {:.5f}f),\n".format(vert.co[0],vert.co[1]))
-            file.write(("\t\t\t"*len(order.split(".")))+"});\n")
+            if len(name) == 2:
+                file.write(("\t\t\t"*len(order.split(".")))+"});\n")
+            else:
+                file.write(("\t\t\t"*len(order.split(".")))+"{},1f,{});\n".format("}",name[2]))
         elif name[0] == "Parent":
             file.write("\n{} // Children of \'{}\'\n\n".format("{",name[1]))
             for child in object.children:
