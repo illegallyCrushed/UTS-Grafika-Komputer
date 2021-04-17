@@ -124,7 +124,7 @@ scene.lastChild().scale(0.07312f, 0.09312f, 0.09312f);
 scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f,0.70711f);
 scene.lastChild().translate(7.77840f, 5.63289f, 5.03484f);
 scene.lastChild().centerOrigin();
-scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 scene.addChild(new Object("TelingaKanan"));
 scene.lastChild().createCube();
@@ -156,7 +156,7 @@ scene.lastChild().scale(0.07312f, 0.09312f, 0.09312f);
 scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f,0.70711f);
 scene.lastChild().translate(7.77840f, 5.43289f, 5.03484f);
 scene.lastChild().centerOrigin();
-scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 scene.addChild(new Object("PupilKiri"));
 scene.lastChild().createBall(0.5f);
