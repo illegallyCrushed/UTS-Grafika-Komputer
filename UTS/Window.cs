@@ -54,9 +54,20 @@ namespace UTS
             base.OnRenderFrame(args);
         }
 
+        protected override void OnUpdateFrame(FrameEventArgs e)
+        {
+            Scene.Movement(e, this);
+        }
+
+        protected override void OnMouseWheel(MouseWheelEventArgs e)
+        {
+            Scene.Zoom(e);
+        }
+
         protected override void OnResize(ResizeEventArgs e)
         {
             GL.Viewport(0, 0, Size.X, Size.Y);
+            Scene.RefreshAspect(Size);
             base.OnResize(e);
         }
     }

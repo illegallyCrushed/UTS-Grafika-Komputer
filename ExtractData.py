@@ -42,6 +42,17 @@ for collection in collections:
                     file.write("scene.lastChild().createTorus(0.5f);\n")
                 else:
                     file.write("scene.lastChild().createTorus(0.5f,{}f);\n".format(name[2]))
+            elif name[0] == "BezierCurve":
+                file.write("scene.lastChild().createFreeformTube(new List<Vector2> {\n")
+                object.data.dimensions = "2D"
+                object.data.render_resolution_u = 5
+                object.data.render_resolution_v = 5
+                object.data.resolution_u = 5
+                object.data.resolution_v = 5
+                curvetemp = object.to_mesh()
+                for vert in curvetemp.vertices:
+                    file.write("\t\t\t\tnew Vector2({:.5f}f, {:.5f}f),\n".format(vert.co[0],vert.co[1],vert.co[2]))
+                file.write("\t\t\t});\n")
             else:
                 continue
         

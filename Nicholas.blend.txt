@@ -1,0 +1,304 @@
+scene.addChild(new Object("BatangPohon"));
+scene.lastChild().createCylinder();
+scene.lastChild().scale(0.25413f, 0.25413f, -1.99938f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(4.10321f, -4.96785f, 1.99546f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("CabangPohon"));
+scene.lastChild().createCylinder();
+scene.lastChild().scale(0.05501f, 0.05501f, 1.07105f);
+scene.lastChild().rotateQ(0.94119f, 0.16041f, 0.23142f,-0.18674f);
+scene.lastChild().translate(4.70789f, -5.48614f, 3.82823f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("CabangPohon.001"));
+scene.lastChild().createCylinder();
+scene.lastChild().scale(0.05501f, 0.05501f, 0.49105f);
+scene.lastChild().rotateQ(0.91689f, -0.28363f, 0.27890f,-0.03282f);
+scene.lastChild().translate(4.49066f, -4.53096f, 4.00314f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("CabangPohon.002"));
+scene.lastChild().createCylinder();
+scene.lastChild().scale(0.05501f, 0.05501f, 0.57105f);
+scene.lastChild().rotateQ(0.34812f, -0.25946f, -0.15753f,0.88695f);
+scene.lastChild().translate(3.65780f, -4.87545f, 3.75402f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DaunPohon.001"));
+scene.lastChild().createBall();
+scene.lastChild().scale(2.64469f, 2.47364f, 1.00000f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(4.39924f, -5.52693f, 4.93471f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DaunPohon"));
+scene.lastChild().createBall();
+scene.lastChild().scale(1.93883f, 1.81343f, 0.73310f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(3.97226f, -4.18096f, 5.72422f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("Awan.001"));
+scene.lastChild().createBall();
+scene.lastChild().scale(2.58855f, 1.75335f, 1.33258f);
+scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f,-0.59801f);
+scene.lastChild().translate(-0.84614f, 5.14307f, 14.38020f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.002"));
+scene.lastChild().createBall();
+scene.lastChild().scale(2.09333f, 1.41791f, 1.07764f);
+scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f,-0.59800f);
+scene.lastChild().translate(-1.47981f, 6.86393f, 15.27800f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.003"));
+scene.lastChild().createBall();
+scene.lastChild().scale(2.09333f, 1.41791f, 1.07764f);
+scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f,-0.59800f);
+scene.lastChild().translate(-1.42335f, 7.67760f, 14.20910f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.006"));
+scene.lastChild().createBall();
+scene.lastChild().scale(2.38547f, 1.02670f, 0.78031f);
+scene.lastChild().rotateQ(0.88547f, 0.11449f, 0.00394f,-0.45036f);
+scene.lastChild().translate(-6.60263f, -7.98543f, 8.78807f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.005"));
+scene.lastChild().createBall();
+scene.lastChild().scale(1.63942f, 0.83028f, 0.63103f);
+scene.lastChild().rotateQ(0.89312f, 0.09758f, 0.00928f,-0.43900f);
+scene.lastChild().translate(-7.09028f, -7.58888f, 9.58345f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.004"));
+scene.lastChild().createBall();
+scene.lastChild().scale(1.22578f, 0.83028f, 0.63103f);
+scene.lastChild().rotateQ(0.88547f, 0.11449f, 0.00394f,-0.45036f);
+scene.lastChild().translate(-7.29405f, -6.70196f, 9.02701f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.007"));
+scene.lastChild().createBall();
+scene.lastChild().scale(3.01242f, 0.72038f, 0.66750f);
+scene.lastChild().rotateQ(0.41887f, -0.28102f, 0.38085f,-0.77494f);
+scene.lastChild().translate(-9.69324f, 3.38415f, 12.10990f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan.008"));
+scene.lastChild().createBall();
+scene.lastChild().scale(1.33242f, 0.72038f, 0.54750f);
+scene.lastChild().rotateQ(0.41887f, -0.28102f, 0.38085f,-0.77494f);
+scene.lastChild().translate(-9.03657f, 4.22907f, 12.59100f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("Awan"));
+scene.lastChild().createBall();
+scene.lastChild().scale(1.67211f, 0.97935f, 0.80967f);
+scene.lastChild().rotateQ(0.41887f, -0.28102f, 0.38085f,-0.77494f);
+scene.lastChild().translate(-10.37290f, 2.66747f, 12.84630f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
+
+scene.addChild(new Object("PelangiBlue"));
+scene.lastChild().createTorus(0.5f,0.25f);
+scene.lastChild().scale(8.19613f, 8.19613f, 8.19613f);
+scene.lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f,-0.50961f);
+scene.lastChild().translate(-3.92839f, -0.03614f, 11.86033f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(0.00000f, 0.00000f, 1.00000f);
+
+scene.addChild(new Object("PelangiGreen"));
+scene.lastChild().createTorus(0.5f,0.25f);
+scene.lastChild().scale(8.53725f, 8.19613f, 8.19613f);
+scene.lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f,-0.50961f);
+scene.lastChild().translate(-4.06628f, -0.26662f, 12.40329f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(0.00000f, 1.00000f, 0.00000f);
+
+scene.addChild(new Object("PelangiRed"));
+scene.lastChild().createTorus(0.5f,0.25f);
+scene.lastChild().scale(8.81015f, 8.19613f, 8.19613f);
+scene.lastChild().rotateQ(0.49332f, -0.28521f, 0.64466f,-0.50961f);
+scene.lastChild().translate(-4.12691f, -0.52018f, 12.85885f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.00000f, 0.00000f, 0.00000f);
+
+scene.addChild(new Object("BalokRumah"));
+scene.lastChild().createCube();
+scene.lastChild().scale(1.52000f, 3.28000f, 1.42893f);
+scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f,0.70711f);
+scene.lastChild().translate(-4.23960f, 6.14272f, 1.41289f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("BalokRumah.002"));
+scene.lastChild().createCube();
+scene.lastChild().scale(0.71000f, 0.43000f, 0.62893f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-3.80779f, 4.25080f, 0.60289f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("BalokRumah.001"));
+scene.lastChild().createCube();
+scene.lastChild().scale(1.52000f, 3.28000f, 1.42893f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-6.01779f, 4.39080f, 1.41289f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("BalokRumah.003"));
+scene.lastChild().createCube();
+scene.lastChild().scale(1.00000f, 0.59000f, 0.85893f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-6.53779f, 0.58080f, 0.83289f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapKecil.001"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(1.19000f, 0.73000f, 1.00000f);
+scene.lastChild().rotateQ(0.96126f, 0.27564f, 0.00000f,0.00000f);
+scene.lastChild().translate(-6.55680f, 0.48981f, 2.00650f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapBesar.002"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(0.64086f, 0.29884f, -0.29884f,-0.64086f);
+scene.lastChild().translate(-6.96441f, 3.47213f, 3.53605f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapBesar.001"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(0.64086f, 0.29884f, 0.29884f,0.64086f);
+scene.lastChild().translate(-5.07441f, 3.47213f, 3.53605f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapBesar"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(-0.00099f, -0.00046f, -0.42262f,-0.90631f);
+scene.lastChild().translate(-3.28698f, 7.07217f, 3.57013f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapBesar.003"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(0.90631f, 0.42262f, -0.00046f,-0.00099f);
+scene.lastChild().translate(-3.29112f, 5.18217f, 3.57013f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("CerobongAsap"));
+scene.lastChild().createCube();
+scene.lastChild().scale(0.38000f, 0.37000f, 1.31893f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-6.12266f, 6.21784f, 4.36146f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DindingSegitiga.001"));
+scene.lastChild().createTriangle();
+scene.lastChild().scale(0.93000f, 1.55000f, 1.00000f);
+scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.70711f,0.00000f);
+scene.lastChild().translate(-0.97175f, 6.13870f, 3.75145f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DindingSegitiga"));
+scene.lastChild().createTriangle();
+scene.lastChild().scale(0.93000f, 1.51000f, 1.00000f);
+scene.lastChild().rotateQ(0.50000f, -0.50000f, 0.50000f,0.50000f);
+scene.lastChild().translate(-6.01472f, 1.09583f, 3.70850f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapConnect"));
+scene.lastChild().createTriangle(true);
+scene.lastChild().scale(0.90000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(0.64086f, 0.29884f, -0.29884f,-0.64086f);
+scene.lastChild().translate(-6.96441f, 6.96051f, 3.53605f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapConnect.001"));
+scene.lastChild().createTriangle(true);
+scene.lastChild().scale(1.04000f, 1.47000f, 1.00000f);
+scene.lastChild().rotateQ(0.41978f, 0.90762f, 0.00000f,0.00000f);
+scene.lastChild().translate(-6.96100f, 7.07217f, 3.57013f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("ConnectorAtap"));
+scene.lastChild().createCylinder();
+scene.lastChild().scale(0.15194f, 0.15194f, 1.42194f);
+scene.lastChild().rotateQ(-0.38302f, 0.84944f, 0.32289f,-0.16582f);
+scene.lastChild().translate(-7.11177f, 7.21642f, 3.33051f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("ConnectBallAtap"));
+scene.lastChild().createBall();
+scene.lastChild().scale(0.15194f, 0.15119f, 0.15119f);
+scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f,-0.01036f);
+scene.lastChild().translate(-7.85539f, 7.98027f, 2.41101f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AtapKecil"));
+scene.lastChild().createPlane();
+scene.lastChild().scale(0.75000f, 0.51000f, 1.00000f);
+scene.lastChild().rotateQ(-0.25207f, 0.96771f, 0.00000f,-0.00000f);
+scene.lastChild().translate(-3.74787f, 4.18645f, 1.43622f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DindingSegitiga"));
+scene.lastChild().createTriangle(true);
+scene.lastChild().scale(0.22014f, 0.40166f, 0.18978f);
+scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f,-0.70711f);
+scene.lastChild().translate(-3.09890f, 4.22200f, 1.44175f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DindingSegitiga.001"));
+scene.lastChild().createTriangle(true);
+scene.lastChild().scale(0.37392f, 0.59102f, 0.27925f);
+scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f,-0.70711f);
+scene.lastChild().translate(-7.53420f, 0.53372f, 2.02718f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("DindingSegitiga.002"));
+scene.lastChild().createTriangle(true);
+scene.lastChild().scale(0.37392f, 0.59102f, 0.27925f);
+scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f,-0.70711f);
+scene.lastChild().translate(-5.53420f, 0.53372f, 2.02718f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+

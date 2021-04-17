@@ -474,34 +474,17 @@ namespace UTS
                     vertexIndices.Add(k2);
                     vertexIndices.Add(k2 + 1);
 
-                    vertexIndices.Add((uint)(vertices.Count - 1));
+                    if (i == 0)
+                    {
+                        vertexIndices.Add(k1);
+                        vertexIndices.Add((uint)vertices.Count - 2);
+                        vertexIndices.Add(k1 + 1);
+
+                    }
+
                     vertexIndices.Add(k2);
+                    vertexIndices.Add((uint)vertices.Count - 1);
                     vertexIndices.Add(k2 + 1);
-
-                    vertexIndices.Add(k1);
-                    vertexIndices.Add((uint)(vertices.Count - 2));
-                    vertexIndices.Add(k1 + 1);
-
-                    if (j == 0)
-                    {
-                        vertexIndices.Add(k1);
-                        vertexIndices.Add(k2);
-                        vertexIndices.Add((uint)vertices.Count - 1);
-
-                        vertexIndices.Add(k1);
-                        vertexIndices.Add((uint)vertices.Count - 1);
-                        vertexIndices.Add((uint)vertices.Count - 2);
-                    }
-                    else if (j == hCount / divide - 1)
-                    {
-                        vertexIndices.Add(k1 + 1);
-                        vertexIndices.Add(k2 + 1);
-                        vertexIndices.Add((uint)vertices.Count - 1);
-
-                        vertexIndices.Add(k1 + 1);
-                        vertexIndices.Add((uint)vertices.Count - 1);
-                        vertexIndices.Add((uint)vertices.Count - 2);
-                    }
                 }
             }
 
@@ -787,6 +770,97 @@ namespace UTS
             }
         }
 
+        public void createFreeformTube(List<Vector2> path,float percent = 1, float tubedia = 1)
+        {
+            delete();
+            int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL;
+            int hCount = sharpness;
+            float divide = 1 / percent;
+            float PI = (float)Math.PI;
+            float hStep = 2 * PI / hCount;
+            float hAngle, firstAngle = 0, lastAngle = 0;
+
+            //smoothify parh 
+            path = generateBezier(path, sharpness);
+            int vCount = path.Count;
+
+            for (int i = 0; i < vCount; i++)
+            {
+                for (int j = 0; j <= hCount / divide; j++)
+                {
+                    hAngle = j * hStep;
+                    float x = 0;
+                    float y = 0;
+
+                    x = 0 + tubedia / 2 * (float)Math.Cos(hAngle);
+                    y = path[i].X + tubedia / 2 * (float)Math.Sin(hAngle);
+
+                    float z = path[i].Y;
+                    if (i == 0)
+                    {
+                        firstAngle = (float)Math.Atan2((path[i + 1].X - path[i].X), (path[i + 1].Y - path[i].Y));
+                    }
+                    if (i != vCount - 1)
+                    {
+                        lastAngle = (float)Math.Atan2((path[i + 1].X - path[i].X), (path[i + 1].Y - path[i].Y));
+                    }
+                    Vector3 temp = new Vector3(x, y, z);
+                    //x always 0, no correction needed
+                    Vector3 clone = new Vector3(temp);
+                    temp = temp + new Vector3(0, -path[i].X, -clone.Z);
+                    temp = new Vector3(new Vector4(temp, 1f) * Matrix4.CreateRotationX(-lastAngle));
+                    temp = temp + new Vector3(0, path[i].X, clone.Z);
+
+                    vertices.Add(temp);
+                    normals.Add(temp);
+                }
+            }
+
+            vertices.Add(new Vector3(0, path[0].X, path[0].Y));
+            normals.Add(new Vector3(0,path[0].X,path[0].Y));
+
+            vertices.Add(new Vector3(0, path.Last().X, path.Last().Y));
+            normals.Add(new Vector3(0, path.Last().X, path.Last().Y));
+
+            uint k1, k2;
+            for (int i = 0; i < vCount; i++)
+            {
+                k1 = (uint)i * ((uint)(hCount / divide) + 1);
+                k2 = (uint)k1 + (uint)(hCount / divide) + 1;
+
+                for (int j = 0; j < hCount / divide; j++, k1++, k2++)
+                {
+                    if (i != vCount - 1)
+                    {
+                        vertexIndices.Add(k1);
+                        vertexIndices.Add(k2);
+                        vertexIndices.Add(k1 + 1);
+
+                        vertexIndices.Add(k1 + 1);
+                        vertexIndices.Add(k2);
+                        vertexIndices.Add(k2 + 1);
+                    }
+                    if (i == 0)
+                    {
+                        vertexIndices.Add(k1);
+                        vertexIndices.Add((uint)vertices.Count - 2);
+                        vertexIndices.Add(k1 + 1);
+
+                    }
+                    else if (i == vCount - 1)
+                    {
+                        vertexIndices.Add(k1);
+                        vertexIndices.Add((uint)vertices.Count - 1);
+                        vertexIndices.Add(k1 + 1);
+                    }
+                }
+            }
+
+            rotateX(180);
+            rotateY(90);
+            init();
+            centerOrigin();
+        }
 
         // misc tool functions
         private static int bCoeff(int n, int k)
@@ -867,6 +941,18 @@ namespace UTS
             }
 
             return res;
+        }
+
+        private static List<Vector2> generateBezier(List<Vector2> parr, float detail = 10)
+        {
+            List<Vector2> proc = new List<Vector2>();
+           
+            for (float t = 0.0f; t <= 1.0f; t += 1 / detail)
+            {
+                proc.Add(setBezier(parr, t));
+            }
+
+            return proc;
         }
     }
 }
