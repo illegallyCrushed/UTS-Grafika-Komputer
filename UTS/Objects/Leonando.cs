@@ -468,10 +468,12 @@ namespace UTS
 			} // Children of 'BuntutPusat'
 
 			scene.lastChild().scale(1.00000f, 1.00000f, 1.00000f);
-			scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+			scene.lastChild().rotateQ(0.99854f, 0.05408f, 0.00000f, 0.00000f);
 			scene.lastChild().translate(3.56384f, 5.62000f, 3.04104f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+
 
 
 
@@ -494,7 +496,7 @@ namespace UTS
 			scene.findChild("KepalaAnjing").findChild("TelingaKanan").rotateX(KepalaAnjingScale.MinMaxBounce(-0.4f, 0.4f));
 			scene.findChild("KepalaAnjing").findChild("TelingaKiri").rotateX(KepalaAnjingScale.MinMaxBounce(0.4f, -0.4f));
 			scene.findChild("KepalaAnjing").findChild("Lidah").translateX(KepalaAnjingScale.MinMaxBounce(-0.005f, 0.005f));
-			scene.findChild("BuntutPusat").rotateX(GoyangBuntutScale.MinMaxBounce(-0.8f, 0.8f));
+			scene.findChild("BuntutPusat").rotateX(GoyangBuntutScale.MinMaxBounce(-0.7f, 0.7f));
 		}
     }
 }
