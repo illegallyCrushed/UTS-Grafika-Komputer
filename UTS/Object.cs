@@ -164,8 +164,6 @@ namespace UTS
                     // set rotation
                     object_transform = object_transform.ClearRotation();
                     object_transform = object_transform * transformation;
-
-
                 }
 
                 else if (type == 1)
@@ -173,14 +171,12 @@ namespace UTS
                     //set translation
                     object_transform = object_transform.ClearTranslation();
                     object_transform = object_transform * transformation;
-
                 }
 
                 else {
                     //clear scale
                     object_transform = object_transform.ClearScale();
                     object_transform = object_transform * transformation;
-
                 }
 
 
@@ -288,11 +284,11 @@ namespace UTS
             setTransform(combinedRotation,0, ignoreOrigin);
         }
 
-        public void setRotationQ(float w, float x, float y, float z, bool ignoreOrigin = false)
-        {
-            Matrix4 combinedRotation = Matrix4.CreateRotationX(x.Rad()) * Matrix4.CreateRotationY(z.Rad()) * Matrix4.CreateRotationZ(y.Rad());
-            setTransform(Matrix4.CreateFromQuaternion(new Quaternion(x, z, -y, w)), 0, ignoreOrigin);
-        }
+        //public void setRotationQ(float w, float x, float y, float z, bool ignoreOrigin = false)
+        //{
+        //    Matrix4 combinedRotation = Matrix4.CreateRotationX(x.Rad()) * Matrix4.CreateRotationY(z.Rad()) * Matrix4.CreateRotationZ(y.Rad());
+        //    setTransform(Matrix4.CreateFromQuaternion(new Quaternion(x, z, -y, w)), 0, ignoreOrigin);
+        //}
 
         public void setTranslateX(float x, bool ignoreOrigin = false)
         {
@@ -319,37 +315,35 @@ namespace UTS
             translation = new Vector3(translation.X, translation.Y, translation.Z);
         }
 
-        public void setScaleX(float x, bool ignoreOrigin = false)
-        {
-            setTransform(Matrix4.CreateScale(new Vector3(x, scalation.Y, scalation.Z)),2, ignoreOrigin);
-            scalation = new Vector3(x, scalation.Y, scalation.Z);
-        }
+        //public void setScaleX(float x, bool ignoreOrigin = false)
+        //{
+        //    setTransform(Matrix4.CreateScale(new Vector3(x, scalation.Y, scalation.Z)),2, ignoreOrigin);
+        //    scalation = new Vector3(x, scalation.Y, scalation.Z);
+        //}
 
-        public void setScaleY(float y, bool ignoreOrigin = false)
-        {
-            setTransform(Matrix4.CreateScale(new Vector3(scalation.X, scalation.Z, y)),2, ignoreOrigin);
-            scalation = new Vector3(scalation.X, y, scalation.Z);
-        }
+        //public void setScaleY(float y, bool ignoreOrigin = false)
+        //{
+        //    setTransform(Matrix4.CreateScale(new Vector3(scalation.X, scalation.Z, y)),2, ignoreOrigin);
+        //    scalation = new Vector3(scalation.X, y, scalation.Z);
+        //}
 
-        public void setScaleZ(float z, bool ignoreOrigin = false)
-        {
-            setTransform(Matrix4.CreateScale(new Vector3(scalation.X, z, scalation.Y)),2, ignoreOrigin);
-            scalation = new Vector3(scalation.X, scalation.Y, z);
-        }
+        //public void setScaleZ(float z, bool ignoreOrigin = false)
+        //{
+        //    setTransform(Matrix4.CreateScale(new Vector3(scalation.X, z, scalation.Y)),2, ignoreOrigin);
+        //    scalation = new Vector3(scalation.X, scalation.Y, z);
+        //}
 
-        public void setScale(float x, float y, float z, bool ignoreOrigin = false)
-        {
-            setTransform(Matrix4.CreateScale(new Vector3(x, z, y)),2, ignoreOrigin);
-            scalation = new Vector3(x,y,z);
-        }
+        //public void setScale(float x, float y, float z, bool ignoreOrigin = false)
+        //{
+        //    setTransform(Matrix4.CreateScale(new Vector3(x, z, y)),2, ignoreOrigin);
+        //    scalation = new Vector3(x,y,z);
+        //}
 
-        public void setScale(float factor, bool ignoreOrigin = false)
-        {
-            setTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), 2, ignoreOrigin);
-            scalation = new Vector3(factor, factor, factor);
-        }
-
-
+        //public void setScale(float factor, bool ignoreOrigin = false)
+        //{
+        //    setTransform(Matrix4.CreateScale(new Vector3(factor, factor, factor)), 2, ignoreOrigin);
+        //    scalation = new Vector3(factor, factor, factor);
+        //}
 
         public void setColor(float r, float g, float b)
         {
@@ -366,25 +360,30 @@ namespace UTS
             origin_transform.Invert();
         }
 
-        public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightDirection, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe)
+        public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightDirection, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe, bool flat)
         {
 
 
-            _shader.SetMatrix4("mvp_transform", processed_transform * ViewMatrix * ProjectionMatrix);
             _shader_line.SetMatrix4("mvp_transform", processed_transform * ViewMatrix * ProjectionMatrix);
             _shader_line.SetVector3("lineColor", WireframeColor);
-            _shader.SetMatrix4("m_transform", processed_transform);
-            _shader.SetMatrix4("v_transform", ViewMatrix);
-            //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(1f, 1f, 1f));
-            //_shader.SetVector3("material.ambient", material.diffuse * new Vector3(0.8f, 0.8f, 0.8f));
+            //_shader.SetMatrix4("mvp_transform", processed_transform * ViewMatrix * ProjectionMatrix);
+            _shader.SetInt("simple", flat?1:0);
+            _shader.SetMatrix4("model", processed_transform);
+            _shader.SetMatrix4("view", ViewMatrix);
+            _shader.SetMatrix4("projection", ProjectionMatrix);
+            _shader.SetVector3("material.ambient", material.diffuse * new Vector3(1,1,1));
             _shader.SetVector3("material.diffuse", material.diffuse);
             _shader.SetVector3("material.specular", material.specular);
             _shader.SetFloat("material.shininess", (float)material.specularExponent);
-            _shader.SetVector3("LightPos_World", LightPosition);
+            //_shader.SetVector3("LightPos_World", LightPosition);
             //_shader.SetVector3("LightDir_World", LightDirection);
-            _shader.SetVector3("LightColor", LightColor);
+            //_shader.SetVector3("LightColor", LightColor);
+            _shader.SetVector3("light.position", LightPosition);
+            _shader.SetVector3("light.ambient", LightColor);
+            _shader.SetVector3("light.diffuse", LightColor);
+            _shader.SetVector3("light.specular", LightColor);
+            _shader.SetVector3("viewPos", ViewPosition);
             //_shader.SetFloat("LightPower", LightPower);
-            //_shader.SetVector3("ViewPos", ViewPosition);
 
             GL.BindVertexArray(_vertexArrayObject);
             if (solids)
@@ -405,7 +404,7 @@ namespace UTS
 
             foreach (var child in children)
             {
-                child.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, solids, wireframe);
+                child.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, solids, wireframe,flat);
             }
         }
 

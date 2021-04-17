@@ -123,7 +123,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-4.23960f, 6.14272f, 1.41289f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("BalokRumah.002"));
             scene.lastChild().createCube();
@@ -131,7 +131,7 @@ namespace UTS
             scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-3.80779f, 4.25080f, 0.60289f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("BalokRumah.001"));
             scene.lastChild().createCube();
@@ -139,7 +139,7 @@ namespace UTS
             scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-6.01779f, 4.39080f, 1.41289f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("BalokRumah.003"));
             scene.lastChild().createCube();
@@ -147,7 +147,7 @@ namespace UTS
             scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-6.53779f, 0.58080f, 0.83289f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("AtapKecil.001"));
             scene.lastChild().createPlane();
@@ -155,7 +155,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.96126f, 0.27564f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-6.55680f, 0.48981f, 2.00650f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("AtapBesar.002"));
             scene.lastChild().createPlane();
@@ -163,7 +163,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.64086f, 0.29884f, -0.29884f, -0.64086f);
             scene.lastChild().translate(-6.96441f, 3.47213f, 3.53605f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("AtapBesar.001"));
             scene.lastChild().createPlane();
@@ -171,7 +171,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.64086f, 0.29884f, 0.29884f, 0.64086f);
             scene.lastChild().translate(-5.07441f, 3.47213f, 3.53605f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("AtapBesar"));
             scene.lastChild().createPlane();
@@ -179,7 +179,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.00099f, 0.00046f, 0.42262f, 0.90631f);
             scene.lastChild().translate(-3.28698f, 7.07217f, 3.57013f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("AtapBesar.003"));
             scene.lastChild().createPlane();
@@ -187,15 +187,15 @@ namespace UTS
             scene.lastChild().rotateQ(0.90631f, 0.42262f, -0.00046f, -0.00099f);
             scene.lastChild().translate(-3.29112f, 5.18217f, 3.57013f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("CerobongAsap"));
             scene.lastChild().createCube();
-            scene.lastChild().scale(0.38000f, 0.37000f, 1.31893f);
+            scene.lastChild().scale(0.09000f, 0.37000f, 1.31893f);
             scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-            scene.lastChild().translate(-6.12266f, 6.21784f, 4.36146f);
+            scene.lastChild().translate(-6.38266f, 6.21784f, 4.36146f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("DindingSegitiga.001"));
             scene.lastChild().createTriangle();
@@ -203,7 +203,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.70711f, 0.00000f);
             scene.lastChild().translate(-0.97175f, 6.13870f, 3.75145f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("DindingSegitiga"));
             scene.lastChild().createTriangle();
@@ -211,7 +211,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.50000f, -0.50000f, 0.50000f, 0.50000f);
             scene.lastChild().translate(-6.01472f, 1.09583f, 3.70850f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("AtapConnect"));
             scene.lastChild().createTriangle(true);
@@ -219,7 +219,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.64086f, 0.29884f, -0.29884f, -0.64086f);
             scene.lastChild().translate(-6.96441f, 6.96051f, 3.53605f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("AtapConnect.001"));
             scene.lastChild().createTriangle(true);
@@ -227,7 +227,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.41978f, 0.90762f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-6.96100f, 7.07217f, 3.57013f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("ConnectorAtap"));
             scene.lastChild().createCylinder();
@@ -235,15 +235,15 @@ namespace UTS
             scene.lastChild().rotateQ(0.38302f, -0.84944f, -0.32289f, 0.16582f);
             scene.lastChild().translate(-7.11177f, 7.21642f, 3.33051f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
 
             scene.addChild(new Object("ConnectBallAtap"));
             scene.lastChild().createBall();
-            scene.lastChild().scale(0.15194f, 0.15119f, 0.15119f);
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
             scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
-            scene.lastChild().translate(-7.85539f, 7.98027f, 2.41101f);
+            scene.lastChild().translate(-7.84544f, 7.96060f, 2.44051f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
 
             scene.addChild(new Object("AtapKecil"));
             scene.lastChild().createPlane();
@@ -251,7 +251,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.25207f, -0.96771f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-3.74787f, 4.18645f, 1.43622f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
 
             scene.addChild(new Object("DindingSegitiga"));
             scene.lastChild().createTriangle(true);
@@ -259,7 +259,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-3.09890f, 4.22200f, 1.44175f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("DindingSegitiga.001"));
             scene.lastChild().createTriangle(true);
@@ -267,7 +267,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-7.53420f, 0.53372f, 2.02718f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("DindingSegitiga.002"));
             scene.lastChild().createTriangle(true);
@@ -275,7 +275,7 @@ namespace UTS
             scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-5.53420f, 0.53372f, 2.02718f);
             scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
 
             scene.addChild(new Object("Pohon"));
 
@@ -336,6 +336,192 @@ namespace UTS
             scene.lastChild().translate(4.10321f, -4.96785f, 0.00000f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+            scene.addChild(new Object("CerobongAsap.001"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.09000f, 0.37000f, 1.31893f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(-6.08266f, 6.49784f, 4.36146f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
+
+            scene.addChild(new Object("CerobongAsap.002"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.09000f, 0.37000f, 1.31893f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(-5.80266f, 6.21784f, 4.36146f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
+
+            scene.addChild(new Object("CerobongAsap.003"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(0.09000f, 0.37000f, 1.31893f);
+            scene.lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, 0.70711f);
+            scene.lastChild().translate(-6.08266f, 5.93784f, 4.36146f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
+
+            scene.addChild(new Object("CerobongTutup"));
+            scene.lastChild().createPlane();
+            scene.lastChild().scale(0.22555f, 0.22555f, 0.22555f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(-6.09230f, 6.20011f, 4.83161f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.88248f, 0.91310f, 0.61404f);
+
+            scene.addChild(new Object("ConnectorAtap.001"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 3.51194f);
+            scene.lastChild().rotateQ(0.50000f, 0.50000f, 0.50000f, 0.50000f);
+            scene.lastChild().translate(-4.29250f, 4.24696f, 2.44396f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.001"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-7.84544f, 0.93060f, 2.44051f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.002"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 3.51194f);
+            scene.lastChild().rotateQ(-0.00000f, -0.00000f, 0.70711f, 0.70711f);
+            scene.lastChild().translate(-7.86250f, 4.42240f, 2.44396f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.002"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.18889f, 0.18796f, 0.18796f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-4.11544f, 4.16516f, 2.51051f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.003"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 3.51194f);
+            scene.lastChild().rotateQ(0.50000f, 0.50000f, 0.50000f, 0.50000f);
+            scene.lastChild().translate(-4.29250f, 7.97240f, 2.44396f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.003"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-0.75544f, 7.96060f, 2.46051f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.004"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 3.51194f);
+            scene.lastChild().rotateQ(-0.00000f, -0.00000f, 0.70711f, 0.70711f);
+            scene.lastChild().translate(-4.19559f, 4.42240f, 2.44396f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.004"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-4.17853f, 0.93060f, 2.44051f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.005"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 1.68194f);
+            scene.lastChild().rotateQ(0.49725f, -0.40926f, 0.09676f, 0.75887f);
+            scene.lastChild().translate(-4.95958f, 5.06091f, 3.44694f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.005"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-0.77544f, 4.23516f, 2.46051f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.006"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 1.50194f);
+            scene.lastChild().rotateQ(0.93969f, 0.34202f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(-0.76627f, 6.99362f, 3.59955f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectorAtap.007"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 1.50194f);
+            scene.lastChild().rotateQ(0.33935f, 0.94066f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(-0.76627f, 5.19186f, 3.58746f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.006"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
+            scene.lastChild().translate(-0.76457f, 6.08823f, 4.69716f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.009"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 1.50194f);
+            scene.lastChild().rotateQ(0.66446f, 0.24184f, -0.24184f, -0.66446f);
+            scene.lastChild().translate(-5.12038f, 0.95759f, 3.54092f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectorAtap.008"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 1.50194f);
+            scene.lastChild().rotateQ(0.23995f, 0.66515f, -0.66515f, -0.23995f);
+            scene.lastChild().translate(-6.92213f, 0.95759f, 3.52882f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("ConnectBallAtap.007"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.17766f, 0.17678f, 0.17678f);
+            scene.lastChild().rotateQ(0.69962f, -0.00064f, -0.01859f, -0.71427f);
+            scene.lastChild().translate(-6.02576f, 0.95589f, 4.63853f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
+
+            scene.addChild(new Object("ConnectorAtap.010"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 2.48194f);
+            scene.lastChild().rotateQ(0.50000f, 0.50000f, 0.50000f, 0.50000f);
+            scene.lastChild().translate(-3.25453f, 6.11921f, 4.68153f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+            scene.addChild(new Object("AtapBesar.004"));
+            scene.lastChild().createPlane();
+            scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
+            scene.lastChild().rotateQ(0.64086f, 0.29884f, -0.29884f, -0.64086f);
+            scene.lastChild().translate(-6.96441f, 3.47213f, 3.53605f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.99110f, 0.88792f, 0.47932f);
+
+            scene.addChild(new Object("ConnectorAtap.011"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.15194f, 0.15194f, 2.48194f);
+            scene.lastChild().rotateQ(-0.00000f, -0.00000f, 0.70711f, 0.70711f);
+            scene.lastChild().translate(-6.02740f, 3.38629f, 4.64478f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
+
+
 
 
 
@@ -479,7 +665,6 @@ namespace UTS
             scene.findChild("Pohon").findChild("DaunPohon.001").scaleZ(DaunPohonScale.MinMaxBounce(0.999f, 1.001f));
             scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonScale.MinMaxBounce(-0.001f,0.001f));
             scene.findChild("Pohon").findChild("DaunPohon").translateZ(DaunPohonScale.MinMaxBounce(-0.001f,0.001f));
-            Console.WriteLine(DaunPohonScale.Bounce());
 
             //scene.findChild("Cube.001").rotateY(-0.2f);
             //scene.findChild("Cube.001").findChild("Cube.002").rotateY(0.4f);

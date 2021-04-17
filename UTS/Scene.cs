@@ -18,14 +18,14 @@ namespace UTS
         public static Object scene = new Object("scene");
         public static Matrix4 ProjectionMatrix;
         public static Matrix4 ViewMatrix;
-        public static Vector3 LightPosition = new Vector3(1.0f, 5.0f, 0.0f);
-        public static Vector3 LightDirection = new Vector3(0, 0f, 0.0f);
+        public static Vector3 LightPosition = new Vector3(5.0f, 15.0f, 0.0f);
+        public static Vector3 LightDirection = new Vector3(5, 5f, 2f);
         public static Vector3 ViewPosition = new Vector3(20, 5, 0);
         public static Vector3 ViewDirection = new Vector3(0, 0, 0);
         public static Vector3 ViewUpwards = new Vector3(0, 1, 0);
         public static Vector3 WireframeColor = new Vector3(1, 1, 1);
         public static Vector3 SkyColor = new Vector3(0.529f, 0.808f, 0.922f);
-        public static Vector3 LightColor = SkyColor;
+        public static Vector3 LightColor = new Vector3(0.8f,0.8f,0.8f);
         public static Vector2i WindowSize;
         public static float LightPower = 100.0f;
         public static float FOV = 45.0f;
@@ -34,6 +34,7 @@ namespace UTS
         public static float rotatesz = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
+        public static bool Flat = false;
 
         public static void SetScene(Vector2i Size)
         {
@@ -59,7 +60,7 @@ namespace UTS
         {
             ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView(FOV.Rad(), (float)WindowSize.X / (float)WindowSize.Y, 0.1f, 100.0f);
             ViewMatrix = Matrix4.LookAt(ViewPosition, ViewDirection, ViewUpwards);
-            scene.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, Solids, Wireframe);
+            scene.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, Solids, Wireframe, Flat);
         }
 
         public static void Movement(FrameEventArgs e, Window w)
