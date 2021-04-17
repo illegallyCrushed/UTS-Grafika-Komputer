@@ -92,7 +92,11 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
 
+<<<<<<< Updated upstream
             scene.addChild(new Object("Leher"));
+=======
+            scene.addChild(new Object("Leher."));
+>>>>>>> Stashed changes
             scene.lastChild().createCylinder();
             scene.lastChild().scale(-0.373297f, -0.373297f, -0.753297f);
             scene.lastChild().rotateQ(1.0f, 0, 0, 0);
@@ -100,11 +104,17 @@ namespace UTS
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
 
-            scene.addChild(new Object("MulutBawah"));
+            scene.addChild(new Object("JariBelakangKiri"));
             scene.lastChild().createCylinder();
+<<<<<<< Updated upstream
             scene.lastChild().scale(0.643924f, 0.643924f, 0.07605f);
             scene.lastChild().rotateQ(1.0f, 0, 0, 0);
             scene.lastChild().translate(7.34f, 5.54f, 3.83f);
+=======
+            scene.lastChild().scale(0.37090f, 0.21291f, 0.11286f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.16000f, 6.03000f, 0.45000f);
+>>>>>>> Stashed changes
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(252 / 255f, 184 / 255f, 41 / 255f);
 
@@ -202,7 +212,141 @@ namespace UTS
             scene.lastChild().rotateQ(0.707107f, 0, 0, 0.707107f);
             scene.lastChild().translate(7.8584f, 5.63289f, 5.03484f);
             scene.lastChild().centerOrigin();
+<<<<<<< Updated upstream
             scene.lastChild().setColor(0, 0, 0);
+=======
+            scene.lastChild().setColor(0.07451f, 0.32157f, 0.50588f);
+
+            scene.addChild(new Object("Semak"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.55856f, 0.55856f, 0.36915f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.10639f, 2.58508f, 0.91036f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak001"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.64466f, 0.74223f, 0.28879f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.02698f, 2.10204f, 1.52921f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak002"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.49542f, 0.73649f, 0.42081f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.50824f, 2.06039f, 0.99822f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak003"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.55856f, 0.62744f, 0.55856f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.28282f, 1.68634f, 0.97674f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak004"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.55856f, 0.73075f, 0.52986f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(5.08623f, 2.03358f, 0.90021f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak005"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.61022f, 0.68483f, 0.42655f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.01660f, 1.07587f, 0.94501f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak006"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.66761f, 0.55856f, 0.55856f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(5.33247f, 0.86226f, 0.93802f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak007"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.55856f, 0.87998f, 0.55856f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.92727f, 1.54841f, 0.86079f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak008"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.63318f, 0.48968f, 0.40359f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(5.65390f, 1.75766f, 1.85784f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak009"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.52986f, 0.47820f, 0.46672f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(5.52762f, 2.48660f, 0.93802f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00429f, 0.34933f, 0.00000f);
+
+            scene.addChild(new Object("Semak010"));
+            scene.lastChild().createBall();
+            scene.lastChild().scale(0.55282f, 0.66761f, 0.38063f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(5.39561f, 1.53381f, 1.47182f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00000f, 0.80000f, 0.00124f);
+
+            scene.addChild(new Object("MulutBawah"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.64392f, 0.64392f, 0.07605f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.34000f, 5.54000f, 3.83000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("JariDepanKanan"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.37090f, 0.21291f, 0.11286f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.94000f, 5.12000f, 0.45000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("JariBelakangKanan"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.37090f, 0.21291f, 0.11286f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.21000f, 4.93000f, 0.45000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("JariDepanKiri"));
+            scene.lastChild().createCylinder();
+            scene.lastChild().scale(0.37090f, 0.21291f, 0.11286f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(6.94000f, 6.03000f, 0.45000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
+
+            scene.addChild(new Object("Aksesoris"));
+            scene.lastChild().createTorus(1f, 0.4f);
+            scene.lastChild().scale(0.36307f, 0.47716f, 0.56921f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(7.06000f, 5.53000f, 3.45000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(0.00000f, 0.00000f, 0.00000f);
+
+
+>>>>>>> Stashed changes
 
 
 
