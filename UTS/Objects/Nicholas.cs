@@ -19,55 +19,6 @@ namespace UTS
             // 4. masukno object, location, rotation, scale ke code (contoh dibawah)
             // 5. see the magic
             // -nsv
-
-            scene.addChild(new Object("BatangPohon"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.25413f, 0.25413f, -1.99938f);
-            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-            scene.lastChild().translate(4.10321f, -4.96785f, 1.99546f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
-            scene.addChild(new Object("CabangPohon"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.05501f, 0.05501f, 1.07105f);
-            scene.lastChild().rotateQ(0.94119f, 0.16041f, 0.23142f, -0.18674f);
-            scene.lastChild().translate(4.70789f, -5.48614f, 3.82823f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
-            scene.addChild(new Object("CabangPohon.001"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.05501f, 0.05501f, 0.49105f);
-            scene.lastChild().rotateQ(0.91689f, -0.28363f, 0.27890f, -0.03282f);
-            scene.lastChild().translate(4.49066f, -4.53096f, 4.00314f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
-            scene.addChild(new Object("CabangPohon.002"));
-            scene.lastChild().createCylinder();
-            scene.lastChild().scale(0.05501f, 0.05501f, 0.57105f);
-            scene.lastChild().rotateQ(0.34812f, -0.25946f, -0.15753f, 0.88695f);
-            scene.lastChild().translate(3.65780f, -4.87545f, 3.75402f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
-            scene.addChild(new Object("DaunPohon.001"));
-            scene.lastChild().createBall();
-            scene.lastChild().scale(2.64469f, 2.47364f, 1.00000f);
-            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-            scene.lastChild().translate(4.39924f, -5.52693f, 4.93471f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
-            scene.addChild(new Object("DaunPohon"));
-            scene.lastChild().createBall();
-            scene.lastChild().scale(1.93883f, 1.81343f, 0.73310f);
-            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-            scene.lastChild().translate(3.97226f, -4.18096f, 5.72422f);
-            scene.lastChild().centerOrigin();
-            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
-
             scene.addChild(new Object("Awan.001"));
             scene.lastChild().createBall();
             scene.lastChild().scale(2.58855f, 1.75335f, 1.33258f);
@@ -79,7 +30,7 @@ namespace UTS
             scene.addChild(new Object("Awan.002"));
             scene.lastChild().createBall();
             scene.lastChild().scale(2.09333f, 1.41791f, 1.07764f);
-            scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f, -0.59800f);
+            scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f, -0.59801f);
             scene.lastChild().translate(-1.47981f, 6.86393f, 15.27800f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
@@ -87,7 +38,7 @@ namespace UTS
             scene.addChild(new Object("Awan.003"));
             scene.lastChild().createBall();
             scene.lastChild().scale(2.09333f, 1.41791f, 1.07764f);
-            scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f, -0.59800f);
+            scene.lastChild().rotateQ(0.79691f, 0.08030f, 0.02969f, -0.59801f);
             scene.lastChild().translate(-1.42335f, 7.67760f, 14.20910f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
@@ -103,7 +54,7 @@ namespace UTS
             scene.addChild(new Object("Awan.005"));
             scene.lastChild().createBall();
             scene.lastChild().scale(1.63942f, 0.83028f, 0.63103f);
-            scene.lastChild().rotateQ(0.89312f, 0.09758f, 0.00928f, -0.43900f);
+            scene.lastChild().rotateQ(0.89313f, 0.09758f, 0.00928f, -0.43900f);
             scene.lastChild().translate(-7.09028f, -7.58888f, 9.58345f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
@@ -223,7 +174,7 @@ namespace UTS
             scene.addChild(new Object("AtapBesar"));
             scene.lastChild().createPlane();
             scene.lastChild().scale(2.65000f, 1.47000f, 1.00000f);
-            scene.lastChild().rotateQ(-0.00099f, -0.00046f, -0.42262f, -0.90631f);
+            scene.lastChild().rotateQ(0.00099f, 0.00046f, 0.42262f, 0.90631f);
             scene.lastChild().translate(-3.28698f, 7.07217f, 3.57013f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -279,7 +230,7 @@ namespace UTS
             scene.addChild(new Object("ConnectorAtap"));
             scene.lastChild().createCylinder();
             scene.lastChild().scale(0.15194f, 0.15194f, 1.42194f);
-            scene.lastChild().rotateQ(-0.38302f, 0.84944f, 0.32289f, -0.16582f);
+            scene.lastChild().rotateQ(0.38302f, -0.84944f, -0.32289f, 0.16582f);
             scene.lastChild().translate(-7.11177f, 7.21642f, 3.33051f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -295,7 +246,7 @@ namespace UTS
             scene.addChild(new Object("AtapKecil"));
             scene.lastChild().createPlane();
             scene.lastChild().scale(0.75000f, 0.51000f, 1.00000f);
-            scene.lastChild().rotateQ(-0.25207f, 0.96771f, 0.00000f, -0.00000f);
+            scene.lastChild().rotateQ(0.25207f, -0.96771f, 0.00000f, 0.00000f);
             scene.lastChild().translate(-3.74787f, 4.18645f, 1.43622f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -303,7 +254,7 @@ namespace UTS
             scene.addChild(new Object("DindingSegitiga"));
             scene.lastChild().createTriangle(true);
             scene.lastChild().scale(0.22014f, 0.40166f, 0.18978f);
-            scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f, -0.70711f);
+            scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-3.09890f, 4.22200f, 1.44175f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -311,7 +262,7 @@ namespace UTS
             scene.addChild(new Object("DindingSegitiga.001"));
             scene.lastChild().createTriangle(true);
             scene.lastChild().scale(0.37392f, 0.59102f, 0.27925f);
-            scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f, -0.70711f);
+            scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-7.53420f, 0.53372f, 2.02718f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -319,10 +270,73 @@ namespace UTS
             scene.addChild(new Object("DindingSegitiga.002"));
             scene.lastChild().createTriangle(true);
             scene.lastChild().scale(0.37392f, 0.59102f, 0.27925f);
-            scene.lastChild().rotateQ(-0.00000f, 0.70711f, -0.00000f, -0.70711f);
+            scene.lastChild().rotateQ(0.00000f, -0.70711f, 0.00000f, 0.70711f);
             scene.lastChild().translate(-5.53420f, 0.53372f, 2.02718f);
             scene.lastChild().centerOrigin();
             scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+            scene.addChild(new Object("Pohon"));
+
+            { // Children of 'Pohon'
+
+                scene.lastChild().addChild(new Object("BatangPohon"));
+                scene.lastChild().lastChild().createCylinder();
+                scene.lastChild().lastChild().scale(-0.25413f, -0.25413f, -1.99938f);
+                scene.lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+                scene.lastChild().lastChild().translate(0.00000f, 0.00000f, 1.99546f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+                scene.lastChild().addChild(new Object("CabangPohon"));
+                scene.lastChild().lastChild().createCylinder();
+                scene.lastChild().lastChild().scale(0.05501f, 0.05501f, 1.07105f);
+                scene.lastChild().lastChild().rotateQ(0.94119f, 0.16041f, 0.23142f, -0.18674f);
+                scene.lastChild().lastChild().translate(0.60468f, -0.51829f, 3.82823f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+                scene.lastChild().addChild(new Object("CabangPohon.001"));
+                scene.lastChild().lastChild().createCylinder();
+                scene.lastChild().lastChild().scale(0.05501f, 0.05501f, 0.49105f);
+                scene.lastChild().lastChild().rotateQ(0.91689f, -0.28363f, 0.27890f, -0.03282f);
+                scene.lastChild().lastChild().translate(0.38745f, 0.43689f, 4.00314f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+                scene.lastChild().addChild(new Object("CabangPohon.002"));
+                scene.lastChild().lastChild().createCylinder();
+                scene.lastChild().lastChild().scale(0.05501f, 0.05501f, 0.57105f);
+                scene.lastChild().lastChild().rotateQ(0.34812f, -0.25946f, -0.15753f, 0.88695f);
+                scene.lastChild().lastChild().translate(-0.44541f, 0.09240f, 3.75402f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+                scene.lastChild().addChild(new Object("DaunPohon"));
+                scene.lastChild().lastChild().createBall();
+                scene.lastChild().lastChild().scale(1.93883f, 1.81343f, 0.73310f);
+                scene.lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+                scene.lastChild().lastChild().translate(-0.13095f, 0.78689f, 5.72422f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+                scene.lastChild().addChild(new Object("DaunPohon.001"));
+                scene.lastChild().lastChild().createBall();
+                scene.lastChild().lastChild().scale(2.64469f, 2.47364f, 1.00000f);
+                scene.lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+                scene.lastChild().lastChild().translate(0.29603f, -0.55908f, 4.93471f);
+                scene.lastChild().lastChild().centerOrigin();
+                scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+            } // Children of 'Pohon'
+
+            scene.lastChild().scale(1.00000f, 1.00000f, 1.00000f);
+            scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+            scene.lastChild().translate(4.10321f, -4.96785f, 0.00000f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+
+
 
 
             //scene.addChild(new Object("AlasBawah"));
@@ -457,7 +471,7 @@ namespace UTS
         {
 
 
-
+            scene.findChild("Pohon").rotateX(-0.05f);
 
             //scene.findChild("Cube.001").rotateY(-0.2f);
             //scene.findChild("Cube.001").findChild("Cube.002").rotateY(0.4f);
