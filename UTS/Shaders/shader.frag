@@ -23,6 +23,7 @@ uniform vec3 viewPos;
 uniform Material material;
 uniform Light light;
 uniform int simple;
+uniform float alpha;
 
 void main()
 {
@@ -47,5 +48,5 @@ void main()
     }
     else
         result = ambient + diffuse + specular;
-    FragColor = vec4(result, 1.0);
+    FragColor = vec4(result, alpha);
 } 

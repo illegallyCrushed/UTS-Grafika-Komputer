@@ -10,6 +10,7 @@ namespace UTS
 
         public static Animator DaunPohonAnimator = new Animator();
         public static Animator RumahAnimator = new Animator();
+        public static Animator CerobongAnimator = new Animator();
 
 
 		public static void Objects(ref Object scene)
@@ -75,24 +76,24 @@ namespace UTS
 			scene.addChild(new Object("Awan.007"));
 			scene.lastChild().createBall();
 			scene.lastChild().scale(2.41138f, 0.57665f, 0.53432f);
-			scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f, -0.77245f);
-			scene.lastChild().translate(-9.06234f, 0.17659f, 16.12335f);
+			scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f, -0.70431f);
+			scene.lastChild().translate(-9.08954f, 0.24154f, 16.12918f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 			scene.addChild(new Object("Awan.008"));
 			scene.lastChild().createBall();
 			scene.lastChild().scale(1.06658f, 0.57665f, 0.43826f);
-			scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f, -0.77245f);
-			scene.lastChild().translate(-8.48477f, 0.78060f, 16.55188f);
+			scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f, -0.70431f);
+			scene.lastChild().translate(-8.50512f, 0.78234f, 16.62723f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 			scene.addChild(new Object("Awan"));
 			scene.lastChild().createBall();
 			scene.lastChild().scale(1.33849f, 0.78395f, 0.64813f);
-			scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f, -0.77245f);
-			scene.lastChild().translate(-9.64145f, -0.40077f, 16.67460f);
+			scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f, -0.70431f);
+			scene.lastChild().translate(-9.59391f, -0.46746f, 16.59341f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
@@ -1128,6 +1129,21 @@ namespace UTS
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
 
+			scene.addChild(new Object("AsapCerobong"));
+			scene.lastChild().createTorus();
+			scene.lastChild().scale(0.24012f, 0.24012f, 0.24012f);
+			scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+			scene.lastChild().translate(-7.58658f, 7.61437f, 9.04314f);
+			scene.lastChild().centerOrigin();
+			scene.lastChild().setColor(0.15743f, 0.15743f, 0.15743f);
+
+			scene.addChild(new Object("AsapCerobong.001"));
+			scene.lastChild().createTorus();
+			scene.lastChild().scale(0.24012f, 0.24012f, 0.24012f);
+			scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+			scene.lastChild().translate(-7.58658f, 7.61437f, 9.04314f);
+			scene.lastChild().centerOrigin();
+			scene.lastChild().setColor(0.15743f, 0.15743f, 0.15743f);
 
 
 			scene.addChild(new Object("Ground-Grass"));
@@ -1138,7 +1154,7 @@ namespace UTS
             scene.lastChild().setColor(38/255f, 139/255f, 7/255f);
 
             DaunPohonAnimator.s = 0.2f;
-            RumahAnimator.s = 1.5f;
+			CerobongAnimator.s = 0.2f;
 		}
 
         public static void Animations(ref Object scene)
@@ -1149,6 +1165,29 @@ namespace UTS
 			scene.findChild("Pohon").findChild("DaunPohon").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
             scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
             scene.findChild("Pohon").findChild("DaunPohon.002").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
+
+			if (CerobongAnimator.Linear() < 0.98)
+			{
+				scene.findChild("AsapCerobong").translateZ(0.01f);
+				scene.findChild("AsapCerobong").scale(1.004f);
+				scene.findChild("AsapCerobong").material.alpha += 0 - scene.findChild("AsapCerobong").material.alpha * 0.005f;
+			}
+			else { 
+				scene.findChild("AsapCerobong").restoreTransform();
+				scene.findChild("AsapCerobong").material.alpha = 1;
+			}
+
+			if (CerobongAnimator.Linear() > 0.20 && CerobongAnimator.Linear() < 0.80)
+			{
+				scene.findChild("AsapCerobong.001").translateZ(0.01f);
+				scene.findChild("AsapCerobong.001").scale(1.004f);
+				scene.findChild("AsapCerobong.001").material.alpha += 0 - scene.findChild("AsapCerobong.001").material.alpha * 0.005f;
+			}
+			else
+			{
+				scene.findChild("AsapCerobong.001").restoreTransform();
+				scene.findChild("AsapCerobong.001").material.alpha = 1;
+			}
 		}
     }
 }

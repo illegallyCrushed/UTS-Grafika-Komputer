@@ -37,6 +37,7 @@ namespace UTS
         private Matrix4 processed_transform;
         private Matrix4 object_transform;
         private Matrix4 origin_transform;
+        private Matrix4 saved_transform;
 
         public Object parent;
 
@@ -53,6 +54,7 @@ namespace UTS
         public Object(string name, bool parent = false)
         {
             material = new Material();
+            saved_transform = Matrix4.Identity;
             object_transform = Matrix4.Identity;
             origin_transform = Matrix4.Identity;
             processed_transform = Matrix4.Identity;
@@ -357,7 +359,13 @@ namespace UTS
             processed_transform = object_transform;
             origin_transform.Invert();
             object_transform = object_transform * origin_transform;
+            saved_transform = object_transform;
             origin_transform.Invert();
+        }
+
+        public void restoreTransform() {
+
+            object_transform = saved_transform;
         }
 
         public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightDirection, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe, bool flat)
@@ -378,6 +386,7 @@ namespace UTS
             //_shader.SetVector3("LightPos_World", LightPosition);
             //_shader.SetVector3("LightDir_World", LightDirection);
             //_shader.SetVector3("LightColor", LightColor);
+            _shader.SetFloat("alpha", material.alpha);
             _shader.SetVector3("light.position", LightPosition);
             _shader.SetVector3("light.ambient", LightColor);
             _shader.SetVector3("light.diffuse", LightColor);

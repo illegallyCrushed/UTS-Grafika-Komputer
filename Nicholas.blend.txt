@@ -49,24 +49,24 @@ scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 scene.addChild(new Object("Awan.007"));
 scene.lastChild().createBall();
 scene.lastChild().scale(2.41138f, 0.57665f, 0.53432f);
-scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f,-0.77245f);
-scene.lastChild().translate(-9.06234f, 0.17659f, 16.12335f);
+scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f,-0.70431f);
+scene.lastChild().translate(-9.08954f, 0.24154f, 16.12918f);
 scene.lastChild().centerOrigin();
 scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 scene.addChild(new Object("Awan.008"));
 scene.lastChild().createBall();
 scene.lastChild().scale(1.06658f, 0.57665f, 0.43826f);
-scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f,-0.77245f);
-scene.lastChild().translate(-8.48477f, 0.78060f, 16.55188f);
+scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f,-0.70431f);
+scene.lastChild().translate(-8.50512f, 0.78234f, 16.62723f);
 scene.lastChild().centerOrigin();
 scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
 scene.addChild(new Object("Awan"));
 scene.lastChild().createBall();
 scene.lastChild().scale(1.33849f, 0.78395f, 0.64813f);
-scene.lastChild().rotateQ(0.39859f, -0.25507f, 0.42354f,-0.77245f);
-scene.lastChild().translate(-9.64145f, -0.40077f, 16.67460f);
+scene.lastChild().rotateQ(0.42525f, -0.25522f, 0.50791f,-0.70431f);
+scene.lastChild().translate(-9.59391f, -0.46746f, 16.59341f);
 scene.lastChild().centerOrigin();
 scene.lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
 
@@ -1101,4 +1101,20 @@ scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
 scene.lastChild().translate(-2.76970f, 2.49096f, 1.42000f);
 scene.lastChild().centerOrigin();
 scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
+
+scene.addChild(new Object("AsapCerobong"));
+scene.lastChild().createTorus();
+scene.lastChild().scale(0.24012f, 0.24012f, 0.24012f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-7.58658f, 7.61437f, 9.04314f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(0.15743f, 0.15743f, 0.15743f);
+
+scene.addChild(new Object("AsapCerobong.001"));
+scene.lastChild().createTorus();
+scene.lastChild().scale(0.24012f, 0.24012f, 0.24012f);
+scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f,0.00000f);
+scene.lastChild().translate(-7.58658f, 7.61437f, 9.04314f);
+scene.lastChild().centerOrigin();
+scene.lastChild().setColor(0.15743f, 0.15743f, 0.15743f);
 

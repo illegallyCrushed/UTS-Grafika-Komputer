@@ -34,6 +34,8 @@ namespace UTS
         {
             GL.ClearColor(Scene.SkyColor.X, Scene.SkyColor.Y, Scene.SkyColor.Z, 1.0f);
             GL.Enable(EnableCap.Multisample);
+            GL.Enable(EnableCap.Blend);
+            GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
             GL.Hint(HintTarget.MultisampleFilterHintNv, HintMode.Nicest);
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Less);
