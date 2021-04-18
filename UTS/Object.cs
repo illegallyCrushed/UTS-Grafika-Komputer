@@ -396,6 +396,7 @@ namespace UTS
             {
 
                 Scene.Shader_Wireframe.SetMatrix4("mvp_transform", processed_transform * Scene.ViewMatrix * Scene.ProjectionMatrix);
+                Scene.Shader_Color.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
                 Scene.Shader_Wireframe.SetVector3("lineColor", Scene.WireframeColor);
                 Scene.Shader_Color.SetInt("simple", Scene.LightMode);
                 Scene.Shader_Color.SetMatrix4("model", processed_transform);
@@ -411,7 +412,7 @@ namespace UTS
                 Scene.Shader_Color.SetVector3("light.diffuse", Scene.LightColor);
                 Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
                 Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
-                Scene.Shader_Color.SetInt("shadowMap", Scene.depthMap);
+                Scene.Shader_Color.SetInt("shadowenable", Window.ENABLE_SHADOW?1:0);
                 //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
 
                 GL.BindVertexArray(_vertexArrayObject);

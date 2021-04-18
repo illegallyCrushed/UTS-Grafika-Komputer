@@ -23,7 +23,7 @@ namespace UTS
         public static Matrix4 LightMatrix;
         public static Matrix4 LightProjectionMatrix;
         public static Matrix4 LightSpaceMatrix;
-        public static Vector3 LightPosition = new Vector3(10f, 15.0f, 0.0f);
+        public static Vector3 LightPosition = new Vector3(20,15, 0.0f);
         public static Vector3 LightTo = new Vector3(0,0,0);
         public static Vector3 LightUpwards = new Vector3(0,1,0);
         public static Vector3 ViewPosition = new Vector3(20, 3, 0);
@@ -46,7 +46,7 @@ namespace UTS
 
         public static void SetScene(Vector2i Size)
         {
-            if (LightMode > 3)
+            if (Window.ENABLE_SHADOW)
             {
                 depthMapFBO = GL.GenFramebuffer();
                 depthMap = GL.GenTexture();
@@ -93,7 +93,7 @@ namespace UTS
             ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView(FOV.Rad(), (float)WindowSize.X / (float)WindowSize.Y, 0.1f, 100.0f);
 
             ViewMatrix = Matrix4.LookAt(ViewPosition, ViewTo, ViewUpwards);
-            if (LightMode > 3)
+            if (Window.ENABLE_SHADOW)
             {
                 // get depth, 1st pass
                 GL.Viewport(0, 0, Window.SHADOW_RESOLUTION, Window.SHADOW_RESOLUTION);
@@ -113,7 +113,7 @@ namespace UTS
         public static void Movement(FrameEventArgs e, Window w)
         {
 
-            float speed = 10;
+            float speed = 5;
             float reducespeed = 7.5f;
             float rotatesens = 0.5f;
 
@@ -187,6 +187,25 @@ namespace UTS
             RotateVelocityY -= (RotateVelocityY - 0) * reducespeed * (float)e.Time;
             scene.rotateZ(RotateVelocityX);
             scene.rotateY(RotateVelocityY);
+
+            if (w.KeyboardState.IsKeyReleased(Keys.F11)) {
+                if (!Window.Fullscreen)
+                {
+                    w.WindowBorder = WindowBorder.Hidden;
+                    w.WindowState = WindowState.Fullscreen;
+                    GL.Viewport(0, 0, w.Size.X, w.Size.Y);
+                    Scene.RefreshAspect(w.Size);
+                }
+                else {
+
+                    w.WindowBorder = WindowBorder.Resizable;
+                    w.WindowState = WindowState.Normal;
+                    GL.Viewport(0, 0, w.Size.X, w.Size.Y);
+                    Scene.RefreshAspect(w.Size);
+                }
+                Window.Fullscreen = !Window.Fullscreen;
+            }
+
         }
 
         public static void Zoom(MouseWheelEventArgs e)

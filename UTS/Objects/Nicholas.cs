@@ -18,7 +18,7 @@ namespace UTS
 		public static void Objects(ref Object scene)
         {
 			scene.addChild(new Object("Ground-Grass"));
-			scene.lastChild().createTerrain(0.2f, 30, 3);
+            scene.lastChild().createTerrain(0.2f, 30, 3);
 			scene.lastChild().scale(10.5f);
 			scene.lastChild().translate(0, 0, 0);
 			scene.lastChild().centerOrigin();
@@ -656,6 +656,70 @@ namespace UTS
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
 
+				scene.lastChild().addChild(new Object("Window.046"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(4.65335f, 0.70725f, 0.65546f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.047"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.38457f, 0.70725f, 0.65546f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.048"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.38457f, 0.70725f, -0.08402f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.049"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(4.65335f, 0.70725f, -0.08402f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.050"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(4.65335f, 0.70725f, 2.12698f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.051"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.38457f, 0.70725f, 2.12698f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.052"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.38457f, 0.70725f, 2.86646f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
+				scene.lastChild().addChild(new Object("Window.053"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.03126f, 0.32903f, 0.32903f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(4.65335f, 0.70725f, 2.86646f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.09463f, 0.09463f, 0.09463f);
+
 				scene.lastChild().addChild(new Object("WindowFrame"));
 				scene.lastChild().lastChild().createCube();
 				scene.lastChild().lastChild().scale(0.06685f, 0.77460f, 0.77460f);
@@ -749,6 +813,22 @@ namespace UTS
 				scene.lastChild().lastChild().scale(0.04332f, 0.50188f, 0.50188f);
 				scene.lastChild().lastChild().rotateQ(0.00000f, 0.00000f, 0.00000f, 1.00000f);
 				scene.lastChild().lastChild().translate(-2.81653f, -8.27021f, 1.26200f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.20155f, 0.34238f, 0.07519f);
+
+				scene.lastChild().addChild(new Object("WindowFrame.012"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.06685f, 0.77460f, 0.77460f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.01953f, 0.76682f, 0.27694f);
+				scene.lastChild().lastChild().centerOrigin();
+				scene.lastChild().lastChild().setColor(0.20155f, 0.34238f, 0.07519f);
+
+				scene.lastChild().addChild(new Object("WindowFrame.013"));
+				scene.lastChild().lastChild().createCube();
+				scene.lastChild().lastChild().scale(0.06685f, 0.77460f, 0.77460f);
+				scene.lastChild().lastChild().rotateQ(0.70711f, 0.00000f, 0.00000f, -0.70711f);
+				scene.lastChild().lastChild().translate(5.01953f, 0.76682f, 2.48794f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.20155f, 0.34238f, 0.07519f);
 
@@ -2008,7 +2088,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong").translateZ(0.005f);
 				scene.findChild("AsapCerobong").scale(1.004f);
-				scene.findChild("AsapCerobong").material.alpha += 0 - scene.findChild("AsapCerobong").material.alpha * 0.006f;
+				scene.findChild("AsapCerobong").material.alpha += 0 - scene.findChild("AsapCerobong").material.alpha * 0.004f;
 			}
 			else { 
 				scene.findChild("AsapCerobong").restoreTransform();
@@ -2019,7 +2099,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong.001").translateZ(0.005f);
 				scene.findChild("AsapCerobong.001").scale(1.004f);
-				scene.findChild("AsapCerobong.001").material.alpha += 0 - scene.findChild("AsapCerobong.001").material.alpha * 0.006f;
+				scene.findChild("AsapCerobong.001").material.alpha += 0 - scene.findChild("AsapCerobong.001").material.alpha * 0.004f;
 			}
 			else
 			{
@@ -2030,7 +2110,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong.002").translateZ(0.005f);
 				scene.findChild("AsapCerobong.002").scale(1.004f);
-				scene.findChild("AsapCerobong.002").material.alpha += 0 - scene.findChild("AsapCerobong.002").material.alpha * 0.006f;
+				scene.findChild("AsapCerobong.002").material.alpha += 0 - scene.findChild("AsapCerobong.002").material.alpha * 0.004f;
 			}									
 			else								
 			{									

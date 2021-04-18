@@ -21,6 +21,7 @@ uniform vec3 viewPos;
 uniform Material material;
 uniform Light light;
 uniform int simple;
+uniform int shadowenable;
 uniform float alpha;
 
 uniform sampler2D shadowMap;
@@ -101,15 +102,17 @@ void main()
     // calculate shadow
     float shadow = ShadowCalculation(fs_in.FragPosLightSpace);
 
+    if(shadowenable == 0)
+        shadow = 0;
+
     vec3 result;
     if(simple == 1)
-        result = vec3(1,1,1) * material.ambient;
+        result = vec3(1,1,1) * (1.0 - shadow) * material.ambient ;
     else if(simple == 2)
-        result = ambient + diffuse;
+        result = ambient + (1.0 - shadow) * diffuse;
     else if (simple == 3)
-        result = ambient + diffuse + specular;
-    else
         result = (ambient + (1.0 - shadow) * ( diffuse + specular)) * light.ambient;
+        
 
     FragColor = vec4(result, alpha);
 }

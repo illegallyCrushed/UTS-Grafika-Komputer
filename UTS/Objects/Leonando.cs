@@ -1244,11 +1244,11 @@ namespace UTS
 
 		public static void Animations(ref Object scene)
         {
-            scene.findChild("Bitzer").findChild("KepalaAnjing").rotateX(KepalaAnjingScale.MinMaxBounce(-0.4f, 0.4f));
-            scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKanan").rotateX(KepalaAnjingScale.MinMaxBounce(-0.3f, 0.3f));
-			scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKiri").rotateX(KepalaAnjingScale.MinMaxBounce(0.3f, -0.3f));
-			scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("Lidah").translateX(KepalaAnjingScale.MinMaxBounce(-0.005f, 0.005f));
-			scene.findChild("Bitzer").findChild("BuntutPusat").rotateX(GoyangBuntutScale.MinMaxBounce(-0.7f, 0.7f));
+            scene.findChild("Bitzer").findChild("KepalaAnjing").rotateX(KepalaAnjingScale.MinMaxBounce(-0.4444f, 0.4444f));
+            scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKanan").rotateX(KepalaAnjingScale.MinMaxBounce(-0.3333f, 0.3333f));
+			scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKiri").rotateX(KepalaAnjingScale.MinMaxBounce(0.3333f, -0.3333f));
+			scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("Lidah").translateX(KepalaAnjingScale.MinMaxBounce(-0.005555f, 0.005555f));
+			scene.findChild("Bitzer").findChild("BuntutPusat").rotateX(GoyangBuntutScale.MinMaxBounce(-0.7777f, 0.7777f));
 		}
     }
 }
