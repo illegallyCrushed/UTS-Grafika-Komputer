@@ -39,7 +39,7 @@ namespace UTS
         public static float RotateVelocityY = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
-        public static int LightMode = 2;
+        public static int LightMode = 3;
 
         public static int depthMapFBO;
         public static int depthMap;

@@ -574,8 +574,8 @@ namespace UTS
         {
 			scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.2f, 0.2f));
 			scene.findChild("timmy").rotateZ(2f);
-			scene.findChild("timmy").translateZ(TanganTimmyRot.MinMaxLinear(0.05f, -0.05f));
-			scene.findChild("Tramp").findChild("karet").scaleZ(TanganTimmyRot.MinMaxLinear(0.996f, 1.004f));
+			scene.findChild("timmy").translateZ(TanganTimmyRot.MinMaxLinear(0.07f, -0.07f));
+			scene.findChild("Tramp").findChild("karet").scaleZ(TanganTimmyRot.MinMaxLinear(0.995f, 1.005f));
 
 			//scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.2f, 0.2f));
 			//scene.findChild("timmy").rotateZ(2f); scene.findChild("timmy").rotateY(2f);

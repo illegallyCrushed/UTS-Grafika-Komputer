@@ -411,6 +411,7 @@ namespace UTS
                 Scene.Shader_Color.SetVector3("light.diffuse", Scene.LightColor);
                 Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
                 Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
+                Scene.Shader_Color.SetInt("shadowMap", Scene.depthMap);
                 //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
 
                 GL.BindVertexArray(_vertexArrayObject);
