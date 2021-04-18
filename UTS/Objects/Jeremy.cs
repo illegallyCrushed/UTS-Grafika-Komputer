@@ -572,7 +572,7 @@ namespace UTS
 
 		public static void Animations(ref Object scene)
         {
-			scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.2f, 0.2f));
+			scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.5f, 0.5f));
 			scene.findChild("timmy").rotateZ(2f);
 			scene.findChild("timmy").translateZ(TanganTimmyRot.MinMaxLinear(0.07f, -0.07f));
 			scene.findChild("Tramp").findChild("karet").scaleZ(TanganTimmyRot.MinMaxLinear(0.995f, 1.005f));
