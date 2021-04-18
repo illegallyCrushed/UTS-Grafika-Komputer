@@ -25,7 +25,7 @@ namespace UTS
     {
         public static readonly int ROUND_OBJECT_DETAIL_LEVEL = 50;
         public static readonly int MULTISAMPLING_LEVEL = 8;
-        public static readonly int SHADOW_RESOLUTION = 1024;
+        public static readonly int SHADOW_RESOLUTION = 4096;
         public static readonly bool ENABLE_SHADOW = true;
         public static bool Fullscreen = false;
 

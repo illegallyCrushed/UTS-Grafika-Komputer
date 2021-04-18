@@ -23,7 +23,7 @@ namespace UTS
         public static Matrix4 LightMatrix;
         public static Matrix4 LightProjectionMatrix;
         public static Matrix4 LightSpaceMatrix;
-        public static Vector3 LightPosition = new Vector3(20,15, 0.0f);
+        public static Vector3 LightPosition = new Vector3(15,15, 0.0f);
         public static Vector3 LightTo = new Vector3(0,0,0);
         public static Vector3 LightUpwards = new Vector3(0,1,0);
         public static Vector3 ViewPosition = new Vector3(20, 3, 0);
@@ -70,7 +70,7 @@ namespace UTS
             Shader_Wireframe = new Shader("../../../Shaders/shader_line.vert", "../../../Shaders/shader_line.frag");
             Shader_Depth = new Shader("../../../Shaders/shader_depth.vert", "../../../Shaders/shader_depth.frag");
 
-            LightProjectionMatrix = Matrix4.CreateOrthographic(15, 15, 0.1f, 100f);
+            LightProjectionMatrix = Matrix4.CreateOrthographic(20,20, 0.1f, 100f);
             LightMatrix = Matrix4.LookAt(LightPosition, LightTo, LightUpwards);
             LightSpaceMatrix = LightMatrix * LightProjectionMatrix;
 
