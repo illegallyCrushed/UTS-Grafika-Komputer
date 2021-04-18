@@ -107,11 +107,11 @@ void main()
 
     vec3 result;
     if(simple == 1)
-        result = vec3(1,1,1) * (1.0 - shadow) * material.ambient ;
+        result = vec3(1,1,1) * (1.0 - shadow*alpha) * material.ambient ;
     else if(simple == 2)
-        result = ambient + (1.0 - shadow) * diffuse;
+        result = ambient + (1.0 - shadow*alpha) * diffuse;
     else if (simple == 3)
-        result = (ambient + (1.0 - shadow) * ( diffuse + specular)) * light.ambient;
+        result = (ambient + (1.0 - shadow*alpha) * ( diffuse + specular)) * light.ambient;
         
 
     FragColor = vec4(result, alpha);

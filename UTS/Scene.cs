@@ -189,7 +189,7 @@ namespace UTS
             scene.rotateY(RotateVelocityY);
 
             if (w.KeyboardState.IsKeyReleased(Keys.F11)) {
-                if (!Window.Fullscreen)
+                if (!Window.ISFULLSCREEN)
                 {
                     w.WindowBorder = WindowBorder.Hidden;
                     w.WindowState = WindowState.Fullscreen;
@@ -203,7 +203,12 @@ namespace UTS
                     GL.Viewport(0, 0, w.Size.X, w.Size.Y);
                     Scene.RefreshAspect(w.Size);
                 }
-                Window.Fullscreen = !Window.Fullscreen;
+                Window.ISFULLSCREEN = !Window.ISFULLSCREEN;
+            }
+
+            if (w.KeyboardState.IsKeyReleased(Keys.F10))
+            {
+                Window.ENABLE_SHADOW = !Window.ENABLE_SHADOW;
             }
 
         }

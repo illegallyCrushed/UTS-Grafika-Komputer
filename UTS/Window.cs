@@ -23,11 +23,11 @@ namespace UTS
 
     class Window : GameWindow
     {
-        public static readonly int ROUND_OBJECT_DETAIL_LEVEL = 50;
-        public static readonly int MULTISAMPLING_LEVEL = 8;
+        public static readonly int ROUND_OBJECT_DETAIL_LEVEL = 30;
+        public static readonly int MULTISAMPLING_LEVEL = 4;
         public static readonly int SHADOW_RESOLUTION = 4096;
-        public static readonly bool ENABLE_SHADOW = true;
-        public static bool Fullscreen = false;
+        public static bool ENABLE_SHADOW = true;
+        public static bool ISFULLSCREEN = false;
 
         public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
         {
@@ -44,6 +44,7 @@ namespace UTS
             Console.WriteLine("MIDDLE MOUSE - FREE SPIN");
             Console.WriteLine("R - RESET CAMERA");
             Console.WriteLine("F11 - TOGGLE FULLSCREEN");
+            Console.WriteLine("F10 - TOGGLE SHADOW");
         }
 
         protected override void OnLoad()
