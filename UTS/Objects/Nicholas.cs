@@ -9,7 +9,10 @@ namespace UTS
     {
 
         public static Animator DaunPohonAnimator = new Animator();
-        public static Animator TitleAnimator = new Animator();
+        public static Animator AwanAnimator1 = new Animator();
+        public static Animator AwanAnimator2 = new Animator();
+        public static Animator AwanAnimator3 = new Animator();
+		public static Animator TitleAnimator = new Animator();
         public static Animator CerobongAnimator = new Animator();
         public static Animator CerobongAnimator1 = new Animator();
         public static Animator CerobongAnimator2 = new Animator();
@@ -18,11 +21,18 @@ namespace UTS
 		public static void Objects(ref Object scene)
         {
 			scene.addChild(new Object("Ground-Grass"));
-            scene.lastChild().createTerrain(0.2f, 30, 3);
+            scene.lastChild().createTerrain(0.3f, 30, 3);
 			scene.lastChild().scale(10.5f);
-			scene.lastChild().translate(0, 0, 0);
+			scene.lastChild().translate(0, 0, 0f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(38 / 255f, 139 / 255f, 7 / 255f);
+
+            scene.addChild(new Object("Ground-Block"));
+            scene.lastChild().createCube();
+            scene.lastChild().scale(10f, 10f, 0.1f);
+            scene.lastChild().translate(-0.5f, 0.5f, -0.3f);
+            scene.lastChild().centerOrigin();
+            scene.lastChild().setColor(38 / 255f, 139 / 255f, 7 / 255f);
 
 			scene.addChild(new Object("Awan.001"));
 			scene.lastChild().createBall();
@@ -940,7 +950,7 @@ namespace UTS
 				scene.lastChild().lastChild().createCylinder();
 				scene.lastChild().lastChild().scale(0.12850f, 0.12850f, 1.69075f);
 				scene.lastChild().lastChild().rotateQ(0.47365f, 0.88071f, 0.00000f, 0.00000f);
-				scene.lastChild().lastChild().translate(-7.68769f, -8.36022f, 3.11573f);
+				scene.lastChild().lastChild().translate(-7.68769f, -8.36022f, 3.11572f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
 
@@ -948,7 +958,7 @@ namespace UTS
 				scene.lastChild().lastChild().createCylinder();
 				scene.lastChild().lastChild().scale(0.12850f, 0.12850f, 1.69075f);
 				scene.lastChild().lastChild().rotateQ(0.47365f, 0.88071f, 0.00000f, 0.00000f);
-				scene.lastChild().lastChild().translate(-2.40679f, -8.36022f, 3.11573f);
+				scene.lastChild().lastChild().translate(-2.40679f, -8.36022f, 3.11572f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.68596f, 0.68087f, 0.27177f);
 
@@ -1146,9 +1156,9 @@ namespace UTS
 
 				scene.lastChild().addChild(new Object("ConnectBallAtap.008"));
 				scene.lastChild().lastChild().createBall();
-				scene.lastChild().lastChild().scale(0.24550f, 0.24428f, 0.24428f);
+				scene.lastChild().lastChild().scale(0.21396f, 0.21290f, 0.21290f);
 				scene.lastChild().lastChild().rotateQ(0.99977f, 0.01269f, -0.01360f, -0.01036f);
-				scene.lastChild().lastChild().translate(-4.68059f, -8.36055f, 0.28174f);
+				scene.lastChild().lastChild().translate(-2.44310f, -9.74018f, 2.22541f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(0.59258f, 0.53168f, 0.28980f);
 
@@ -1196,7 +1206,7 @@ namespace UTS
 
 			scene.lastChild().scale(1.00000f, 1.00000f, 1.00000f);
 			scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-			scene.lastChild().translate(-2.76970f, 2.49096f, 1.42000f);
+			scene.lastChild().translate(-2.76970f, 2.49096f, 1.29371f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
 
@@ -2052,6 +2062,10 @@ namespace UTS
 			DaunPohonAnimator.s = 0.002f;
             TitleAnimator.s = 0.001f;
 
+			AwanAnimator1.s = 0.002f;
+			AwanAnimator2.s = 0.004f;
+			AwanAnimator3.s = 0.006f;
+
 			CerobongAnimator.s = 0.0015f;
 			CerobongAnimator1.s = 0.0015f;
 			CerobongAnimator2.s = 0.0015f;
@@ -2066,22 +2080,20 @@ namespace UTS
             scene.findChild("BigTitleBezier").scale(TitleAnimator.MinMaxBounce(0.9995f, 1.0005f));
             scene.findChild("BigTitleBezier.001").scale(TitleAnimator.MinMaxBounce(0.9995f, 1.0005f));
 
-			scene.findChild("Pohon").findChild("DaunPohon").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Pohon").findChild("DaunPohon.001").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Pohon").findChild("DaunPohon.002").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Pohon").findChild("DaunPohon").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
-            scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
-            scene.findChild("Pohon").findChild("DaunPohon.002").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
+			scene.findChild("Pohon").findChild("DaunPohon.001").scaleZ(DaunPohonAnimator.MinMaxBounce(0.9985f, 1.0015f));
+			scene.findChild("Pohon").findChild("DaunPohon.002").scaleZ(DaunPohonAnimator.MinMaxBounce(0.9985f, 1.0015f));
+            scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonAnimator.MinMaxBounce(-0.0015f, 0.0015f));
+            scene.findChild("Pohon").findChild("DaunPohon.002").translateZ(DaunPohonAnimator.MinMaxBounce(-0.0015f, 0.0015f));
 
-			scene.findChild("Awan").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.001").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.002").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.003").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.004").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.005").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.006").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.007").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-			scene.findChild("Awan.008").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan").scaleX(AwanAnimator1.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.001").scaleX(AwanAnimator1.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.002").scaleX(AwanAnimator1.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.003").scaleX(AwanAnimator2.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.004").scaleX(AwanAnimator2.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.005").scaleX(AwanAnimator2.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.006").scaleX(AwanAnimator3.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.007").scaleX(AwanAnimator3.MinMaxBounce(0.998f, 1.002f));
+			scene.findChild("Awan.008").scaleX(AwanAnimator3.MinMaxBounce(0.998f, 1.002f));
 
 
 			if (CerobongAnimator.Linear() > 0 && CerobongAnimator.Linear() < 1)

@@ -349,18 +349,21 @@ namespace UTS
         {
             if (vertices.Count > 0)
             {
-                Scene.Shader_Depth.SetMatrix4("model", processed_transform);
-                Scene.Shader_Depth.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
-                GL.BindVertexArray(_vertexArrayObject);
+                Scene.Shader_Depth.Use();
 
+                Scene.Shader_Depth.SetMatrix4("model", processed_transform);
+                for (int i = 0; i < 6; ++i)
+                    Scene.Shader_Depth.SetMatrix4("shadowMatrices" + i.ToString(), Scene.LightSpaceMatrix[i]);
+                Scene.Shader_Depth.SetFloat("far_plane", Scene.LightFarPlane);
+                Scene.Shader_Depth.SetVector3("lightPos", Scene.LightPosition);
+
+                GL.BindVertexArray(_vertexArrayObject);
                 if (Scene.Solids)
                 {
-                    Scene.Shader_Depth.Use();
                     GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
                 }
                 if (Scene.Wireframe)
                 {
-                    Scene.Shader_Depth.Use();
                     GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
                     GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
                     GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
@@ -380,8 +383,8 @@ namespace UTS
             {
 
                 Scene.Shader_Wireframe.SetMatrix4("mvp_transform", processed_transform * Scene.ViewMatrix * Scene.ProjectionMatrix);
-                Scene.Shader_Color.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
                 Scene.Shader_Wireframe.SetVector3("lineColor", Scene.WireframeColor);
+                Scene.Shader_Color.SetFloat("far_plane", Scene.LightFarPlane);
                 Scene.Shader_Color.SetInt("simple", Scene.LightMode);
                 Scene.Shader_Color.SetMatrix4("model", processed_transform);
                 Scene.Shader_Color.SetMatrix4("view", Scene.ViewMatrix);
@@ -397,7 +400,6 @@ namespace UTS
                 Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
                 Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
                 Scene.Shader_Color.SetInt("shadowenable", Window.ENABLE_SHADOW?1:0);
-                //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
 
                 GL.BindVertexArray(_vertexArrayObject);
 
@@ -998,7 +1000,8 @@ namespace UTS
                         //normals.Add(allCurved[j][i]);
                         //patch rotation dibawah
                         vertices.Add(new Vector3(allCurved[j][i].X, -allCurved[j][i].Z, allCurved[j][i].Y));
-                        normals.Add(new Vector3(allCurved[j][i].X, -allCurved[j][i].Z, allCurved[j][i].Y));
+                        normals.Add(new Vector3(0,1,0));
+                        //normals.Add(new Vector3(allCurved[j][i].X, -allCurved[j][i].Z, allCurved[j][i].Y));
                     }
                 }
 
@@ -1041,7 +1044,7 @@ namespace UTS
             float hAngle, firstAngle = 0, lastAngle = 0;
             Quaternion rotfix = new Quaternion(0.7071068f, 0.7071068f, 0, 0);
 
-            //smoothify parh 
+            //smoothify path 
             path = generateBezier(path, sharpness);
             int vCount = path.Count;
 
