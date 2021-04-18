@@ -39,27 +39,30 @@ namespace UTS
         public static float RotateVelocityY = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
-        public static int LightMode = 3;
+        public static int LightMode = 2;
 
         public static int depthMapFBO;
         public static int depthMap;
 
         public static void SetScene(Vector2i Size)
         {
-            depthMapFBO = GL.GenFramebuffer();
-            depthMap = GL.GenTexture();
-            GL.BindTexture(TextureTarget.Texture2D, depthMap);
-            GL.TexImage2D(TextureTarget.Texture2D, 0 ,PixelInternalFormat.DepthComponent,Window.SHADOW_RESOLUTION,Window.SHADOW_RESOLUTION,0,PixelFormat.DepthComponent,PixelType.Float, IntPtr.Zero);
-            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureMinFilter, (float)TextureMinFilter.Nearest);
-            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureMagFilter, (float)TextureMagFilter.Nearest);
-            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureWrapS, (float)TextureWrapMode.ClampToBorder);
-            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureWrapT, (float)TextureWrapMode.ClampToBorder);
-            GL.TexParameterI(TextureTarget.Texture2D,TextureParameterName.TextureBorderColor, new int[]{1,1,1,1 });
-            GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
-            GL.FramebufferTexture2D(FramebufferTarget.Framebuffer,FramebufferAttachment.DepthAttachment,TextureTarget.Texture2D, depthMap, 0);
-            GL.DrawBuffer(DrawBufferMode.None);
-            GL.ReadBuffer(ReadBufferMode.None);
-            GL.BindFramebuffer(FramebufferTarget.Framebuffer,0);
+            if (LightMode > 3)
+            {
+                depthMapFBO = GL.GenFramebuffer();
+                depthMap = GL.GenTexture();
+                GL.BindTexture(TextureTarget.Texture2D, depthMap);
+                GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.DepthComponent, Window.SHADOW_RESOLUTION, Window.SHADOW_RESOLUTION, 0, PixelFormat.DepthComponent, PixelType.Float, IntPtr.Zero);
+                GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (float)TextureMinFilter.Nearest);
+                GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (float)TextureMagFilter.Nearest);
+                GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (float)TextureWrapMode.ClampToBorder);
+                GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (float)TextureWrapMode.ClampToBorder);
+                GL.TexParameterI(TextureTarget.Texture2D, TextureParameterName.TextureBorderColor, new int[] { 1, 1, 1, 1 });
+                GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
+                GL.FramebufferTexture2D(FramebufferTarget.Framebuffer, FramebufferAttachment.DepthAttachment, TextureTarget.Texture2D, depthMap, 0);
+                GL.DrawBuffer(DrawBufferMode.None);
+                GL.ReadBuffer(ReadBufferMode.None);
+                GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+            }
 
             WindowSize = Size;
 

@@ -200,7 +200,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("Kepala"));
 					scene.lastChild().lastChild().lastChild().createCylinder();
 					scene.lastChild().lastChild().lastChild().scale(0.56409f, 0.56409f, 0.66713f);
-					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, -0.00000f);
+					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, -0.00000f, -0.00000f, 0.00000f);
 					scene.lastChild().lastChild().lastChild().translate(-0.06000f, -0.00000f, 0.73000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
@@ -208,7 +208,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("Lidah"));
 					scene.lastChild().lastChild().lastChild().createCylinder();
 					scene.lastChild().lastChild().lastChild().scale(0.37987f, 0.18635f, 0.06451f);
-					scene.lastChild().lastChild().lastChild().rotateQ(0.96858f, 0.00000f, 0.24869f, -0.00000f);
+					scene.lastChild().lastChild().lastChild().rotateQ(0.96858f, -0.00000f, 0.24869f, 0.00000f);
 					scene.lastChild().lastChild().lastChild().translate(0.66000f, -0.03000f, -0.19000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.80000f, 0.04368f, 0.06054f);
@@ -217,14 +217,14 @@ namespace UTS
 					scene.lastChild().lastChild().lastChild().createCylinder();
 					scene.lastChild().lastChild().lastChild().scale(0.45129f, 0.45129f, 0.39890f);
 					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, -0.70711f, 0.00000f);
-					scene.lastChild().lastChild().lastChild().translate(0.55000f, 0.00000f, 0.38000f);
+					scene.lastChild().lastChild().lastChild().translate(0.55000f, -0.00000f, 0.38000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
 
 					scene.lastChild().lastChild().addChild(new Object("MulutAtas"));
 					scene.lastChild().lastChild().lastChild().createCylinder();
 					scene.lastChild().lastChild().lastChild().scale(0.82405f, 0.70405f, 0.09732f);
-					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
+					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, -0.00000f, -0.00000f, 0.00000f);
 					scene.lastChild().lastChild().lastChild().translate(0.07000f, -0.00000f, -0.01000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
@@ -232,7 +232,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("MulutBawah"));
 					scene.lastChild().lastChild().lastChild().createCylinder();
 					scene.lastChild().lastChild().lastChild().scale(0.64392f, 0.64392f, 0.07605f);
-					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, -0.00000f);
+					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, -0.00000f, 0.00000f, 0.00000f);
 					scene.lastChild().lastChild().lastChild().translate(0.04000f, -0.00000f, -0.21000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.98824f, 0.72157f, 0.16078f);
@@ -240,7 +240,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("HidungDepan"));
 					scene.lastChild().lastChild().lastChild().createBall(0.5f);
 					scene.lastChild().lastChild().lastChild().scale(0.42832f, 0.42832f, 0.42832f);
-					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, -0.00000f, 0.70711f);
+					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, 0.00000f, 0.70711f);
 					scene.lastChild().lastChild().lastChild().translate(0.90840f, -0.00711f, 0.38484f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.08627f, 0.06275f, 0.01290f);
@@ -248,7 +248,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("MataKanan"));
 					scene.lastChild().lastChild().lastChild().createBall(0.5f);
 					scene.lastChild().lastChild().lastChild().scale(0.07312f, 0.09312f, 0.09312f);
-					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, -0.00000f, 0.70711f);
+					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, 0.00000f, -0.00000f, 0.70711f);
 					scene.lastChild().lastChild().lastChild().translate(0.47840f, -0.10711f, 0.99484f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
@@ -256,7 +256,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("MataKiri"));
 					scene.lastChild().lastChild().lastChild().createBall(0.5f);
 					scene.lastChild().lastChild().lastChild().scale(0.07312f, 0.09312f, 0.09312f);
-					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, 0.00000f, 0.70711f);
+					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, -0.00000f, 0.70711f);
 					scene.lastChild().lastChild().lastChild().translate(0.47840f, 0.09289f, 0.99484f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(1.00000f, 1.00000f, 1.00000f);
@@ -264,7 +264,7 @@ namespace UTS
 					scene.lastChild().lastChild().addChild(new Object("PupilKanan"));
 					scene.lastChild().lastChild().lastChild().createBall(0.5f);
 					scene.lastChild().lastChild().lastChild().scale(0.03591f, 0.02573f, 0.04573f);
-					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, -0.00000f, -0.00000f, 0.70711f);
+					scene.lastChild().lastChild().lastChild().rotateQ(0.70711f, 0.00000f, -0.00000f, 0.70711f);
 					scene.lastChild().lastChild().lastChild().translate(0.55840f, -0.10711f, 0.99484f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.00000f, 0.00000f, 0.00000f);
@@ -301,7 +301,7 @@ namespace UTS
 
 					scene.lastChild().lastChild().lastChild().scale(2.03873f, 2.03873f, 2.03873f);
 					scene.lastChild().lastChild().lastChild().rotateQ(0.66005f, -0.23599f, 0.23372f, 0.67381f);
-					scene.lastChild().lastChild().lastChild().translate(-0.09047f, -0.56029f, 0.91418f);
+					scene.lastChild().lastChild().lastChild().translate(-0.09048f, -0.56029f, 0.91418f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
 
@@ -321,14 +321,14 @@ namespace UTS
 
 					scene.lastChild().lastChild().lastChild().scale(2.03873f, 2.03873f, 2.03873f);
 					scene.lastChild().lastChild().lastChild().rotateQ(0.69923f, 0.07736f, -0.08779f, 0.70526f);
-					scene.lastChild().lastChild().lastChild().translate(-0.09003f, 0.52952f, 0.92100f);
+					scene.lastChild().lastChild().lastChild().translate(-0.09003f, 0.52953f, 0.92100f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
 
 					scene.lastChild().lastChild().addChild(new Object("TopiTepi"));
 					scene.lastChild().lastChild().lastChild().createTorus();
 					scene.lastChild().lastChild().lastChild().scale(0.56735f, 0.56735f, 0.56735f);
-					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, -0.00000f, 0.00000f, -0.00000f);
+					scene.lastChild().lastChild().lastChild().rotateQ(1.00000f, -0.00000f, -0.00000f, 0.00000f);
 					scene.lastChild().lastChild().lastChild().translate(-0.02000f, -0.00000f, 1.29000f);
 					scene.lastChild().lastChild().lastChild().centerOrigin();
 					scene.lastChild().lastChild().lastChild().setColor(0.07451f, 0.32157f, 0.50588f);
@@ -336,7 +336,7 @@ namespace UTS
 				} // Children of 'KepalaAnjing'
 
 				scene.lastChild().lastChild().scale(1.00000f, 1.00000f, 1.00000f);
-				scene.lastChild().lastChild().rotateQ(0.99027f, -0.13917f, 0.00000f, 0.00000f);
+				scene.lastChild().lastChild().rotateQ(0.99956f, -0.02764f, 0.00653f, 0.00803f);
 				scene.lastChild().lastChild().translate(1.70000f, 0.37000f, 1.59896f);
 				scene.lastChild().lastChild().centerOrigin();
 				scene.lastChild().lastChild().setColor(1.0f, 1.0f, 0.0f);
@@ -1238,8 +1238,8 @@ namespace UTS
 			scene.lastChild().setColor(0.31765f, 0.19216f, 0.03922f);
 
 
-			KepalaAnjingScale.s = 0.2f;
-			GoyangBuntutScale.s = 0.8f;
+			KepalaAnjingScale.s = 0.002f;
+			GoyangBuntutScale.s = 0.008f;
 		}
 
 		public static void Animations(ref Object scene)

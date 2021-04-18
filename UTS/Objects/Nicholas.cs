@@ -1969,12 +1969,12 @@ namespace UTS
 			scene.lastChild().setColor(0.15743f, 0.15743f, 0.15743f);
 
 
-			DaunPohonAnimator.s = 0.2f;
-            TitleAnimator.s = 0.1f;
+			DaunPohonAnimator.s = 0.002f;
+            TitleAnimator.s = 0.001f;
 
-			CerobongAnimator.s = 0.15f;
-			CerobongAnimator1.s = 0.15f;
-			CerobongAnimator2.s = 0.15f;
+			CerobongAnimator.s = 0.0015f;
+			CerobongAnimator1.s = 0.0015f;
+			CerobongAnimator2.s = 0.0015f;
 
 			CerobongAnimator.o = 0f;
 			CerobongAnimator1.o = 0.1f;

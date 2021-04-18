@@ -71,7 +71,7 @@ namespace UTS
         public static void Tick(FrameEventArgs e) {
             foreach (var instant in Animator.instances)
             {
-                instant.p += instant.s * (float)e.Time;
+                instant.p += instant.s;
                 if (instant.p > 1.0 + instant.o) instant.p = 0;
             }
         }

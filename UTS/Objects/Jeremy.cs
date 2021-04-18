@@ -502,7 +502,7 @@ namespace UTS
 
 			scene.lastChild().scale(1.00000f, 1.00000f, 1.00000f);
 			scene.lastChild().rotateQ(1.00000f, 0.00000f, 0.00000f, 0.00000f);
-			scene.lastChild().translate(3.41279f, -3.37982f, 3.96967f);
+			scene.lastChild().translate(3.41279f, -3.37982f, 2.33825f);
 			scene.lastChild().centerOrigin();
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
 
@@ -567,7 +567,7 @@ namespace UTS
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
 
 
-			TanganTimmyRot.s = 0.2f;
+			TanganTimmyRot.s = 0.002f;
 		}
 
 		public static void Animations(ref Object scene)
