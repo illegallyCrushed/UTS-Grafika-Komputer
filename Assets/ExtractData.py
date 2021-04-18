@@ -1,3 +1,4 @@
+#made by nsv
 import bpy
 
 def generateObject(object, file, order):
