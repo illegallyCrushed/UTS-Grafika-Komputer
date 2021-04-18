@@ -1987,12 +1987,22 @@ namespace UTS
             scene.findChild("BigTitleBezier.001").scale(TitleAnimator.MinMaxBounce(0.9995f, 1.0005f));
 
 			scene.findChild("Pohon").findChild("DaunPohon").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
-
 			scene.findChild("Pohon").findChild("DaunPohon.001").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
 			scene.findChild("Pohon").findChild("DaunPohon.002").scaleZ(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
 			scene.findChild("Pohon").findChild("DaunPohon").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
             scene.findChild("Pohon").findChild("DaunPohon.001").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
             scene.findChild("Pohon").findChild("DaunPohon.002").translateZ(DaunPohonAnimator.MinMaxBounce(-0.001f, 0.001f));
+
+			scene.findChild("Awan").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.001").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.002").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.003").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.004").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.005").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.006").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.007").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+			scene.findChild("Awan.008").scaleX(DaunPohonAnimator.MinMaxBounce(0.999f, 1.001f));
+
 
 			if (CerobongAnimator.Linear() > 0 && CerobongAnimator.Linear() < 1)
 			{

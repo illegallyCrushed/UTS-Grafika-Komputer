@@ -567,15 +567,15 @@ namespace UTS
 			scene.lastChild().setColor(1.0f, 1.0f, 0.0f);
 
 
-			TanganTimmyRot.s = 0.1f;
+			TanganTimmyRot.s = 0.2f;
 		}
 
 		public static void Animations(ref Object scene)
         {
 			scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.2f, 0.2f));
 			scene.findChild("timmy").rotateZ(2f);
-			scene.findChild("timmy").translateZ(TanganTimmyRot.MinMaxLinear(0.025f, -0.025f));
-			scene.findChild("Tramp").findChild("karet").scaleZ(TanganTimmyRot.MinMaxLinear(0.997f, 1.003f));
+			scene.findChild("timmy").translateZ(TanganTimmyRot.MinMaxLinear(0.05f, -0.05f));
+			scene.findChild("Tramp").findChild("karet").scaleZ(TanganTimmyRot.MinMaxLinear(0.996f, 1.004f));
 
 			//scene.findChild("timmy").findChild("Tangantimmy").rotateX(TanganTimmyRot.MinMaxBounce(-0.2f, 0.2f));
 			//scene.findChild("timmy").rotateZ(2f); scene.findChild("timmy").rotateY(2f);

@@ -14,14 +14,20 @@ namespace UTS
     class Scene
     {
 
-        // Global Variables;
+        public static Shader Shader_Color;
+        public static Shader Shader_Wireframe;
+        public static Shader Shader_Depth;
         public static Object scene = new Object("scene");
         public static Matrix4 ProjectionMatrix;
         public static Matrix4 ViewMatrix;
-        public static Vector3 LightPosition = new Vector3(5.0f, 15.0f, 0.0f);
-        public static Vector3 LightDirection = new Vector3(5, 5f, 2f);
+        public static Matrix4 LightMatrix;
+        public static Matrix4 LightProjectionMatrix;
+        public static Matrix4 LightSpaceMatrix;
+        public static Vector3 LightPosition = new Vector3(10f, 15.0f, 0.0f);
+        public static Vector3 LightTo = new Vector3(0,0,0);
+        public static Vector3 LightUpwards = new Vector3(0,1,0);
         public static Vector3 ViewPosition = new Vector3(20, 3, 0);
-        public static Vector3 ViewDirection = new Vector3(0, 0, 0);
+        public static Vector3 ViewTo = new Vector3(0, 0, 0);
         public static Vector3 ViewUpwards = new Vector3(0, 1, 0);
         public static Vector3 WireframeColor = new Vector3(1, 1, 1);
         public static Vector3 SkyColor = new Vector3(0.529f, 0.808f, 0.922f);
@@ -33,11 +39,38 @@ namespace UTS
         public static float RotateVelocityY = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
-        public static bool Flat = false;
+        public static int LightMode = 3;
+
+        public static int depthMapFBO;
+        public static int depthMap;
 
         public static void SetScene(Vector2i Size)
         {
+            depthMapFBO = GL.GenFramebuffer();
+            depthMap = GL.GenTexture();
+            GL.BindTexture(TextureTarget.Texture2D, depthMap);
+            GL.TexImage2D(TextureTarget.Texture2D, 0 ,PixelInternalFormat.DepthComponent,Window.SHADOW_RESOLUTION,Window.SHADOW_RESOLUTION,0,PixelFormat.DepthComponent,PixelType.Float, IntPtr.Zero);
+            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureMinFilter, (float)TextureMinFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureMagFilter, (float)TextureMagFilter.Nearest);
+            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureWrapS, (float)TextureWrapMode.ClampToBorder);
+            GL.TexParameter(TextureTarget.Texture2D,TextureParameterName.TextureWrapT, (float)TextureWrapMode.ClampToBorder);
+            GL.TexParameterI(TextureTarget.Texture2D,TextureParameterName.TextureBorderColor, new int[]{1,1,1,1 });
+            GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
+            GL.FramebufferTexture2D(FramebufferTarget.Framebuffer,FramebufferAttachment.DepthAttachment,TextureTarget.Texture2D, depthMap, 0);
+            GL.DrawBuffer(DrawBufferMode.None);
+            GL.ReadBuffer(ReadBufferMode.None);
+            GL.BindFramebuffer(FramebufferTarget.Framebuffer,0);
+
             WindowSize = Size;
+
+            Shader_Color = new Shader("../../../Shaders/shader.vert", "../../../Shaders/shader.frag");
+            //Shader_Color = new Shader("../../../Shaders/shader_debug.vert", "../../../Shaders/shader_debug.frag");
+            Shader_Wireframe = new Shader("../../../Shaders/shader_line.vert", "../../../Shaders/shader_line.frag");
+            Shader_Depth = new Shader("../../../Shaders/shader_depth.vert", "../../../Shaders/shader_depth.frag");
+
+            LightProjectionMatrix = Matrix4.CreateOrthographic(15, 15, 1.0f, 7.5f);
+            LightMatrix = Matrix4.LookAt(LightPosition, LightTo, LightUpwards);
+            LightSpaceMatrix = LightMatrix * LightProjectionMatrix;
 
             Leonando.Objects(ref scene);
             Jeremy.Objects(ref scene);
@@ -56,8 +89,21 @@ namespace UTS
         public static void RenderScene()
         {
             ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView(FOV.Rad(), (float)WindowSize.X / (float)WindowSize.Y, 0.1f, 100.0f);
-            ViewMatrix = Matrix4.LookAt(ViewPosition, ViewDirection, ViewUpwards);
-            scene.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, Solids, Wireframe, Flat);
+
+            ViewMatrix = Matrix4.LookAt(ViewPosition, ViewTo, ViewUpwards);
+
+            //// get depth, 1st pass
+            //GL.Viewport(0, 0, Window.SHADOW_RESOLUTION, Window.SHADOW_RESOLUTION);
+            //GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
+            //GL.Clear(ClearBufferMask.DepthBufferBit);
+            //scene.renderDepth();
+
+            // render color, 2nd pass
+            GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+            GL.Viewport(0, 0, WindowSize.X, WindowSize.Y);
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            GL.BindTexture(TextureTarget.Texture2D, depthMap);
+            scene.render();
         }
 
         public static void Movement(FrameEventArgs e, Window w)
@@ -70,37 +116,37 @@ namespace UTS
             if (w.KeyboardState.IsKeyDown(Keys.W))
             {
                 ViewPosition -= new Vector3(1, 0, 0) * speed * (float)e.Time;
-                ViewDirection -= new Vector3(1, 0, 0) * speed * (float)e.Time;
+                ViewTo -= new Vector3(1, 0, 0) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.S))
             {
                 ViewPosition += new Vector3(1, 0, 0) * speed * (float)e.Time;
-                ViewDirection += new Vector3(1, 0, 0) * speed * (float)e.Time;
+                ViewTo += new Vector3(1, 0, 0) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.A))
             {
                 ViewPosition += new Vector3(0, 0, 1) * speed * (float)e.Time;
-                ViewDirection += new Vector3(0, 0, 1) * speed * (float)e.Time;
+                ViewTo += new Vector3(0, 0, 1) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.D))
             {
                 ViewPosition -= new Vector3(0, 0, 1) * speed * (float)e.Time;
-                ViewDirection -= new Vector3(0, 0, 1) * speed * (float)e.Time;
+                ViewTo -= new Vector3(0, 0, 1) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.Space))
             {
                 ViewPosition += new Vector3(0, 1, 0) * speed * (float)e.Time;
-                ViewDirection += new Vector3(0, 1, 0) * speed * (float)e.Time;
+                ViewTo += new Vector3(0, 1, 0) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.LeftShift))
             {
                 ViewPosition -= new Vector3(0, 1, 0) * speed * (float)e.Time;
-                ViewDirection -= new Vector3(0, 1, 0) * speed * (float)e.Time;
+                ViewTo -= new Vector3(0, 1, 0) * speed * (float)e.Time;
             }
 
             if (w.KeyboardState.IsKeyDown(Keys.R))
@@ -111,7 +157,7 @@ namespace UTS
                 scene.rotateZ(45f);
 
                 ViewPosition = new Vector3(20, 3, 0);
-                ViewDirection = new Vector3(0, 0, 0);
+                ViewTo = new Vector3(0, 0, 0);
 
                 FOV = 45f;
             }

@@ -18,10 +18,6 @@ namespace UTS
         private int _elementBufferObject;
         private int _normalsBufferObject;
 
-        // Shaders
-        private Shader _shader;
-        private Shader _shader_line;
-
         // Vectors
         private List<Vector3> vertices = new List<Vector3>();
         private List<Vector3> normals = new List<Vector3>();
@@ -30,8 +26,8 @@ namespace UTS
         private List<uint> vertexIndices = new List<uint>();
 
         // Transformation
-        public Vector3 scalation = new Vector3(1,1,1);
-        public Vector3 translation = new Vector3(0,0,0);
+        public Vector3 scalation = new Vector3(1, 1, 1);
+        public Vector3 translation = new Vector3(0, 0, 0);
         public Quaternion rotation = new Quaternion();
 
         private Matrix4 processed_transform;
@@ -95,11 +91,6 @@ namespace UTS
                 vertexIndices.Count * sizeof(uint),
                 vertexIndices.ToArray(), BufferUsageHint.StaticDraw);
 
-            _shader = new Shader("../../../Shaders/shader.vert", "../../../Shaders/shader.frag");
-            _shader_line = new Shader("../../../Shaders/shader_line.vert", "../../../Shaders/shader_line.frag");
-            _shader.Use();
-            _shader_line.Use();
-
             foreach (var child in children)
             {
                 child.init();
@@ -148,7 +139,7 @@ namespace UTS
             }
         }
 
-        public void setTransform(Matrix4 transformation,int type = 0, bool parentAction = false)
+        public void setTransform(Matrix4 transformation, int type = 0, bool parentAction = false)
         {
             processed_transform = Matrix4.Identity;
 
@@ -175,7 +166,8 @@ namespace UTS
                     object_transform = object_transform * transformation;
                 }
 
-                else {
+                else
+                {
                     //clear scale
                     object_transform = object_transform.ClearScale();
                     object_transform = object_transform * transformation;
@@ -191,7 +183,7 @@ namespace UTS
 
             foreach (var child in children)
             {
-                child.setTransform(transformation,type, isParent());
+                child.setTransform(transformation, type, isParent());
             }
         }
 
@@ -243,14 +235,14 @@ namespace UTS
         public void translate(float x, float y, float z, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)), ignoreOrigin);
-            translation += new Vector3(x,y,z);
+            translation += new Vector3(x, y, z);
             //applyTransform(Matrix4.CreateTranslation(new Vector3(x, y, z)), ignoreOrigin);
         }
 
         public void scaleX(float x, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(x, 1, 1)), ignoreOrigin);
-            scalation *= new Vector3(x,1,1);
+            scalation *= new Vector3(x, 1, 1);
         }
 
         public void scaleY(float y, bool ignoreOrigin = false)
@@ -264,14 +256,14 @@ namespace UTS
         {
             applyTransform(Matrix4.CreateScale(new Vector3(1, z, 1)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(1, 1, z)), ignoreOrigin);
-            scalation *= new Vector3(1,1, z);
+            scalation *= new Vector3(1, 1, z);
         }
 
         public void scale(float x, float y, float z, bool ignoreOrigin = false)
         {
             applyTransform(Matrix4.CreateScale(new Vector3(x, z, y)), ignoreOrigin);
             //applyTransform(Matrix4.CreateScale(new Vector3(x, y, z)), ignoreOrigin);
-            scalation *= new Vector3(x,y,z);
+            scalation *= new Vector3(x, y, z);
         }
 
         public void scale(float factor, bool ignoreOrigin = false)
@@ -281,9 +273,10 @@ namespace UTS
             scalation *= new Vector3(factor, factor, factor);
         }
 
-        public void setRotation(float x, float y, float z, bool ignoreOrigin = false) {
+        public void setRotation(float x, float y, float z, bool ignoreOrigin = false)
+        {
             Matrix4 combinedRotation = Matrix4.CreateRotationX(x.Rad()) * Matrix4.CreateRotationY(z.Rad()) * Matrix4.CreateRotationZ(y.Rad());
-            setTransform(combinedRotation,0, ignoreOrigin);
+            setTransform(combinedRotation, 0, ignoreOrigin);
         }
 
         //public void setRotationQ(float w, float x, float y, float z, bool ignoreOrigin = false)
@@ -295,25 +288,25 @@ namespace UTS
         public void setTranslateX(float x, bool ignoreOrigin = false)
         {
 
-            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, 0, 0)),1, ignoreOrigin);
-            translation = new Vector3(x,translation.Y,translation.Z);
+            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, 0, 0)), 1, ignoreOrigin);
+            translation = new Vector3(x, translation.Y, translation.Z);
         }
 
         public void setTranslateY(float y, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateTranslation(new Vector3(0, 0, -y / 2)),1, ignoreOrigin);
+            setTransform(Matrix4.CreateTranslation(new Vector3(0, 0, -y / 2)), 1, ignoreOrigin);
             translation = new Vector3(translation.X, y, translation.Z);
         }
 
         public void setTranslateZ(float z, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateTranslation(new Vector3(0, z / 2, 0)),1, ignoreOrigin);
+            setTransform(Matrix4.CreateTranslation(new Vector3(0, z / 2, 0)), 1, ignoreOrigin);
             translation = new Vector3(translation.X, translation.Y, z);
         }
 
         public void setTranslate(float x, float y, float z, bool ignoreOrigin = false)
         {
-            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)),1, ignoreOrigin);
+            setTransform(Matrix4.CreateTranslation(new Vector3(x / 2, z / 2, -y / 2)), 1, ignoreOrigin);
             translation = new Vector3(translation.X, translation.Y, translation.Z);
         }
 
@@ -363,48 +356,26 @@ namespace UTS
             origin_transform.Invert();
         }
 
-        public void restoreTransform() {
+        public void restoreTransform()
+        {
 
             object_transform = saved_transform;
         }
-
-        public void render(Matrix4 ProjectionMatrix, Matrix4 ViewMatrix, Vector3 LightPosition, Vector3 LightDirection, Vector3 LightColor, float LightPower, Vector3 ViewPosition, Vector3 WireframeColor, bool solids, bool wireframe, bool flat)
+        public void renderDepth()
         {
-
-
-            _shader_line.SetMatrix4("mvp_transform", processed_transform * ViewMatrix * ProjectionMatrix);
-            _shader_line.SetVector3("lineColor", WireframeColor);
-            //_shader.SetMatrix4("mvp_transform", processed_transform * ViewMatrix * ProjectionMatrix);
-            _shader.SetInt("simple", flat?1:0);
-            _shader.SetMatrix4("model", processed_transform);
-            _shader.SetMatrix4("view", ViewMatrix);
-            _shader.SetMatrix4("projection", ProjectionMatrix);
-            _shader.SetVector3("material.ambient", material.diffuse * new Vector3(1,1,1));
-            _shader.SetVector3("material.diffuse", material.diffuse);
-            _shader.SetVector3("material.specular", material.specular);
-            _shader.SetFloat("material.shininess", (float)material.specularExponent);
-            //_shader.SetVector3("LightPos_World", LightPosition);
-            //_shader.SetVector3("LightDir_World", LightDirection);
-            //_shader.SetVector3("LightColor", LightColor);
-            _shader.SetFloat("alpha", material.alpha);
-            _shader.SetVector3("light.position", LightPosition);
-            _shader.SetVector3("light.ambient", LightColor);
-            _shader.SetVector3("light.diffuse", LightColor);
-            _shader.SetVector3("light.specular", LightColor);
-            _shader.SetVector3("viewPos", ViewPosition);
-            //_shader.SetFloat("LightPower", LightPower);
-
+            Scene.Shader_Depth.SetMatrix4("model", processed_transform);
+            Scene.Shader_Depth.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
             GL.BindVertexArray(_vertexArrayObject);
-            if (solids)
+
+            if (Scene.Solids)
             {
-                _shader.Use();
+                Scene.Shader_Depth.Use();
                 GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
             }
-            if (wireframe)
+            if (Scene.Wireframe)
             {
-                _shader_line.Use();
+                Scene.Shader_Depth.Use();
                 GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
-                //GL.DrawArrays(PrimitiveType.LineStrip, 0, vertices.Count);
                 GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
                 GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
             }
@@ -413,7 +384,50 @@ namespace UTS
 
             foreach (var child in children)
             {
-                child.render(ProjectionMatrix, ViewMatrix, LightPosition, LightDirection, LightColor, LightPower, ViewPosition, WireframeColor, solids, wireframe,flat);
+                child.renderDepth();
+            }
+        }
+        public void render()
+        {
+
+            Scene.Shader_Wireframe.SetMatrix4("mvp_transform", processed_transform * Scene.ViewMatrix * Scene.ProjectionMatrix);
+            Scene.Shader_Wireframe.SetVector3("lineColor", Scene.WireframeColor);
+            Scene.Shader_Color.SetInt("simple", Scene.LightMode);
+            Scene.Shader_Color.SetMatrix4("model", processed_transform);
+            Scene.Shader_Color.SetMatrix4("view", Scene.ViewMatrix);
+            Scene.Shader_Color.SetMatrix4("projection", Scene.ProjectionMatrix);
+            Scene.Shader_Color.SetVector3("material.ambient", material.diffuse * new Vector3(0.9f,0.9f,0.9f));
+            Scene.Shader_Color.SetVector3("material.diffuse", material.diffuse);
+            Scene.Shader_Color.SetVector3("material.specular", material.specular);
+            Scene.Shader_Color.SetFloat("material.shininess", (float)material.specularExponent);
+            Scene.Shader_Color.SetFloat("alpha", material.alpha);
+            Scene.Shader_Color.SetVector3("light.position", Scene.LightPosition);
+            Scene.Shader_Color.SetVector3("light.ambient", Scene.LightColor);
+            Scene.Shader_Color.SetVector3("light.diffuse", Scene.LightColor);
+            Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
+            Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
+            //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
+
+            GL.BindVertexArray(_vertexArrayObject);
+
+            if (Scene.Solids)
+            {
+                Scene.Shader_Color.Use();
+                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+            }
+            if (Scene.Wireframe)
+            {
+                Scene.Shader_Wireframe.Use();
+                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+            }
+
+            GL.BindVertexArray(0);
+
+            foreach (var child in children)
+            {
+                child.render();
             }
         }
 
@@ -441,45 +455,75 @@ namespace UTS
 
         public void createCube()
         {
-
             delete();
-
-            vertices.Add(new Vector3(0.5f, 0.5f, -0.5f));
-            vertices.Add(new Vector3(0.5f, -0.5f, -0.5f));
             vertices.Add(new Vector3(0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, 0.5f, -0.5f));
             vertices.Add(new Vector3(0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, -0.5f, -0.5f));
             vertices.Add(new Vector3(-0.5f, 0.5f, -0.5f));
-            vertices.Add(new Vector3(-0.5f, -0.5f, -0.5f));
             vertices.Add(new Vector3(-0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.5f, -0.5f));
             vertices.Add(new Vector3(-0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.5f, -0.5f));
+            vertices.Add(new Vector3(0.5f, 0.5f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.5f, -0.5f));
+            vertices.Add(new Vector3(0.5f, -0.5f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, 0.5f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, -0.5f, 0.5f));
+            vertices.Add(new Vector3(0.5f, 0.5f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.5f, -0.5f));
+            vertices.Add(new Vector3(0.5f, -0.5f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.5f, -0.5f));
 
-            normals.Add(new Vector3(0.5f, 0.5f, -0.5f));
-            normals.Add(new Vector3(0.5f, -0.5f, -0.5f));
-            normals.Add(new Vector3(0.5f, 0.5f, 0.5f));
-            normals.Add(new Vector3(0.5f, -0.5f, 0.5f));
-            normals.Add(new Vector3(-0.5f, 0.5f, -0.5f));
-            normals.Add(new Vector3(-0.5f, -0.5f, -0.5f));
-            normals.Add(new Vector3(-0.5f, 0.5f, 0.5f));
-            normals.Add(new Vector3(-0.5f, -0.5f, 0.5f));
+            normals.Add(new Vector3(1, 0, 0));
+            normals.Add(new Vector3(1, 0, 0));
+            normals.Add(new Vector3(1, 0, 0));
+            normals.Add(new Vector3(1, 0, 0));
+            normals.Add(new Vector3(-1,0,0));
+            normals.Add(new Vector3(-1,0,0));
+            normals.Add(new Vector3(-1,0,0));
+            normals.Add(new Vector3(-1,0,0));
+            normals.Add(new Vector3(0,1,0));
+            normals.Add(new Vector3(0,1,0));
+            normals.Add(new Vector3(0,1,0));
+            normals.Add(new Vector3(0,1,0));
+            normals.Add(new Vector3(0,-1,0));
+            normals.Add(new Vector3(0,-1,0));
+            normals.Add(new Vector3(0,-1,0));
+            normals.Add(new Vector3(0,-1,0));
+            normals.Add(new Vector3(0,0,1));
+            normals.Add(new Vector3(0,0,1));
+            normals.Add(new Vector3(0,0,1));
+            normals.Add(new Vector3(0,0,1));
+            normals.Add(new Vector3(0,0,-1));
+            normals.Add(new Vector3(0,0,-1));
+            normals.Add(new Vector3(0,0,-1));
+            normals.Add(new Vector3(0,0,-1));
 
             vertexIndices = new List<uint>(new uint[] {
-                4 ,2 ,0 ,
-                2 ,7 ,3 ,
-                6 ,5 ,7 ,
-                1 ,7 ,5 ,
-                0 ,3 ,1 ,
-                4 ,1 ,5 ,
-                4 ,6 ,2 ,
-                2 ,6 ,7 ,
-                6 ,4 ,5 ,
-                1 ,3 ,7 ,
-                0 ,2 ,3 ,
-                4 ,0 ,1
+                0,2,1,
+                2,3,1,
+                4,6,5,
+                6,7,5,
+                8,10,9,
+                10,11,9,
+                12,14,13,
+                14,15,13,
+                16,18,17,
+                18,19,17,
+                20,22,21,
+                22,23,21
             });
             init();
         }
 
-        
+
 
         public void createBall(float percent = 1)
         {
@@ -506,12 +550,17 @@ namespace UTS
                     float x = radius * (float)Math.Cos(vAngle) * (float)Math.Cos(hAngle);
                     float y = radius * (float)Math.Cos(vAngle) * (float)Math.Sin(hAngle);
                     float z = radius * (float)Math.Sin(vAngle);
-                    vertices.Add(new Vector3(x, y, z));
-                    normals.Add(new Vector3(x, y, z));
+
+                    //patch rotation dibawah
+                    vertices.Add(new Vector3(x, -z, y));
+                    normals.Add(new Vector3(x, -z, y));
+
+                    //vertices.Add(new Vector3(x, y, z));
+                    //normals.Add(new Vector3(x, y, z));
                 }
             }
             vertices.Add(new Vector3(0, 0, 0));
-            normals.Add(new Vector3(0, 0, 0));
+            normals.Add(new Vector3(0, 1, 0));
 
             uint k1, k2;
             for (int i = 0; i < vCount; i++)
@@ -548,7 +597,7 @@ namespace UTS
                 }
             }
             init();
-            rotateX(90f);
+            //rotateX(90f);
             centerOrigin();
         }
 
@@ -587,16 +636,27 @@ namespace UTS
                     }
 
                     float z = vAngle - length / 2;
-                    vertices.Add(new Vector3(x, y, z));
-                    normals.Add(new Vector3(x, y, z));
+
+                    //patch rotation dibawah
+                    vertices.Add(new Vector3(x, -z, y));
+                    normals.Add(new Vector3(x, -z, y));
+
+                    //vertices.Add(new Vector3(x, y, z));
+                    //normals.Add(new Vector3(x, y, z));
                 }
             }
 
-            vertices.Add(new Vector3(0, 0, -length / 2));
-            normals.Add(new Vector3(0, 0, -length / 2));
+            vertices.Add(new Vector3(0, length / 2, 0));
+            normals.Add(new Vector3(0, 1, 0));
 
-            vertices.Add(new Vector3(0, 0, length / 2));
-            normals.Add(new Vector3(0, 0, length / 2));
+            vertices.Add(new Vector3(0, -length / 2, 0));
+            normals.Add(new Vector3(0, -1, 0));
+
+            //vertices.Add(new Vector3(0, 0, -length / 2));
+            //normals.Add(new Vector3(0, 0, -length / 2));
+
+            //vertices.Add(new Vector3(0, 0, length / 2));
+            //normals.Add(new Vector3(0, 0, length / 2));
 
             uint k1, k2;
             for (int i = 0; i < vCount; i++)
@@ -629,7 +689,7 @@ namespace UTS
             }
 
             init();
-            rotateX(90f);
+            //rotateX(90f);
             centerOrigin();
         }
 
@@ -638,32 +698,32 @@ namespace UTS
             createCylinder(percent, 0);
         }
 
-        public void createCapsule(float length = 1, float percent = 1)
-        {
+        //public void createCapsule(float length = 1, float percent = 1)
+        //{
 
-            delete();
+        //    delete();
 
-            addChild(new Object(name + ".top"));
-            lastChild().createBall(0.5f);
-            lastChild().rotateZ(180.0f);
-            lastChild().translateY(0.5f);
-            lastChild().centerOrigin();
+        //    addChild(new Object(name + ".top"));
+        //    lastChild().createBall(0.5f);
+        //    lastChild().rotateZ(180.0f);
+        //    lastChild().translateY(0.5f);
+        //    lastChild().centerOrigin();
 
-            addChild(new Object(name + ".mid"));
-            lastChild().createCylinder();
-            lastChild().scaleZ(0.5f);
-            lastChild().rotateX(90.0f);
-            lastChild().centerOrigin();
+        //    addChild(new Object(name + ".mid"));
+        //    lastChild().createCylinder();
+        //    lastChild().scaleZ(0.5f);
+        //    lastChild().rotateX(90.0f);
+        //    lastChild().centerOrigin();
 
-            addChild(new Object(name + ".bot"));
-            lastChild().createBall(0.5f);
-            lastChild().rotateZ(0);
-            lastChild().translateY(-0.5f);
-            lastChild().centerOrigin();
+        //    addChild(new Object(name + ".bot"));
+        //    lastChild().createBall(0.5f);
+        //    lastChild().rotateZ(0);
+        //    lastChild().translateY(-0.5f);
+        //    lastChild().centerOrigin();
 
-            rotateX(90f);
-            centerOrigin();
-        }
+        //    rotateX(90f);
+        //    centerOrigin();
+        //}
 
         public void createTorus(float percent = 1, float tubedia = 1f)
         {
@@ -693,8 +753,13 @@ namespace UTS
                     y = (torusdia / 2 + tubedia / 2 * (float)Math.Cos(vAngle)) * (float)Math.Sin(hAngle);
 
                     float z = tubedia / 2 * (float)Math.Sin(vAngle);
-                    vertices.Add(new Vector3(x, y, z));
-                    normals.Add(new Vector3(x, y, z));
+
+                    //patch rotation dibawah
+                    vertices.Add(new Vector3(x, -z, y));
+                    normals.Add(new Vector3(x, -z, y));
+
+                    //vertices.Add(new Vector3(x, y, z));
+                    //normals.Add(new Vector3(x, y, z));
                 }
             }
 
@@ -716,7 +781,7 @@ namespace UTS
             }
 
             init();
-            rotateX(90f);
+            //rotateX(90f);
             centerOrigin();
         }
 
@@ -725,59 +790,85 @@ namespace UTS
 
             delete();
 
-            vertices.Add(new Vector3(0.5f, 0.5f, 0));
-            vertices.Add(new Vector3(0.5f, -0.5f, 0));
-            vertices.Add(new Vector3(-0.5f, 0.5f, 0));
-            vertices.Add(new Vector3(-0.5f, -0.5f, 0));
+            //dua sisi biar normalsnya bagus
 
-            normals.Add(new Vector3(0.5f, 0.5f, 0));
-            normals.Add(new Vector3(0.5f, -0.5f, 0));
-            normals.Add(new Vector3(-0.5f, 0.5f, 0));
-            normals.Add(new Vector3(-0.5f, -0.5f, 0));
+            vertices.Add(new Vector3(0.5f,-0.005f, 0.5f));
+            vertices.Add(new Vector3(0.5f, -0.005f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.005f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, -0.005f, -0.5f));
+
+            vertices.Add(new Vector3(0.5f, 0.005f, 0.5f));
+            vertices.Add(new Vector3(0.5f, 0.005f, -0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.005f, 0.5f));
+            vertices.Add(new Vector3(-0.5f, 0.005f, -0.5f));
+
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, 1, 0));
+            normals.Add(new Vector3(0, 1, 0)); 
+            normals.Add(new Vector3(0, 1, 0));
+            normals.Add(new Vector3(0, 1, 0));
 
             vertexIndices = new List<uint>(new uint[] {
                 0, 1, 3,
-                0, 3, 2
+                0, 3, 2,
+                4, 5, 7,
+                4, 7, 6
             });
             init();
-            rotateX(90f);
         }
 
         public void createTriangle(bool right = false)
         {
 
+            //dua sisi biar normalsnya bagus
+
             delete();
             if (!right)
             {
-                vertices.Add(new Vector3(0.5f, -0.5f, 0));
-                vertices.Add(new Vector3(0.5f, 0.5f, 0));
-                vertices.Add(new Vector3(-0.5f, 0, 0));
+                vertices.Add(new Vector3(0.5f,-0.005f, -0.5f));
+                vertices.Add(new Vector3(0.5f, -0.005f, 0.5f));
+                vertices.Add(new Vector3(-0.5f, -0.005f, 0));
 
-                normals.Add(new Vector3(0.5f, -0.5f, 0));
-                normals.Add(new Vector3(0.5f, 0.5f, 0));
-                normals.Add(new Vector3(-0.5f, 0, 0));
+                vertices.Add(new Vector3(0.5f, 0.005f, -0.5f));
+                vertices.Add(new Vector3(0.5f, 0.005f, 0.5f));
+                vertices.Add(new Vector3(-0.5f, 0.005f, 0));
             }
-            else {
-                vertices.Add(new Vector3(0.5f, -0.5f, 0));
-                vertices.Add(new Vector3(0.5f, 0.5f, 0));
-                vertices.Add(new Vector3(-0.5f, 0.5f, 0));
+            else
+            {
+                vertices.Add(new Vector3(0.5f, -0.005f, -0.5f));
+                vertices.Add(new Vector3(0.5f, -0.005f, 0.5f));
+                vertices.Add(new Vector3(-0.5f, -0.005f, 0.5f));
 
-                normals.Add(new Vector3(0.5f, -0.5f, 0));
-                normals.Add(new Vector3(0.5f, 0.5f, 0));
-                normals.Add(new Vector3(-0.5f, 0.5f, 0));
+                vertices.Add(new Vector3(0.5f, 0.005f, -0.5f));
+                vertices.Add(new Vector3(0.5f, 0.005f, 0.5f));
+                vertices.Add(new Vector3(-0.5f, 0.005f, 0.5f));
             }
-            
+
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, -1, 0));
+            normals.Add(new Vector3(0, -1, 0));
+
+            normals.Add(new Vector3(0, 1, 0));
+            normals.Add(new Vector3(0, 1, 0));
+            normals.Add(new Vector3(0, 1, 0));
+
 
             vertexIndices = new List<uint>(new uint[] {
-               0,1,2
+               0,1,2,
+               3,4,5
             });
 
             init();
-            rotateX(90f);
         }
 
         public void createCircle(float percent = 1)
         {
+
+            //dua sisi biar normalsnya bagus
+
             delete();
             int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL;
             int hCount = sharpness;
@@ -796,15 +887,49 @@ namespace UTS
                 x = (float)0.5 * (float)Math.Cos(hAngle);
                 y = (float)0.5 * (float)Math.Sin(hAngle);
 
-                float z = 0;
-                vertices.Add(new Vector3(x, y, z));
-                normals.Add(new Vector3(x, y, z));
+                float z = -0.005f;
+
+                //patch rotation dibawah
+                vertices.Add(new Vector3(x, -z, y));
+                normals.Add(new Vector3(0,-1,0));
+                //vertices.Add(new Vector3(x, y, z));
+                //normals.Add(new Vector3(x, y, z));
             }
 
             vertices.Add(new Vector3(0, 0, 0));
-            normals.Add(new Vector3(0, 0, 0));
+            normals.Add(new Vector3(0, -1, 0));
+
+            for (int j = 0; j <= hCount / divide; j++)
+            {
+                hAngle = j * hStep;
+                float x = 0;
+                float y = 0;
+
+                x = (float)0.5 * (float)Math.Cos(hAngle);
+                y = (float)0.5 * (float)Math.Sin(hAngle);
+
+                float z = 0.005f;
+
+                //patch rotation dibawah
+                vertices.Add(new Vector3(x, -z, y));
+                normals.Add(new Vector3(0, 1, 0));
+                //vertices.Add(new Vector3(x, y, z));
+                //normals.Add(new Vector3(x, y, z));
+            }
+
+            vertices.Add(new Vector3(0, 0, 0));
+            normals.Add(new Vector3(0,1,0));
 
             uint k1 = 0, k2 = 1;
+            for (int j = 0; j < hCount / divide; j++, k1++, k2++)
+            {
+                vertexIndices.Add(k1);
+                vertexIndices.Add((uint)(vertices.Count/2.0f - 1));
+                vertexIndices.Add(k2);
+            }
+
+            k1 = (uint)(vertices.Count / 2.0f);
+            k2 = (uint)(vertices.Count / 2.0f);
             for (int j = 0; j < hCount / divide; j++, k1++, k2++)
             {
                 vertexIndices.Add(k1);
@@ -813,13 +938,13 @@ namespace UTS
             }
 
             init();
-            rotateX(90f);
+            //rotateX(90f);
             centerOrigin();
         }
 
 
 
-        public void createTerrain(float bumpyness = 0.1f, float detail = 3 , int seed = 0)
+        public void createTerrain(float bumpyness = 0.1f, float detail = 3, int seed = 0)
         {
 
             if (detail >= 3)
@@ -834,8 +959,8 @@ namespace UTS
                 float curvedetail = Window.ROUND_OBJECT_DETAIL_LEVEL;
                 float xdet = detail;
                 float ydet = detail;
-                float xstep = 1 / (xdet-1);
-                float ystep = 1 / (ydet-1);
+                float xstep = 1 / (xdet - 1);
+                float ystep = 1 / (ydet - 1);
                 float xdif, ydif;
 
                 for (int i = 0; i < ydet; i++)
@@ -847,7 +972,7 @@ namespace UTS
                         xdif = j * xstep - 0.5f;
                         float x = xdif;
                         float y = ydif;
-                       
+
                         float z = (float)(rand.NextDouble() - 0.5) * bumpyness / 2;
                         xPlanePoints.Add(new Vector3(x, y, z));
                     }
@@ -858,7 +983,7 @@ namespace UTS
                 List<List<Vector3>> curvedXPoints = new List<List<Vector3>>();
                 foreach (var xPoints in planePoints)
                 {
-                    curvedXPoints.Add(generateBezier(xPoints, 1,curvedetail));
+                    curvedXPoints.Add(generateBezier(xPoints, 1, curvedetail));
                 }
 
                 // curving x axis and store to temp
@@ -877,8 +1002,11 @@ namespace UTS
                 {
                     for (int j = 0; j < allCurved.Count; j++)
                     {
-                        vertices.Add(allCurved[j][i]);
-                        normals.Add(allCurved[j][i]);
+                        //vertices.Add(allCurved[j][i]);
+                        //normals.Add(allCurved[j][i]);
+                        //patch rotation dibawah
+                        vertices.Add(new Vector3(allCurved[j][i].X, -allCurved[j][i].Z, allCurved[j][i].Y));
+                        normals.Add(new Vector3(allCurved[j][i].X, -allCurved[j][i].Z, allCurved[j][i].Y));
                     }
                 }
 
@@ -890,7 +1018,7 @@ namespace UTS
 
                     for (int j = 0; j < allCurved.Count; j++, k1++, k2++)
                     {
-                        if (i < allCurved[0].Count-1 && j < allCurved.Count-1)
+                        if (i < allCurved[0].Count - 1 && j < allCurved.Count - 1)
                         {
                             vertexIndices.Add(k2 + 1);
                             vertexIndices.Add(k1 + 1);
@@ -905,20 +1033,21 @@ namespace UTS
                 }
 
                 init();
-                rotateX(90f);
+                //rotateX(90f);
                 centerOrigin();
             }
         }
 
-        public void createFreeformTube(List<Vector2> path,float percent = 1, float tubedia = 0.2f)
+        public void createFreeformTube(List<Vector2> path, float percent = 1, float tubedia = 0.2f)
         {
             delete();
-            int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL*10;
+            int sharpness = Window.ROUND_OBJECT_DETAIL_LEVEL * 10;
             int hCount = sharpness;
             float divide = 1 / percent;
             float PI = (float)Math.PI;
             float hStep = 2 * PI / hCount;
             float hAngle, firstAngle = 0, lastAngle = 0;
+            Quaternion rotfix = new Quaternion(0.7071068f, 0.7071068f, 0, 0);
 
             //smoothify parh 
             path = generateBezier(path, sharpness);
@@ -950,17 +1079,27 @@ namespace UTS
                     temp = temp + new Vector3(0, -path[i].X, -clone.Z);
                     temp = new Vector3(new Vector4(temp, 1f) * Matrix4.CreateRotationX(-lastAngle));
                     temp = temp + new Vector3(0, path[i].X, clone.Z);
+                    //patch rotation dibawah
+                    temp *= Matrix3.CreateFromQuaternion(rotfix);
 
                     vertices.Add(temp);
                     normals.Add(temp);
+                    //vertices.Add(new Vector3(temp.Z, -temp.Y, temp.X));
+                    //normals.Add(new Vector3(temp.Z, -temp.Y, temp.X));
                 }
             }
 
-            vertices.Add(new Vector3(0, path[0].X, path[0].Y));
-            normals.Add(new Vector3(0,path[0].X,path[0].Y));
+            vertices.Add(new Vector3(0, path[0].X, path[0].Y) * Matrix3.CreateFromQuaternion(rotfix));
+            normals.Add(new Vector3(0, path[0].X, path[0].Y) * Matrix3.CreateFromQuaternion(rotfix));
 
-            vertices.Add(new Vector3(0, path.Last().X, path.Last().Y));
-            normals.Add(new Vector3(0, path.Last().X, path.Last().Y));
+            vertices.Add(new Vector3(0, path.Last().X, path.Last().Y) * Matrix3.CreateFromQuaternion(rotfix));
+            normals.Add(new Vector3(0, path.Last().X, path.Last().Y) * Matrix3.CreateFromQuaternion(rotfix));
+
+            //vertices.Add(new Vector3(path[0].Y, -path[0].X, 0));
+            //normals.Add(new Vector3(path[0].Y, -path[0].X, 0));
+
+            //vertices.Add(new Vector3(path.Last().Y, -path.Last().X, 0));
+            //normals.Add(new Vector3(path.Last().Y, -path.Last().X, 0));
 
             uint k1, k2;
             for (int i = 0; i < vCount; i++)
@@ -996,8 +1135,8 @@ namespace UTS
                 }
             }
 
-            rotateX(180);
-            rotateY(90);
+            //rotateX(180);
+            //rotateY(90);
             init();
             centerOrigin();
         }
@@ -1033,7 +1172,7 @@ namespace UTS
             return resvect;
         }
 
-        private static List<Vector3> generateBezier( List<Vector3> parr, int nullify, float detail = 10)
+        private static List<Vector3> generateBezier(List<Vector3> parr, int nullify, float detail = 10)
         {
             List<Vector3> res = new List<Vector3>();
             List<Vector2> app = new List<Vector2>();
@@ -1086,7 +1225,7 @@ namespace UTS
         private static List<Vector2> generateBezier(List<Vector2> parr, float detail = 10)
         {
             List<Vector2> proc = new List<Vector2>();
-           
+
             for (float t = 0.0f; t <= 1.0f; t += 1 / detail)
             {
                 proc.Add(setBezier(parr, t));

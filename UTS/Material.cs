@@ -28,7 +28,7 @@ namespace UTS
             specular.Y = 1;
             specular.Z = 1;
             alpha = 1.0f;
-            specularExponent = 999;
+            specularExponent = 32;
         }
     }
 
