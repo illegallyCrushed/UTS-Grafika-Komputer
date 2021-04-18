@@ -2008,7 +2008,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong").translateZ(0.005f);
 				scene.findChild("AsapCerobong").scale(1.004f);
-				scene.findChild("AsapCerobong").material.alpha += 0 - scene.findChild("AsapCerobong").material.alpha * 0.005f;
+				scene.findChild("AsapCerobong").material.alpha += 0 - scene.findChild("AsapCerobong").material.alpha * 0.006f;
 			}
 			else { 
 				scene.findChild("AsapCerobong").restoreTransform();
@@ -2019,7 +2019,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong.001").translateZ(0.005f);
 				scene.findChild("AsapCerobong.001").scale(1.004f);
-				scene.findChild("AsapCerobong.001").material.alpha += 0 - scene.findChild("AsapCerobong.001").material.alpha * 0.005f;
+				scene.findChild("AsapCerobong.001").material.alpha += 0 - scene.findChild("AsapCerobong.001").material.alpha * 0.006f;
 			}
 			else
 			{
@@ -2030,7 +2030,7 @@ namespace UTS
 			{
 				scene.findChild("AsapCerobong.002").translateZ(0.005f);
 				scene.findChild("AsapCerobong.002").scale(1.004f);
-				scene.findChild("AsapCerobong.002").material.alpha += 0 - scene.findChild("AsapCerobong.002").material.alpha * 0.005f;
+				scene.findChild("AsapCerobong.002").material.alpha += 0 - scene.findChild("AsapCerobong.002").material.alpha * 0.006f;
 			}									
 			else								
 			{									

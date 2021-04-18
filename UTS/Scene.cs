@@ -39,7 +39,7 @@ namespace UTS
         public static float RotateVelocityY = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
-        public static int LightMode = 3;
+        public static int LightMode = 2;
 
         public static int depthMapFBO;
         public static int depthMap;
@@ -64,11 +64,10 @@ namespace UTS
             WindowSize = Size;
 
             Shader_Color = new Shader("../../../Shaders/shader.vert", "../../../Shaders/shader.frag");
-            //Shader_Color = new Shader("../../../Shaders/shader_debug.vert", "../../../Shaders/shader_debug.frag");
             Shader_Wireframe = new Shader("../../../Shaders/shader_line.vert", "../../../Shaders/shader_line.frag");
             Shader_Depth = new Shader("../../../Shaders/shader_depth.vert", "../../../Shaders/shader_depth.frag");
 
-            LightProjectionMatrix = Matrix4.CreateOrthographic(15, 15, 1.0f, 7.5f);
+            LightProjectionMatrix = Matrix4.CreateOrthographic(15, 15, 0.1f, 100f);
             LightMatrix = Matrix4.LookAt(LightPosition, LightTo, LightUpwards);
             LightSpaceMatrix = LightMatrix * LightProjectionMatrix;
 
@@ -91,18 +90,20 @@ namespace UTS
             ProjectionMatrix = Matrix4.CreatePerspectiveFieldOfView(FOV.Rad(), (float)WindowSize.X / (float)WindowSize.Y, 0.1f, 100.0f);
 
             ViewMatrix = Matrix4.LookAt(ViewPosition, ViewTo, ViewUpwards);
-
-            //// get depth, 1st pass
-            //GL.Viewport(0, 0, Window.SHADOW_RESOLUTION, Window.SHADOW_RESOLUTION);
-            //GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
-            //GL.Clear(ClearBufferMask.DepthBufferBit);
-            //scene.renderDepth();
+            if (LightMode > 3)
+            {
+                // get depth, 1st pass
+                GL.Viewport(0, 0, Window.SHADOW_RESOLUTION, Window.SHADOW_RESOLUTION);
+                GL.BindFramebuffer(FramebufferTarget.Framebuffer, depthMapFBO);
+                GL.Clear(ClearBufferMask.DepthBufferBit);
+                scene.renderDepth();
+                GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+                GL.Viewport(0, 0, WindowSize.X, WindowSize.Y);
+                GL.BindTexture(TextureTarget.Texture2D, depthMap);
+            }
 
             // render color, 2nd pass
-            GL.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
-            GL.Viewport(0, 0, WindowSize.X, WindowSize.Y);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.BindTexture(TextureTarget.Texture2D, depthMap);
             scene.render();
         }
 

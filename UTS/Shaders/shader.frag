@@ -105,6 +105,8 @@ void main()
     if(simple == 1)
         result = vec3(1,1,1) * material.ambient;
     else if(simple == 2)
+        result = ambient + diffuse;
+    else if (simple == 3)
         result = ambient + diffuse + specular;
     else
         result = (ambient + (1.0 - shadow) * ( diffuse + specular)) * light.ambient;

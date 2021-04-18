@@ -363,24 +363,27 @@ namespace UTS
         }
         public void renderDepth()
         {
-            Scene.Shader_Depth.SetMatrix4("model", processed_transform);
-            Scene.Shader_Depth.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
-            GL.BindVertexArray(_vertexArrayObject);
-
-            if (Scene.Solids)
+            if (vertices.Count > 0)
             {
-                Scene.Shader_Depth.Use();
-                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
-            }
-            if (Scene.Wireframe)
-            {
-                Scene.Shader_Depth.Use();
-                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
-                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
-                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
-            }
+                Scene.Shader_Depth.SetMatrix4("model", processed_transform);
+                Scene.Shader_Depth.SetMatrix4("lightSpaceMatrix", Scene.LightSpaceMatrix);
+                GL.BindVertexArray(_vertexArrayObject);
 
-            GL.BindVertexArray(0);
+                if (Scene.Solids)
+                {
+                    Scene.Shader_Depth.Use();
+                    GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+                }
+                if (Scene.Wireframe)
+                {
+                    Scene.Shader_Depth.Use();
+                    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+                    GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+                    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+                }
+
+                GL.BindVertexArray(0);
+            }
 
             foreach (var child in children)
             {
@@ -389,41 +392,44 @@ namespace UTS
         }
         public void render()
         {
-
-            Scene.Shader_Wireframe.SetMatrix4("mvp_transform", processed_transform * Scene.ViewMatrix * Scene.ProjectionMatrix);
-            Scene.Shader_Wireframe.SetVector3("lineColor", Scene.WireframeColor);
-            Scene.Shader_Color.SetInt("simple", Scene.LightMode);
-            Scene.Shader_Color.SetMatrix4("model", processed_transform);
-            Scene.Shader_Color.SetMatrix4("view", Scene.ViewMatrix);
-            Scene.Shader_Color.SetMatrix4("projection", Scene.ProjectionMatrix);
-            Scene.Shader_Color.SetVector3("material.ambient", material.diffuse * new Vector3(0.9f,0.9f,0.9f));
-            Scene.Shader_Color.SetVector3("material.diffuse", material.diffuse);
-            Scene.Shader_Color.SetVector3("material.specular", material.specular);
-            Scene.Shader_Color.SetFloat("material.shininess", (float)material.specularExponent);
-            Scene.Shader_Color.SetFloat("alpha", material.alpha);
-            Scene.Shader_Color.SetVector3("light.position", Scene.LightPosition);
-            Scene.Shader_Color.SetVector3("light.ambient", Scene.LightColor);
-            Scene.Shader_Color.SetVector3("light.diffuse", Scene.LightColor);
-            Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
-            Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
-            //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
-
-            GL.BindVertexArray(_vertexArrayObject);
-
-            if (Scene.Solids)
+            if (vertices.Count > 0)
             {
-                Scene.Shader_Color.Use();
-                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
-            }
-            if (Scene.Wireframe)
-            {
-                Scene.Shader_Wireframe.Use();
-                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
-                GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
-                GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
-            }
 
-            GL.BindVertexArray(0);
+                Scene.Shader_Wireframe.SetMatrix4("mvp_transform", processed_transform * Scene.ViewMatrix * Scene.ProjectionMatrix);
+                Scene.Shader_Wireframe.SetVector3("lineColor", Scene.WireframeColor);
+                Scene.Shader_Color.SetInt("simple", Scene.LightMode);
+                Scene.Shader_Color.SetMatrix4("model", processed_transform);
+                Scene.Shader_Color.SetMatrix4("view", Scene.ViewMatrix);
+                Scene.Shader_Color.SetMatrix4("projection", Scene.ProjectionMatrix);
+                Scene.Shader_Color.SetVector3("material.ambient", material.diffuse * new Vector3(0.9f, 0.9f, 0.9f));
+                Scene.Shader_Color.SetVector3("material.diffuse", material.diffuse);
+                Scene.Shader_Color.SetVector3("material.specular", material.specular);
+                Scene.Shader_Color.SetFloat("material.shininess", (float)material.specularExponent);
+                Scene.Shader_Color.SetFloat("alpha", material.alpha);
+                Scene.Shader_Color.SetVector3("light.position", Scene.LightPosition);
+                Scene.Shader_Color.SetVector3("light.ambient", Scene.LightColor);
+                Scene.Shader_Color.SetVector3("light.diffuse", Scene.LightColor);
+                Scene.Shader_Color.SetVector3("light.specular", Scene.LightColor);
+                Scene.Shader_Color.SetVector3("viewPos", Scene.ViewPosition);
+                //Scene.Shader_Color.SetFloat("LightPower", Scene.LightPower);
+
+                GL.BindVertexArray(_vertexArrayObject);
+
+                if (Scene.Solids)
+                {
+                    Scene.Shader_Color.Use();
+                    GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+                }
+                if (Scene.Wireframe)
+                {
+                    Scene.Shader_Wireframe.Use();
+                    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+                    GL.DrawElements(PrimitiveType.Triangles, vertexIndices.Count, DrawElementsType.UnsignedInt, 0);
+                    GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Fill);
+                }
+
+                GL.BindVertexArray(0);
+            }
 
             foreach (var child in children)
             {
