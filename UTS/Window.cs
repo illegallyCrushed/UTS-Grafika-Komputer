@@ -28,6 +28,18 @@ namespace UTS
 
         public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
         {
+            Console.WriteLine("Shaun the Sheep made by:");
+            Console.WriteLine("Leonando L - C14190010");
+            Console.WriteLine("Nicholas S - C14190034");
+            Console.WriteLine("Jeremy H - C14190215");
+            Console.WriteLine("\nControls:");
+            Console.WriteLine("WASD - MOVE");
+            Console.WriteLine("SPACE - UP");
+            Console.WriteLine("SHIFT - DOWN");
+            Console.WriteLine("LEFT MOUSE - HORIZONTAL SPIN");
+            Console.WriteLine("RIGHT MOUSE - VERTICAL SPIN");
+            Console.WriteLine("MIDDLE MOUSE - FREE SPIN");
+            Console.WriteLine("R - RESET CAMERA");
         }
 
         protected override void OnLoad()

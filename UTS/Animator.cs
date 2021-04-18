@@ -9,12 +9,14 @@ namespace UTS
     {
         public float s;
         public float p;
+        public float o;
         public static List<Animator> instances = new List<Animator>();
 
-        public Animator(float speed = 1)
+        public Animator(float speed = 1, float offset = 0)
         {
             p = 0;
             s = speed;
+            o = offset;
             Animator.instances.Add(this);
         }
 
@@ -70,7 +72,7 @@ namespace UTS
             foreach (var instant in Animator.instances)
             {
                 instant.p += instant.s * (float)e.Time;
-                if (instant.p > 1.0) instant.p = 0;
+                if (instant.p > 1.0 + instant.o) instant.p = 0;
             }
         }
 

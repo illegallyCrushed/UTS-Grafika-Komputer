@@ -12,7 +12,7 @@ namespace UTS
             var ourWindow = new NativeWindowSettings()
             {
                 Size = new Vector2i(1000, 1000),
-                Title = "Proyek UTS",
+                Title = "Proyek UTS - Shaun the Sheep",
                 NumberOfSamples = Window.MULTISAMPLING_LEVEL
             };
 

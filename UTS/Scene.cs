@@ -31,21 +31,17 @@ namespace UTS
         public static float FOV = 45.0f;
         public static float RotateVelocityX = 0;
         public static float RotateVelocityY = 0;
-        public static float rotatesz = 0;
         public static bool Wireframe = false;
         public static bool Solids = true;
         public static bool Flat = false;
 
         public static void SetScene(Vector2i Size)
         {
-            // perspective
-            // ortho
-            // ProjectionMatrix = Matrix4.CreateOrthographic(15,15,0.1f,100.0f); 
             WindowSize = Size;
 
             Leonando.Objects(ref scene);
-            Nicholas.Objects(ref scene);
             Jeremy.Objects(ref scene);
+            Nicholas.Objects(ref scene);
             scene.translateZ(-8.5f);
             scene.rotateZ(45f);
             scene.init();
@@ -54,8 +50,8 @@ namespace UTS
         public static void AnimateScene()
         {
             Leonando.Animations(ref scene);
-            Nicholas.Animations(ref scene);
             Jeremy.Animations(ref scene);
+            Nicholas.Animations(ref scene);
         }
         public static void RenderScene()
         {
@@ -112,6 +108,7 @@ namespace UTS
                 scene.setTranslate(0,0,0);
                 scene.setRotation(0,0,0);
                 scene.translateZ(-8.5f);
+                scene.rotateZ(45f);
 
                 ViewPosition = new Vector3(20, 3, 0);
                 ViewDirection = new Vector3(0, 0, 0);
@@ -156,13 +153,10 @@ namespace UTS
             }
         }
 
-
         public static void RefreshAspect(Vector2i Size)
         {
             WindowSize = Size;
         }
-
-
     }
 
 }
