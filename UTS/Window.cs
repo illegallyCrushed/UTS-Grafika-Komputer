@@ -28,6 +28,7 @@ namespace UTS
         public static readonly int SHADOW_RESOLUTION = 2048;
         public static bool ENABLE_SHADOW = true;
         public static bool ISFULLSCREEN = false;
+        public static bool PLAYANIMATION = true;
 
         public Window(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
         {
@@ -44,7 +45,7 @@ namespace UTS
             Console.WriteLine("");
             Console.WriteLine("LEFT MOUSE - HORIZONTAL SPIN");
             Console.WriteLine("RIGHT MOUSE - VERTICAL SPIN");
-            Console.WriteLine("MIDDLE MOUSE - FREE SPIN");
+            Console.WriteLine("MIDDLE MOUSE - CIRCLE SPIN");
             Console.WriteLine("");
             Console.WriteLine("ARROW KEYS - MOVE LIGHT");
             Console.WriteLine("RSHIFT - MOVE UP LIGHT");
@@ -57,6 +58,7 @@ namespace UTS
             Console.WriteLine("F9 - TOGGLE LIGHTBALL");
             Console.WriteLine("F10 - TOGGLE SHADOW");
             Console.WriteLine("F11 - TOGGLE FULLSCREEN");
+            Console.WriteLine("F12 - TOGGLE ANIMATIONS");
             Console.WriteLine("\nActions:");
         }
 
@@ -86,7 +88,8 @@ namespace UTS
 
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
-            Animator.Tick(e);
+            if(Window.PLAYANIMATION)
+                Animator.Tick(e);
             Scene.Movement(e, this);
         }
 

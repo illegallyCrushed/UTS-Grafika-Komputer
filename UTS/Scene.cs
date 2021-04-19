@@ -37,6 +37,7 @@ namespace UTS
         public static float FOV = 45.0f;
         public static float RotateVelocityX = 0;
         public static float RotateVelocityY = 0;
+        public static float RotateVelocityZ = 0;
         public static bool ShowLightBall = false;
         public static bool Wireframe = false;
         public static bool Solids = true;
@@ -86,9 +87,11 @@ namespace UTS
 
             scene = new Object("scene");
 
-            Leonando.Objects(ref scene);
-            Jeremy.Objects(ref scene);
-            Nicholas.Objects(ref scene);
+            
+             Leonando.Objects(ref scene);
+             Jeremy.Objects(ref scene);
+             Nicholas.Objects(ref scene);
+
 
             scene.translateZ(-8.8f);
             scene.rotateZ(45f);
@@ -104,9 +107,12 @@ namespace UTS
 
         public static void AnimateScene()
         {
-            Leonando.Animations(ref scene);
-            Jeremy.Animations(ref scene);
-            Nicholas.Animations(ref scene);
+            if (Window.PLAYANIMATION)
+            {
+                Leonando.Animations(ref scene);
+                Jeremy.Animations(ref scene);
+                Nicholas.Animations(ref scene);
+            }
         }
         public static void RenderScene()
         {
@@ -239,14 +245,14 @@ namespace UTS
                 Console.WriteLine("Light Reset");
             }
 
+            
+
 
             float deltaX = w.MouseState.Position.X - w.MouseState.PreviousPosition.X;
             float deltaY = w.MouseState.Position.Y - w.MouseState.PreviousPosition.Y;
             if (w.MouseState.IsButtonDown(MouseButton.Button3))
             {
-
-                RotateVelocityX = deltaX * (float)rotatesens;
-                RotateVelocityY = deltaY * (float)rotatesens;
+                RotateVelocityZ = deltaX * (float)rotatesens;
             }
             else if (w.MouseState.IsButtonDown(MouseButton.Button2))
             {
@@ -259,8 +265,10 @@ namespace UTS
             }
             RotateVelocityX -= (RotateVelocityX - 0) * reducespeed * (float)e.Time;
             RotateVelocityY -= (RotateVelocityY - 0) * reducespeed * (float)e.Time;
-            scene.rotateZ(RotateVelocityX);
+            RotateVelocityZ -= (RotateVelocityZ - 0) * reducespeed * (float)e.Time;
             scene.rotateY(RotateVelocityY);
+            scene.rotateZ(RotateVelocityX);
+            scene.rotateX(RotateVelocityZ);
 
             if (w.KeyboardState.IsKeyReleased(Keys.F11)) {
                 if (!Window.ISFULLSCREEN)
@@ -314,7 +322,7 @@ namespace UTS
                 Console.WriteLine("");
                 Console.WriteLine("LEFT MOUSE - HORIZONTAL SPIN");
                 Console.WriteLine("RIGHT MOUSE - VERTICAL SPIN");
-                Console.WriteLine("MIDDLE MOUSE - FREE SPIN");
+                Console.WriteLine("MIDDLE MOUSE - CIRCLE SPIN");
                 Console.WriteLine("");
                 Console.WriteLine("ARROW KEYS - MOVE LIGHT");
                 Console.WriteLine("RSHIFT - MOVE UP LIGHT");
@@ -327,10 +335,14 @@ namespace UTS
                 Console.WriteLine("F9 - TOGGLE LIGHTBALL");
                 Console.WriteLine("F10 - TOGGLE SHADOW");
                 Console.WriteLine("F11 - TOGGLE FULLSCREEN");
+                Console.WriteLine("F12 - TOGGLE ANIMATIONS");
                 Console.WriteLine("\nActions:");
             }
-
-
+            if (w.KeyboardState.IsKeyReleased(Keys.F12))
+            {
+                Window.PLAYANIMATION = !Window.PLAYANIMATION;
+                Console.WriteLine("Toggle Animations = " + Window.PLAYANIMATION);
+            }
         }
 
         public static void Zoom(MouseWheelEventArgs e)

@@ -190,7 +190,7 @@ namespace UTS
                                                                 new Vector2(3.82352f, -1.24597f),
                                                                 new Vector2(4.01912f, -1.02413f),
                                                                 new Vector2(4.08118f, -0.94048f),
-                                                }, 1f, 0.01f);
+                                                }, 1f, 0.1f);
                     scene.lastChild().lastChild().lastChild().scale(0.10553f, 0.16553f, 0.20553f);
                     scene.lastChild().lastChild().lastChild().rotateQ(0.50000f, 0.50000f, 0.50000f, 0.50000f);
                     scene.lastChild().lastChild().lastChild().translate(0.68000f, -0.03000f, 0.84000f);
@@ -1244,7 +1244,7 @@ namespace UTS
 
         public static void Animations(ref Object scene)
         {
-            scene.findChild("Bitzer").findChild("KepalaAnjing").rotateX(KepalaAnjingScale.MinMaxBounce(-0.4444f, 0.447f));
+            scene.findChild("Bitzer").findChild("KepalaAnjing").rotateX(KepalaAnjingScale.MinMaxBounce(-0.4444f, 0.4465f));
             scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKanan").rotateX(KepalaAnjingScale.MinMaxBounce(-0.3333f, 0.3333f));
             scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("OffsetTelingaKiri").rotateX(KepalaAnjingScale.MinMaxBounce(0.3333f, -0.3333f));
             scene.findChild("Bitzer").findChild("KepalaAnjing").findChild("Lidah").translateX(KepalaAnjingScale.MinMaxBounce(-0.005555f, 0.005555f));
