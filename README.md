@@ -6,7 +6,7 @@ Mid Term Project for Computer Graphic Class
 <br><b>Nicholas S C14190034</b>
 <br><b>Jeremy H C14190215</b>
 
-<b>[File Laporan](https://drive.google.com/file/d/1gXqs85wrSWCOwHFn1Zb1aqMXbd_G5Ysh/view?usp=sharing)</b>
+<b>[File Laporan](https://drive.google.com/file/d/1lEkIEJnBnW6X2BcFVK0XxlDR4PCHdjHC/view?usp=sharing)</b>
 <br><b>[Video Demonstrasi](https://drive.google.com/file/d/1WiiILWKaBXr-kWmxyYwN7OcHRMLUb413/view?usp=sharing)</b>
 
 
